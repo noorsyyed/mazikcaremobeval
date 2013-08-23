@@ -173,19 +173,19 @@
                             <RowDefinition Height="20"/>
                         </Grid.RowDefinitions>
                         <TextBlock Text="↘ 08 Nov 2012   Not able to walk more than 10 mtrs" TextWrapping="Wrap" Style="{StaticResource TextStyle}" VerticalAlignment="Center" Margin="20 0 0 0"/>
-                        <TextBlock Text="Doctor : Tapang, David" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Column="1" VerticalAlignment="Center"/>
+                        <TextBlock Text="Doctor : Attawar, Sandeep" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Column="1" VerticalAlignment="Center"/>
 
                         <TextBlock Text="↘ 14 Sept 2012   Trouble with knee while walking" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="1" VerticalAlignment="Center" Margin="20 0 0 0"/>
-                        <TextBlock Text="Doctor : Tapang, David" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
+                        <TextBlock Text="Doctor : Gupta, Ila" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
 
                         <TextBlock Text="↘ 23 July 2012   Essential Hypertension" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="2" VerticalAlignment="Center" Margin="20 0 0 0"/>
-                        <TextBlock Text="Doctor : Brown, Alex" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"/>
+                        <TextBlock Text="Doctor : Oberoi, IPS" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"/>
 
                         <TextBlock Text="↘ 05 June 2012   Need assistance to sit and stand" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="3" VerticalAlignment="Center" Margin="20 0 0 0"/>
-                        <TextBlock Text="Doctor : Tapang, David" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
+                        <TextBlock Text="Doctor : Gupta, Praveen" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
 
                         <TextBlock Text="↘ 10 April 2012   Hige Cholesterol levels" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="4" VerticalAlignment="Center" Margin="20 0 0 0"/>
-                        <TextBlock Text="Doctor : Barnett, Dave" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"/>
+                        <TextBlock Text="Doctor : Narayan, Surya" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"/>
                     </Grid>
 
                 </Grid>

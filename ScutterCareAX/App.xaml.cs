@@ -202,9 +202,9 @@ namespace MazikCare.MobEval
                     {
                         return new Patient()
                         {
-                            Name = "Bruce Caine",
-                            Address = "2604 East  Dempster St",
-                            City = "Park Ridge IL 60016.",
+                            Name = "Prakash Raj",
+                            Address = "2930 Ashok Nagar, Jublee Hills",
+                            City = "Hyderabad, 500034",
                             PhoneNumber = "Tel : 1 312 345 6789",
                             DOB = "78 Years",
                             Gender = "Gender : Male",
@@ -216,9 +216,9 @@ namespace MazikCare.MobEval
                 {
                     return new Patient()
                     {
-                        Name = "Bruce Caine",
-                        Address = "2604 East  Dempster St",
-                        City = "Park Ridge IL 60016.",
+                        Name = "Prakash Raj",
+                        Address = "604, VidyaNagar, Kranti Marg",
+                        City = "Mumbai, 400036",
                         PhoneNumber = "Tel : 1 312 345 6789",
                         DOB = "78 Years",
                         Gender = "Gender : Male",

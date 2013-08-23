@@ -343,7 +343,7 @@ namespace MazikCare.MobEval.Datas
         {
             return new SettingsData()
             {
-                Name = "LK Prasad",
+                Name = "Prakash Raj",
                 Address = "3424 Kimble Dr",
                 CityState = "Plano, TX - 75025",
                 ContactPhone = "+16086955867",
@@ -355,7 +355,7 @@ namespace MazikCare.MobEval.Datas
                 ChiefComplaint = "multiple sclerosis",
                 PrimaryCarePhysician = "Dr.RadhaKishan",
                 OrthopedicsSpecialist = "Dr.Himanshu",
-                AttendingNurse = "Nancy Young",
+                AttendingNurse = "Aneeta Rai",
 
                 Tile2Title = "Sales Quote-Confirmation",
                 Tile2Content = "Iansoprazole 15 mg tablets – take 1 tablet once a day",
