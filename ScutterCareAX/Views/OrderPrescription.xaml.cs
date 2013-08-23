@@ -161,13 +161,23 @@ namespace MazikCare.MobEval.Views
 
         private async void GeneratePdf_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            await this.WriteDataToXML();
-            var pdf = await this.GeneratePdf();
-            await Launcher.LaunchFileAsync(pdf);
+            try
+            {
+                this.progressRing.IsActive = true;
+                await this.WriteDataToXML();
+                var pdf = await this.GeneratePdf();
+                await Launcher.LaunchFileAsync(pdf);
 
-            var app = (App)Application.Current;
-            var srv = app.ServiceHelper;
-            var pat = app.Patient;
+                var app = (App)Application.Current;
+                var srv = app.ServiceHelper;
+                var pat = app.Patient;
+                this.progressRing.IsActive = false;
+            }
+            catch (Exception ex)
+            {
+                this.progressRing.IsActive = false;
+                Util.HandleException(ex, ex.Message);
+            }
 
             //srv.AddDocument(pat.SSN
         }
@@ -784,7 +794,7 @@ namespace MazikCare.MobEval.Views
                         //Order Prescription Details
                         page.Graphics.DrawString(677, 191, DateTime.Today.ToString("dd MMM yyyy"));
                         page.Graphics.DrawString(364, 315, app.SettingsData.Name);
-                        page.Graphics.DrawString(376, 392, data.OrderItem==null ? string.Empty:data.OrderItem.Name);
+                        page.Graphics.DrawString(376, 392, data.OrderItem == null ? string.Empty : data.OrderItem.Name);
                         page.Graphics.DrawString(368, 469, DateTime.Today.ToString("dd MMM yyyy"));
 
                         int ICSCount = 1;
