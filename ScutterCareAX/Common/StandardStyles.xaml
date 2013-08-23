@@ -45,7 +45,70 @@
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="Padding" Value="5 0"/>
     </Style>-->
-    
+
+    <Style x:Key="BtnStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid x:Name="grid">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ColorAnimation Duration="0"
+                                                            Storyboard.TargetName="rectangle"
+                                                            Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+                                                            To="White"
+                                                           />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0"
+                                                             Storyboard.TargetName="rectangle"
+                                                             Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                             To="0.995"
+                                                             />
+                                        <DoubleAnimation Duration="0"
+                                                             Storyboard.TargetName="grid"
+                                                             Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                             To="0.5"
+                                                            />
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="(ContentPresenter.Content)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Save" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="PointerOver">
+                                    <Storyboard>
+                                        <ColorAnimation Duration="0"
+                                                            Storyboard.TargetName="rectangle"
+                                                            Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+                                                            To="#FF777777"
+                                                           />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused" />
+                                <VisualState x:Name="PointerFocused" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Rectangle x:Name="rectangle"
+                                       Fill="White"
+                                       Stroke="Black"
+                                       StrokeThickness="1" RadiusX="25" RadiusY="25" />
+                        <ContentPresenter x:Name="contentPresenter"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Foreground="Black" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <Style x:Key="BasicRichTextStyle" TargetType="RichTextBlock">
         <Setter Property="Foreground" Value="{StaticResource ApplicationForegroundThemeBrush}"/>
         <Setter Property="FontSize" Value="{StaticResource ControlContentThemeFontSize}"/>

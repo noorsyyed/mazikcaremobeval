@@ -1,4 +1,6 @@
 ﻿using MazikCare.MobEval.Datas;
+using MazikCare.MobEval.Helpers;
+using MazikCare.MobEval.Views.Popups;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,9 +13,11 @@ using Windows.Storage;
 using Windows.Storage.AccessCache;
 using Windows.Storage.Streams;
 using Windows.System;
+using Windows.UI.Core;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -28,6 +32,7 @@ namespace MazikCare.MobEval.Views
         private StorageFile _pdf;
         private StorageFile _signature;
         private long _prescriptionId;
+        private SignaturePage _signPopup;
         #endregion
 
         #region CTOR
@@ -116,6 +121,44 @@ namespace MazikCare.MobEval.Views
         #endregion
 
         #region Event Handlers
+
+        private void Sign_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                CoreWindow currentWindow = Window.Current.CoreWindow;
+                Popup popup = new Popup();
+                popup.HorizontalAlignment = Windows.UI.Xaml.HorizontalAlignment.Stretch;
+                popup.VerticalAlignment = Windows.UI.Xaml.VerticalAlignment.Stretch;
+
+                if (_signPopup == null)
+                {
+                    _signPopup = new SignaturePage();
+
+                }
+                else
+                {
+                    _signPopup = null;
+                    this._signPopup = new SignaturePage();
+                }
+
+                popup.Child = _signPopup;
+                this._signPopup.Tag = popup;
+                this._signPopup.Height = currentWindow.Bounds.Height;
+                this._signPopup.Width = currentWindow.Bounds.Width;
+                var btn = (Button)sender;
+                this._signPopup.Source = this.imgSign;
+
+                popup.Margin = new Thickness(0, 0, 0, 0);
+
+                popup.IsOpen = true;
+            }
+            catch (Exception ex)
+            {
+                Util.HandleException(ex, ex.Message);
+            }
+        }
+
         private async void GeneratePdf_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             await this.WriteDataToXML();
@@ -128,6 +171,7 @@ namespace MazikCare.MobEval.Views
 
             //srv.AddDocument(pat.SSN
         }
+
 
         private void llComboItem_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
@@ -211,7 +255,7 @@ namespace MazikCare.MobEval.Views
                 this._prescriptionId = await app.ServiceHelper.CreatePrescription(app.Patient.RecId, app.PrescriptionData.LON, itemsForOrder, diagnosis);
 
                 //add document
-                await app.ServiceHelper.AddDocumentToPrescription(this._prescriptionId, await this.GenerateSignature());
+                //   await app.ServiceHelper.AddDocumentToPrescription(this._prescriptionId, await this.GenerateSignature());
                 try
                 {
                     await app.ServiceHelper.AddDocumentToPrescription(this._prescriptionId, await this.GeneratePdf());
@@ -233,11 +277,6 @@ namespace MazikCare.MobEval.Views
             if (this._pdf == null)
             {
                 var app = (App)Application.Current;
-
-                //generate image
-                var signFile = await GenerateSignature();
-
-
                 //data
                 var data = (PrescriptionData)this.DefaultViewModel["PrescriptionData"];
                 var diagData = (DiagnosisData)this.DefaultViewModel["DiagnosisData"];
@@ -250,6 +289,7 @@ namespace MazikCare.MobEval.Views
                 StorageFile page5 = await Package.Current.InstalledLocation.GetFileAsync(@"Datas\page5.png");
 
                 this._pdf = await ApplicationData.Current.LocalFolder.CreateFileAsync(@"Data\Prescription.pdf", CreationCollisionOption.ReplaceExisting);
+                var signStream = await this.GetLocalResource("Sign.png");
                 using (var stream = await this._pdf.OpenStreamForWriteAsync())
                 {
                     await Task.Run(async () =>
@@ -734,18 +774,17 @@ namespace MazikCare.MobEval.Views
                         image = new Siberix.Sparkle.Graphics.Image(await page5.OpenStreamForReadAsync());
                         page.Graphics.DrawImage(image, 1, 1, image.Width, image.Height);
 
-                        //signature
-                        image = new Siberix.Sparkle.Graphics.Image(await signFile.OpenStreamForReadAsync());
-                        page.Graphics.DrawImage(image, 350, 920, image.Width * 0.65F, image.Height * 0.60F);
-
-
-
-                        //objective mesures
+                        //signature                     
+                        if (signStream != Stream.Null)
+                        {
+                            var signImage = new Siberix.Sparkle.Graphics.Image(signStream);
+                            page.Graphics.DrawImage(signImage, 390, 939, signImage.Width * 0.27F, signImage.Height * 0.27F);
+                        }
 
                         //Order Prescription Details
                         page.Graphics.DrawString(677, 191, DateTime.Today.ToString("dd MMM yyyy"));
                         page.Graphics.DrawString(364, 315, app.SettingsData.Name);
-                        page.Graphics.DrawString(376, 392, data.OrderItem.Name);
+                        page.Graphics.DrawString(376, 392, data.OrderItem==null ? string.Empty:data.OrderItem.Name);
                         page.Graphics.DrawString(368, 469, DateTime.Today.ToString("dd MMM yyyy"));
 
                         int ICSCount = 1;
@@ -837,57 +876,79 @@ namespace MazikCare.MobEval.Views
         /// First Generate the signature 
         /// </summary>
         /// <returns></returns>
-        private async Task<StorageFile> GenerateSignature()
-        {
-            if (this._signature == null)
-            {
-                var data = this.wView.InvokeScript("getImageData", null);
-                data = data.Replace("data:image/png;base64,", "");
-                var bytes = System.Convert.FromBase64String(data);
+        //private async Task<StorageFile> GenerateSignature()
+        //{
+        //    if (this._signature == null)
+        //    {
+        //        var data = this.wView.InvokeScript("getImageData", null);
+        //        data = data.Replace("data:image/png;base64,", "");
+        //        var bytes = System.Convert.FromBase64String(data);
 
-                var storageItemAccessList = StorageApplicationPermissions.FutureAccessList;
+        //        var storageItemAccessList = StorageApplicationPermissions.FutureAccessList;
 
-                this._signature = await ApplicationData.Current.LocalFolder.CreateFileAsync(@"Data\sign.png", CreationCollisionOption.ReplaceExisting);
+        //        this._signature = await ApplicationData.Current.LocalFolder.CreateFileAsync(@"Data\sign.png", CreationCollisionOption.ReplaceExisting);
 
-                using (IRandomAccessStream fileStream = await this._signature.OpenAsync(FileAccessMode.ReadWrite))
-                {
-                    using (IOutputStream outputStream = fileStream.GetOutputStreamAt(0))
-                    {
-                        using (DataWriter dataWriter = new DataWriter(outputStream))
-                        {
-                            //TODO: Replace "Bytes" with the type you want to write.
-                            dataWriter.WriteBytes(bytes);
-                            await dataWriter.StoreAsync();
-                            dataWriter.DetachStream();
-                        }
+        //        using (IRandomAccessStream fileStream = await this._signature.OpenAsync(FileAccessMode.ReadWrite))
+        //        {
+        //            using (IOutputStream outputStream = fileStream.GetOutputStreamAt(0))
+        //            {
+        //                using (DataWriter dataWriter = new DataWriter(outputStream))
+        //                {
+        //                    //TODO: Replace "Bytes" with the type you want to write.
+        //                    dataWriter.WriteBytes(bytes);
+        //                    await dataWriter.StoreAsync();
+        //                    dataWriter.DetachStream();
+        //                }
 
-                        await outputStream.FlushAsync();
-                    }
-                }
+        //                await outputStream.FlushAsync();
+        //            }
+        //        }
 
-            }
-            return this._signature;
-        }
+        //    }
+        //    return this._signature;
+        //}
         #endregion
 
         #region Other Methods
+
+        private async Task<Stream> GetLocalResource(string fileName)
+        {
+            try
+            {
+                var file = await ApplicationData.Current.LocalFolder.GetFileAsync(fileName);
+                var stream = await file.OpenAsync(FileAccessMode.ReadWrite);
+                return stream.AsStreamForWrite();
+            }
+            catch (Exception)
+            {
+                return Stream.Null;
+            }
+        }
+
         private async Task WriteDataToXML()
         {
-            var data = (PrescriptionData)this.DefaultViewModel["PrescriptionData"];
-
-            var folder = KnownFolders.DocumentsLibrary;
-            var file = await folder.CreateFileAsync("data.xml", CreationCollisionOption.ReplaceExisting);
-            using (var stream = await file.OpenStreamForWriteAsync())
+            try
             {
-                var doc = new XDocument(
-                    new XElement("Data",
-                        new XElement("OrderItem", data.OrderItem.Name),
-                        new XElement("Diagnosis", data.Diagnosis),
-                        new XElement("PrescriptionId", this._prescriptionId)
-                        )
-                    );
-                doc.Save(stream);
-                await stream.FlushAsync();
+                var data = (PrescriptionData)this.DefaultViewModel["PrescriptionData"];
+                var folder = KnownFolders.DocumentsLibrary;
+                var file = await folder.CreateFileAsync("data.xml", CreationCollisionOption.ReplaceExisting);
+                using (var stream = await file.OpenStreamForWriteAsync())
+                {
+                    var doc = new XDocument(
+                               new XElement("Data",
+                                   new XElement("OrderItem", data.OrderItem == null ? string.Empty : data.OrderItem.Name),
+                                   new XElement("Diagnosis", data.Diagnosis ?? string.Empty),
+                                   new XElement("PrescriptionId", this._prescriptionId)
+                                   )
+                               );
+
+                    doc.Save(stream);
+                    await stream.FlushAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Util.HandleException(ex, ex.Message);
             }
         }
 

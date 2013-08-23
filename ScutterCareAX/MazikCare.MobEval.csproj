@@ -137,6 +137,7 @@
     <Compile Include="Datas\PatientPhysicalAssessment.cs" />
     <Compile Include="Datas\ServiceHelper.cs" />
     <Compile Include="Datas\SettingsData.cs" />
+    <Compile Include="Helpers\Util.cs" />
     <Compile Include="Service References\RoutingServiceAX\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -253,6 +254,9 @@
     <Compile Include="Views\PhysicalExamReport.xaml.cs">
       <DependentUpon>PhysicalExamReport.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Popups\SignaturePage.xaml.cs">
+      <DependentUpon>SignaturePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\POVStatuses.xaml.cs">
       <DependentUpon>POVStatuses.xaml</DependentUpon>
     </Compile>
@@ -295,6 +299,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\NeurologicalCondition.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Popups\SignaturePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -565,6 +573,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\RoutingServiceAX\" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>
   </PropertyGroup>
