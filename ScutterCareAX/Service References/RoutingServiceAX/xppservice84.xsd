@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org" elementFormDefault="qualified" targetNamespace="http://tempuri.org" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ax2012-a.contoso.com:85/MicrosoftDynamicsAXAif60/MZKWEB/xppservice.svc?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" />
+  <xs:import schemaLocation="http://ax2012-a.contoso.com:85/MicrosoftDynamicsAXAif60/MZKWEB/xppservice.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="MazikCareWebServiceGetSalesOrderNoRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_encounterRecId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MazikCareWebServiceGetSalesOrderNoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="response" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MazikCareWebServicePostPackingSlipRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_encounterRecId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MazikCareWebServicePostPackingSlipResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="response" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MazikCareWebServiceGetSalesLinesRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_salesId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MazikCareWebServiceGetSalesLinesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" minOccurs="0" name="response" nillable="true" type="q1:ArrayOfHMSalesLineServiceContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MazikCareWebServiceGetPatientImageRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientRecId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MazikCareWebServiceGetPatientImageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="response" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MazikCareWebServiceGetAllPropectsRequest">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MazikCareWebServiceGetAllPropectsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" minOccurs="0" name="response" nillable="true" type="q2:ArrayOfHMPatientDataContracts" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MazikCareWebServiceGetAllPatientsRequest">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MazikCareWebServiceGetAllPatientsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" minOccurs="0" name="response" nillable="true" type="q3:ArrayOfHMPatientDataContracts" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MazikCareWebServiceCreatePrescriptionRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientRecId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="clinicstaffRecId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lengthofneed" nillable="true" type="xs:string" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="itemForOrder" nillable="true" type="q4:ArrayOfstring" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="diagnosis" nillable="true" type="q5:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MazikCareWebServiceCreatePrescriptionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="response" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MazikCareWebServiceCreateNewPrescriptionRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientRecId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="clinicstaffRecId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MazikCareWebServiceCreateNewPrescriptionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="response" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MazikCareWebServiceConvertProspectToPatientRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_prospectRecId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MazikCareWebServiceConvertProspectToPatientResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="response" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MazikCareWebServiceAddNewSONotesDocumentRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_encounterRecId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="byteArray" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fileExt" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MazikCareWebServiceAddNewSONotesDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="response" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MazikCareWebServiceAddNewDocumentRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_encounterRecId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="byteArray" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fileExt" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MazikCareWebServiceAddNewDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="response" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

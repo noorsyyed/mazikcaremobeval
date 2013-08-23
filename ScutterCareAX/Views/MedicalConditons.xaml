@@ -1,0 +1,31 @@
+﻿<common:LayoutAwarePage
+    x:Name="pageRoot"
+    x:Class="MazikCare.MobEval.Views.MedicalConditons"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MazikCare.MobEval.Views"
+    xmlns:common="using:MazikCare.MobEval.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">    
+    <Grid HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Please select medical conditions" Style="{StaticResource PageSubheaderTextStyle}"/>
+
+        <GridView Grid.Row="1" x:Name="gvGrid" HorizontalAlignment="Left" SelectionMode="Multiple">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Background="#30FFFFFF" Height="50" Width="280" VerticalAlignment="Center">                        
+                        <TextBlock Grid.Column="0" Text="{Binding}" Margin="10 10" Style="{StaticResource GridTextStyle}" Foreground="White"/>                        
+                    </Grid>                    
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+        <Button Grid.Row="2" Content="Done" HorizontalAlignment="Right" Margin="10" Click="Done_Click"/>
+    </Grid>
+</common:LayoutAwarePage>

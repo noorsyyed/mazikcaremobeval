@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="MazikCareMobEval" Publisher="CN=MazikGlobal" Version="1.0.0.10" />
+  <Properties>
+    <DisplayName>MazikCare MobEval</DisplayName>
+    <PublisherDisplayName>admin</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="MazikCare.MobEval.App">
+      <VisualElements DisplayName="MazikCare MobEval" Logo="Assets\mazikcare_150-150_mob.png" SmallLogo="Assets\logo-small.png" Description="MazikCare MobEval" ForegroundText="light" BackgroundColor="#1f497d">
+        <DefaultTile WideLogo="Assets\mazikcare_310-150_mob.png" ShowName="noLogos" />
+        <SplashScreen Image="Assets\mazikcare_620-300_mob.png" BackgroundColor="#1f497d" />
+      </VisualElements>
+      <Extensions>
+        <Extension Category="windows.fileTypeAssociation">
+          <FileTypeAssociation Name="xml">
+            <SupportedFileTypes>
+              <FileType>.xml</FileType>
+            </SupportedFileTypes>
+          </FileTypeAssociation>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="documentsLibrary" />
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

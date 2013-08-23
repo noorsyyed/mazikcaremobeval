@@ -1,0 +1,580 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F154B1B7-8964-4EA5-A584-F10479955753}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MazikCare.MobEval</RootNamespace>
+    <AssemblyName>MazikCare.MobEval</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>MazikCare.MobEval_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <PackageCertificateThumbprint>F16525CB4E31AF7BBCB4870762D8692838D8A131</PackageCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <SDKReference Include="Bing.Maps.Xaml, Version=1.113.0601.1">
+      <Name>Bing Maps for C#, C++, or Visual Basic %28Bing.Maps.Xaml, Version=1.113.0601.1%29</Name>
+    </SDKReference>
+    <SDKReference Include="Microsoft.VCLibs, Version=11.0">
+      <Name>Microsoft Visual C++ Runtime Package</Name>
+    </SDKReference>
+    <SDKReference Include="SQLite.WinRT, Version=3.7.17">
+      <Name>SQLite for Windows Runtime</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\RBValueConverter.cs" />
+    <Compile Include="Controls\PatientInfoBox.xaml.cs">
+      <DependentUpon>PatientInfoBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CompleteMainPage.xaml.cs">
+      <DependentUpon>CompleteMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Datas\CheckListItemSource.cs" />
+    <Compile Include="Datas\DiagnosisItem.cs" />
+    <Compile Include="Datas\MobilityData.cs" />
+    <Compile Include="Datas\PatientHistory.cs" />
+    <Compile Include="Datas\PatientPhysicalAssessment.cs" />
+    <Compile Include="Datas\ServiceHelper.cs" />
+    <Compile Include="Datas\SettingsData.cs" />
+    <Compile Include="Service References\RoutingServiceAX\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AmbulatoryStatuses.xaml.cs">
+      <DependentUpon>AmbulatoryStatuses.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AssesmentMobility.xaml.cs">
+      <DependentUpon>AssesmentMobility.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BingMapsRESTService.cs" />
+    <Compile Include="Common\BindableBase.cs" />
+    <Compile Include="Common\BooleanNegationConverter.cs" />
+    <Compile Include="Common\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Common\LayoutAwarePage.cs" />
+    <Compile Include="Common\RichTextColumns.cs" />
+    <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="Datas\DBHelper.cs" />
+    <Compile Include="Datas\DiagnosisData.cs" />
+    <Compile Include="Datas\OrderItem.cs" />
+    <Compile Include="Datas\Patient.cs" />
+    <Compile Include="Datas\PrescriptionData.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatientList.xaml.cs">
+      <DependentUpon>PatientList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="POCPage.xaml.cs">
+      <DependentUpon>POCPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLite.cs" />
+    <Compile Include="SQLiteAsync.cs" />
+    <Compile Include="Views\AddPatientDetails.xaml.cs">
+      <DependentUpon>AddPatientDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Assesment.xaml.cs">
+      <DependentUpon>Assesment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AssesmentDetail.xaml.cs">
+      <DependentUpon>AssesmentDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AssesmentDiagnosis.xaml.cs">
+      <DependentUpon>AssesmentDiagnosis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AssesmentHistory.xaml.cs">
+      <DependentUpon>AssesmentHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AssesmentPhysical.xaml.cs">
+      <DependentUpon>AssesmentPhysical.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AssessmentEvaluation.xaml.cs">
+      <DependentUpon>AssessmentEvaluation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AssessmentEnquiry.xaml.cs">
+      <DependentUpon>AssessmentEnquiry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AssessmentPlan.xaml.cs">
+      <DependentUpon>AssessmentPlan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CardioReport.xaml.cs">
+      <DependentUpon>CardioReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CongenitalSkeletalDeformity.xaml.cs">
+      <DependentUpon>CongenitalSkeletalDeformity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DiagnosisCondition.xaml.cs">
+      <DependentUpon>DiagnosisCondition.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MedicalConditons.xaml.cs">
+      <DependentUpon>MedicalConditons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MRADLStatuses.xaml.cs">
+      <DependentUpon>MRADLStatuses.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MRIDetails.xaml.cs">
+      <DependentUpon>MRIDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Myopathy.xaml.cs">
+      <DependentUpon>Myopathy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NeurologicalCondition.xaml.cs">
+      <DependentUpon>NeurologicalCondition.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrderPrescription.xaml.cs">
+      <DependentUpon>OrderPrescription.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PainLocation.xaml.cs">
+      <DependentUpon>PainLocation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PatientAssesment.xaml.cs">
+      <DependentUpon>PatientAssesment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PatientDemog.xaml.cs">
+      <DependentUpon>PatientDemog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PatientDetails.xaml.cs">
+      <DependentUpon>PatientDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PatientEvolution.xaml.cs">
+      <DependentUpon>PatientEvolution.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PatientPlan.xaml.cs">
+      <DependentUpon>PatientPlan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PatientPrescription.xaml.cs">
+      <DependentUpon>PatientPrescription.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PatientVisitReason.xaml.cs">
+      <DependentUpon>PatientVisitReason.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PhysicalExamReport.xaml.cs">
+      <DependentUpon>PhysicalExamReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\POVStatuses.xaml.cs">
+      <DependentUpon>POVStatuses.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsData.xaml.cs">
+      <DependentUpon>SettingsData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Symptoms.xaml.cs">
+      <DependentUpon>Symptoms.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WalkStatuses.xaml.cs">
+      <DependentUpon>WalkStatuses.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="MazikCare.MobEval_TemporaryKey.pfx" />
+    <None Include="Service References\RoutingServiceAX\RoutingService1.wsdl" />
+    <None Include="Service References\RoutingServiceAX\xppservice2.wsdl" />
+    <None Include="Service References\RoutingServiceAX\xppservice21.wsdl" />
+    <None Include="Service References\RoutingServiceAX\xppservice8.xsd" />
+    <None Include="Service References\RoutingServiceAX\xppservice81.xsd" />
+    <None Include="Service References\RoutingServiceAX\xppservice82.xsd" />
+    <None Include="Service References\RoutingServiceAX\xppservice83.xsd" />
+    <None Include="Service References\RoutingServiceAX\xppservice84.xsd" />
+    <None Include="Service References\RoutingServiceAX\xppservice85.xsd" />
+    <None Include="Service References\RoutingServiceAX\xppservice86.xsd" />
+    <None Include="Service References\RoutingServiceAX\xppservice87.xsd" />
+    <Page Include="Views\CongenitalSkeletalDeformity.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DiagnosisCondition.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Myopathy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NeurologicalCondition.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SettingsData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WalkStatuses.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\POVStatuses.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AmbulatoryStatuses.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MRADLStatuses.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MedicalConditons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AssesmentMobility.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Content Include="Assets\dr_pearlstein.png" />
+    <Content Include="Assets\image1.png" />
+    <Content Include="Assets\logo-small.png" />
+    <Content Include="Assets\mazikcare_150-150_mob.png" />
+    <Content Include="Assets\mazikcare_310-150_mob.png" />
+    <Content Include="Assets\mazikcare_620-300_mob.png" />
+    <Content Include="Assets\mobeval_logo.png" />
+    <Content Include="Assets\Picture1.png" />
+    <Content Include="Assets\Picture2.png" />
+    <Content Include="Assets\Picture3.png" />
+    <Content Include="Assets\Picture4.png" />
+    <Content Include="Assets\scooterstore_310-150.png" />
+    <Content Include="Assets\scooterstore_620-300.png" />
+    <Page Include="Controls\PatientInfoBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CompleteMainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Content Include="Datas\calibrib.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Datas\calibriz.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Page Include="Views\AssesmentHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AssesmentPhysical.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AssesmentDiagnosis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CardioReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <None Include="packages.config" />
+    <None Include="Properties\ServiceReferences.Designer.ClientConfig" />
+    <Page Include="Views\PainLocation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Symptoms.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\bg.png" />
+    <Content Include="Assets\bg1.png" />
+    <Content Include="Assets\bg_theme.png" />
+    <Content Include="Assets\bg_theme1.png" />
+    <Content Include="Assets\bg_theme2.png" />
+    <Content Include="Assets\bg_theme_dark.png" />
+    <Content Include="Assets\card_resp_report.png" />
+    <Content Include="Assets\chart1.png" />
+    <Content Include="Assets\chart2.png" />
+    <Content Include="Assets\cushion_seat.png" />
+    <Content Include="Assets\demographics.png" />
+    <Content Include="Assets\joystick.png" />
+    <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\mazikcare_310-150.png" />
+    <Content Include="Assets\mazikcare_620-300.png" />
+    <Content Include="Assets\physical_report.png" />
+    <Content Include="Assets\plan.png" />
+    <Content Include="Assets\profile1.png" />
+    <Content Include="Assets\profile2.png" />
+    <Content Include="Assets\profile3.png" />
+    <Content Include="Assets\profile4.png" />
+    <Content Include="Assets\profile5.png" />
+    <Content Include="Assets\profile6.png" />
+    <Content Include="Assets\profile7.png" />
+    <Content Include="Assets\profile_gen.png" />
+    <Content Include="Assets\recliner.png" />
+    <Content Include="Assets\SmallLogo.png" />
+    <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\view_all.png" />
+    <Content Include="Assets\visit_reason.png" />
+    <Content Include="Common\ReadMe.txt" />
+    <Content Include="Datas\canvas.html" />
+    <Content Include="Datas\cardioexamcanvas.html" />
+    <Content Include="Datas\final.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Datas\final1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Datas\MRI\mri1.png" />
+    <Content Include="Datas\MRI\mri10.png" />
+    <Content Include="Datas\MRI\mri11.png" />
+    <Content Include="Datas\MRI\mri12.png" />
+    <Content Include="Datas\MRI\mri2.png" />
+    <Content Include="Datas\MRI\mri3.png" />
+    <Content Include="Datas\MRI\mri4.png" />
+    <Content Include="Datas\MRI\mri5.png" />
+    <Content Include="Datas\MRI\mri6.png" />
+    <Content Include="Datas\MRI\mri7.png" />
+    <Content Include="Datas\MRI\mri8.png" />
+    <Content Include="Datas\MRI\mri9.png" />
+    <Content Include="Datas\page1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Datas\page2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Datas\page3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Datas\page4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Datas\page5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Datas\physicalexamcanvas.html" />
+    <Page Include="Views\AssessmentPlan.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AssessmentEnquiry.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AssessmentEvaluation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AssesmentDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MRIDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Content Include="Datas\reportpage1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Service References\RoutingServiceAX\configuration91.svcinfo" />
+    <None Include="Service References\RoutingServiceAX\configuration.svcinfo" />
+    <None Include="Service References\RoutingServiceAX\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\RoutingServiceAX\xppservice1.disco" />
+    <Content Include="Siberix.PDFSparkle.dll" />
+    <Page Include="Views\Assesment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OrderPrescription.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PhysicalExamReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddPatientDetails.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="POCPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PatientPrescription.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PatientAssesment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PatientEvolution.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PatientPlan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PatientVisitReason.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PatientDemog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PatientDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatientList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Common\StandardStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Siberix.PDFSparkle, Version=1.0.85.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Siberix.PDFSparkle.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Charting\ModernUI.Toolkit.Data.Charting.csproj">
+      <Project>{c6c4fc26-8000-49c2-a525-79ca241472a7}</Project>
+      <Name>ModernUI.Toolkit.Data.Charting</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\RoutingServiceAX\" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
+    <VisualStudioVersion>11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

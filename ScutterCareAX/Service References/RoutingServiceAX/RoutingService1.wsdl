@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://schemas.microsoft.com/netfx/2009/05/routing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:i1="http://tempuri.org" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RoutingService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="reqReplyEndpoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_MazikCareWebService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://schemas.microsoft.com/netfx/2009/05/routing" location="http://ax2012-a.contoso.com:85/MicrosoftDynamicsAXAif60/MZKWEB/xppservice.svc?wsdl=wsdl0" />
+  <wsdl:import namespace="http://tempuri.org" location="http://ax2012-a.contoso.com:85/MicrosoftDynamicsAXAif60/MZKWEB/xppservice.svc?wsdl=wsdl1" />
+  <wsdl:types />
+  <wsdl:binding name="reqReplyEndpoint" type="i0:IRequestReplyRouter">
+    <wsp:PolicyReference URI="#reqReplyEndpoint_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_MazikCareWebService" type="i1:MazikCareWebService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_MazikCareWebService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getSalesOrderNo">
+      <soap:operation soapAction="http://tempuri.org/MazikCareWebService/getSalesOrderNo" style="document" />
+      <wsdl:input name="MazikCareWebServiceGetSalesOrderNoRequest">
+        <soap:header message="i1:MazikCareWebServiceGetSalesOrderNoRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MazikCareWebServiceGetSalesOrderNoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="postPackingSlip">
+      <soap:operation soapAction="http://tempuri.org/MazikCareWebService/postPackingSlip" style="document" />
+      <wsdl:input name="MazikCareWebServicePostPackingSlipRequest">
+        <soap:header message="i1:MazikCareWebServicePostPackingSlipRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MazikCareWebServicePostPackingSlipResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getSalesLines">
+      <soap:operation soapAction="http://tempuri.org/MazikCareWebService/getSalesLines" style="document" />
+      <wsdl:input name="MazikCareWebServiceGetSalesLinesRequest">
+        <soap:header message="i1:MazikCareWebServiceGetSalesLinesRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MazikCareWebServiceGetSalesLinesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPatientImage">
+      <soap:operation soapAction="http://tempuri.org/MazikCareWebService/getPatientImage" style="document" />
+      <wsdl:input name="MazikCareWebServiceGetPatientImageRequest">
+        <soap:header message="i1:MazikCareWebServiceGetPatientImageRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MazikCareWebServiceGetPatientImageResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllPropects">
+      <soap:operation soapAction="http://tempuri.org/MazikCareWebService/getAllPropects" style="document" />
+      <wsdl:input name="MazikCareWebServiceGetAllPropectsRequest">
+        <soap:header message="i1:MazikCareWebServiceGetAllPropectsRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MazikCareWebServiceGetAllPropectsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllPatients">
+      <soap:operation soapAction="http://tempuri.org/MazikCareWebService/getAllPatients" style="document" />
+      <wsdl:input name="MazikCareWebServiceGetAllPatientsRequest">
+        <soap:header message="i1:MazikCareWebServiceGetAllPatientsRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MazikCareWebServiceGetAllPatientsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createPrescription">
+      <soap:operation soapAction="http://tempuri.org/MazikCareWebService/createPrescription" style="document" />
+      <wsdl:input name="MazikCareWebServiceCreatePrescriptionRequest">
+        <soap:header message="i1:MazikCareWebServiceCreatePrescriptionRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MazikCareWebServiceCreatePrescriptionResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createNewPrescription">
+      <soap:operation soapAction="http://tempuri.org/MazikCareWebService/createNewPrescription" style="document" />
+      <wsdl:input name="MazikCareWebServiceCreateNewPrescriptionRequest">
+        <soap:header message="i1:MazikCareWebServiceCreateNewPrescriptionRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MazikCareWebServiceCreateNewPrescriptionResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="convertProspectToPatient">
+      <soap:operation soapAction="http://tempuri.org/MazikCareWebService/convertProspectToPatient" style="document" />
+      <wsdl:input name="MazikCareWebServiceConvertProspectToPatientRequest">
+        <soap:header message="i1:MazikCareWebServiceConvertProspectToPatientRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MazikCareWebServiceConvertProspectToPatientResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addNewSONotesDocument">
+      <soap:operation soapAction="http://tempuri.org/MazikCareWebService/addNewSONotesDocument" style="document" />
+      <wsdl:input name="MazikCareWebServiceAddNewSONotesDocumentRequest">
+        <soap:header message="i1:MazikCareWebServiceAddNewSONotesDocumentRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MazikCareWebServiceAddNewSONotesDocumentResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addNewDocument">
+      <soap:operation soapAction="http://tempuri.org/MazikCareWebService/addNewDocument" style="document" />
+      <wsdl:input name="MazikCareWebServiceAddNewDocumentRequest">
+        <soap:header message="i1:MazikCareWebServiceAddNewDocumentRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MazikCareWebServiceAddNewDocumentResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RoutingService">
+    <wsdl:port name="reqReplyEndpoint" binding="tns:reqReplyEndpoint">
+      <soap:address location="http://ax2012-a.contoso.com:85/MicrosoftDynamicsAXAif60/MZKWEB/xppservice.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_MazikCareWebService" binding="tns:BasicHttpBinding_MazikCareWebService">
+      <soap:address location="http://ax2012-a.contoso.com:85/MicrosoftDynamicsAXAif60/MZKWEB/xppservice.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

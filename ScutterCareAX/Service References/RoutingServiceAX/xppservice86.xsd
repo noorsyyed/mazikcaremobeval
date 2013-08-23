@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ax2012-a.contoso.com:85/MicrosoftDynamicsAXAif60/MZKWEB/xppservice.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" />
+  <xs:complexType name="HMPatientDataContracts">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q1:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="chiefcomp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmAge" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmContact" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmGender" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmMRN" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmRecId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HMPatientDataContracts" nillable="true" type="tns:HMPatientDataContracts" />
+  <xs:complexType name="HMSalesLineServiceContract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q2:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmRecId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmSalesId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HMSalesLineServiceContract" nillable="true" type="tns:HMSalesLineServiceContract" />
+  <xs:complexType name="ArrayOfHMSalesLineServiceContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HMSalesLineServiceContract" nillable="true" type="tns:HMSalesLineServiceContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHMSalesLineServiceContract" nillable="true" type="tns:ArrayOfHMSalesLineServiceContract" />
+  <xs:complexType name="ArrayOfHMPatientDataContracts">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HMPatientDataContracts" nillable="true" type="tns:HMPatientDataContracts" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHMPatientDataContracts" nillable="true" type="tns:ArrayOfHMPatientDataContracts" />
+</xs:schema>
