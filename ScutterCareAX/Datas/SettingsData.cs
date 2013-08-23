@@ -343,18 +343,18 @@ namespace MazikCare.MobEval.Datas
         {
             return new SettingsData()
             {
-                Name = "Bruce Caine",
+                Name = "LK Prasad",
                 Address = "3424 Kimble Dr",
                 CityState = "Plano, TX - 75025",
                 ContactPhone = "+16086955867",
-                Daddress = "2930 Skyway Circle North, Bldg B",
+                Daddress = "2930 Ashok Nagar, Jublee Hills, Hyderabad",
                 DcityState = "Irving, TX - 75038",
                 WoReportingComment = "I have no problem getting through doorways and sitting the tables",
                 AlertMsg1 = "Jazzy select installation class",
                 AlertMsg2 = "Shoprider installation class",
                 ChiefComplaint = "multiple sclerosis",
-                PrimaryCarePhysician = "Dr.Alex Brown",
-                OrthopedicsSpecialist = "Dr.David Tapang",
+                PrimaryCarePhysician = "Dr.RadhaKishan",
+                OrthopedicsSpecialist = "Dr.Himanshu",
                 AttendingNurse = "Nancy Young",
 
                 Tile2Title = "Sales Quote-Confirmation",
