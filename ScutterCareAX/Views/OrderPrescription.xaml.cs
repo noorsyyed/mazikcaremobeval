@@ -172,7 +172,6 @@ namespace MazikCare.MobEval.Views
             //srv.AddDocument(pat.SSN
         }
 
-
         private void llComboItem_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
             List<string> selectedItems = null;

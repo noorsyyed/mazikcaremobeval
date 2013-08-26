@@ -118,6 +118,9 @@
     <SDKReference Include="SQLite.WinRT, Version=3.7.17">
       <Name>SQLite for Windows Runtime</Name>
     </SDKReference>
+    <SDKReference Include="Syncfusion controls for WinRT XAML, Version=11.2.0.25">
+      <Name>Syncfusion Controls for WinRT XAML</Name>
+    </SDKReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -138,6 +141,7 @@
     <Compile Include="Datas\ServiceHelper.cs" />
     <Compile Include="Datas\SettingsData.cs" />
     <Compile Include="Helpers\Util.cs" />
+    <Compile Include="Models\Prescription.cs" />
     <Compile Include="Service References\RoutingServiceAX\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -208,6 +212,9 @@
     </Compile>
     <Compile Include="Views\DiagnosisCondition.xaml.cs">
       <DependentUpon>DiagnosisCondition.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Frames\PrescriptionView.xaml.cs">
+      <DependentUpon>PrescriptionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MedicalConditons.xaml.cs">
       <DependentUpon>MedicalConditons.xaml</DependentUpon>
@@ -294,6 +301,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\Frames\PrescriptionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Myopathy.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -337,6 +348,7 @@
     <Content Include="Assets\dr_pearlstein.png" />
     <Content Include="Assets\image1.png" />
     <Content Include="Assets\logo-small.png" />
+    <Content Include="Assets\Lync.png" />
     <Content Include="Assets\mazikcare_150-150_mob.png" />
     <Content Include="Assets\mazikcare_310-150_mob.png" />
     <Content Include="Assets\mazikcare_620-300_mob.png" />

@@ -60,6 +60,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
+                    <RowDefinition Height="30"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="420"/>
@@ -69,101 +70,13 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <ctrl:PatientInfoBox Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"/>
-                <!--<Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-
-                    <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0" Margin="50 0 20 0">
-                        <Image Source="../Assets/profile2.png" Height="150" Width="150" HorizontalAlignment="Left"/>
-                        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0" Margin="50 0 20 10">
-                            <TextBlock Text="Bruce Caine" Style="{StaticResource SubheaderTextStyle}"/>
-                            <TextBlock Text="78 Years" Style="{StaticResource MediumTextStyle}"/>
-                            <TextBlock Text="Gender : Male" Style="{StaticResource MediumTextStyle}"/>
-                        </StackPanel>
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0" Margin="50 0 50 10">
-                        <TextBlock Text="2604 East  Dempster St" TextWrapping="Wrap" Style="{StaticResource AddressTextStyle}"/>
-                        <TextBlock Text="Park Ridge IL 60016." TextWrapping="Wrap" Style="{StaticResource AddressTextStyle}"/>
-                        <TextBlock Text="Tel : 1 312 345 6789" TextWrapping="Wrap" Style="{StaticResource AddressTextStyle}"/>
-                    </StackPanel>
-                    <Grid Grid.Row="2" Grid.RowSpan="4" Margin="50 11 50 40" Background="#30FFFFFF">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="50"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="50"/>
-                            <RowDefinition Height="35"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="35"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="35"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="35"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="20"/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Text="Life Style " FontSize="26" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Margin="10 5 0 0"/>
-
-                        <TextBlock Text="Current Risk" Style="{StaticResource TextStyle}" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        <TextBlock Text="24%" Style="{StaticResource SubheaderTextStyle}" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="Orange" Margin="0 5"/>
-
-                        <TextBlock Text="Target Risk" Style="{StaticResource TextStyle}" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        <TextBlock Text="10%" Style="{StaticResource SubheaderTextStyle}" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="LimeGreen" Margin="0 5"/>
-
-                        <TextBlock Text="Proj. Risk" Style="{StaticResource TextStyle}" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        <TextBlock Text="24%" Style="{StaticResource SubheaderTextStyle}" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="Cyan" Margin="0 5"/>
-
-
-                        <TextBlock Text="Weight" Style="{StaticResource TextStyle}" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <TextBlock Text="140" Style="{StaticResource SubheaderTextStyle}" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="Orange" Margin="0 5"/>
-                            <TextBlock Text=" lbs" Style="{StaticResource SubheaderTextStyle}" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="Orange" Margin="0 5"/>
-                        </StackPanel>
-
-
-                        <TextBlock Text="Height" Style="{StaticResource TextStyle}" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20 0 0 0">
-                            <TextBlock Text="5" Style="{StaticResource SubheaderTextStyle}" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="LimeGreen" Margin="0 5"/>
-                            <TextBlock Text="ft" Style="{StaticResource SubheaderTextStyle}" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="LimeGreen" Margin="0 5"/>
-                            <TextBlock Text=" 5" Style="{StaticResource SubheaderTextStyle}" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="LimeGreen" Margin="0 5"/>
-                            <TextBlock Text="inches" Style="{StaticResource SubheaderTextStyle}" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="LimeGreen" Margin="0 5"/>
-                        </StackPanel>
-                        <TextBlock Text="Cholesterol Level (Target &lt; 5mmgl)" Style="{StaticResource TextStyle}" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10 0 0 5"/>
-                        <ProgressBar Value="7.8" Minimum="2" Maximum="9" Height="10" Width="300" Margin="10 0 20 0" Foreground="YellowGreen" Background="DarkRed" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="6" ToolTipService.ToolTip="{Binding RelativeSource={RelativeSource Self},Path=Value}"/>
-
-                        <TextBlock Text="BMI (Target  20)" Style="{StaticResource TextStyle}" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="7" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10 0 0 5"/>
-                        <ProgressBar Value="32" Minimum="20" Maximum="50" Height="10" Width="300" Margin="10 0 20 0" Foreground="YellowGreen" Background="DarkRed" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="8" ToolTipService.ToolTip="{Binding RelativeSource={RelativeSource Self},Path=Value}"/>
-
-                        <TextBlock Text="Blood Pressure (Target  100 - 140)" Style="{StaticResource TextStyle}" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="9" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10 0 0 5"/>
-                        <ProgressBar Value="130" Minimum="100" Maximum="150" Height="10" Width="300" Margin="10 0 20 0" Foreground="YellowGreen" Background="DarkRed" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="10" ToolTipService.ToolTip="{Binding RelativeSource={RelativeSource Self},Path=Value}"/>
-
-                        <TextBlock Text="Sugar Level (Target  100 - 110)" Style="{StaticResource TextStyle}" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="11" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10 0 0 5"/>
-                        <ProgressBar Value="105" Minimum="85" Maximum="150" Height="10" Width="300" Margin="10 0 20 0" Foreground="YellowGreen" Background="DarkRed" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="12" ToolTipService.ToolTip="{Binding RelativeSource={RelativeSource Self},Path=Value}"/>
-                    </Grid>
-
-                    
-                </Grid>-->
-
                 <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" x:Name="spTabs">
                     <TextBlock Text="Symptom/Analysis" FontSize="26" Margin="10 10 10 10" PointerReleased="Tab_PointerReleased" Foreground="#FFFDBD51"/>
                     <TextBlock Text="Evaluation" FontSize="26" Margin="10 10 10 10" PointerReleased="Tab_PointerReleased"/>
                     <TextBlock Text="Assessment" FontSize="26" Margin="10 10 10 10" PointerReleased="Tab_PointerReleased"/>
                     <TextBlock Text="Plan" FontSize="26" Margin="10 10 10 10" PointerReleased="Tab_PointerReleased"/>
                     <TextBlock Text="Physical" FontSize="26" Margin="10 10 10 10" PointerReleased="Tab_PointerReleased"/>
+                    <TextBlock Text="Prescription" FontSize="26" Margin="10 10 10 10" PointerReleased="Tab_PointerReleased"/>
                     <TextBlock Text="History" FontSize="26" Margin="10 10 10 10" PointerReleased="Tab_PointerReleased"/>
                     <TextBlock Text="Mobility" FontSize="26" Margin="10 10 10 10" PointerReleased="Tab_PointerReleased"/>
                 </StackPanel>

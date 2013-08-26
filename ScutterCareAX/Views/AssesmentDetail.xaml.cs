@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MazikCare.MobEval.Views.Frames;
+using System;
 using System.Collections.Generic;
 using Windows.UI;
 using Windows.UI.Xaml.Controls;
@@ -73,6 +74,9 @@ namespace MazikCare.MobEval.Views
                     break;
                 case "History":
                     toNavigate = typeof(AssesmentHistory);
+                    break;
+                case "Prescription":
+                    toNavigate = typeof(PrescriptionView);
                     break;
                 case "Mobility":
                     toNavigate = typeof(AssesmentMobility);

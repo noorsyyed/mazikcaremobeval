@@ -32,7 +32,10 @@
         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0" Margin="50 0 50 10">
             <TextBlock Text="{Binding Path=Patient.Address}" TextWrapping="Wrap" Style="{StaticResource AddressTextStyle}"/>
             <TextBlock Text="{Binding Path=Patient.City}" TextWrapping="Wrap" Style="{StaticResource AddressTextStyle}"/>
-            <TextBlock Text="{Binding Path=Patient.PhoneNumber}" TextWrapping="Wrap" Style="{StaticResource AddressTextStyle}"/>
+            <StackPanel Orientation="Horizontal">
+                <Image Height="26" VerticalAlignment="Top"  Source="ms-appx:///Assets/Lync.png" Width="26" Margin="0 6 10 0" PointerReleased="Lync_PointerReleased"/>
+                <TextBlock LineHeight="0" Text="{Binding Path=Patient.PhoneNumber}" TextWrapping="Wrap" Style="{StaticResource AddressTextStyle}" PointerReleased="Lync_PointerReleased"/>
+            </StackPanel>
         </StackPanel>
         <Grid Grid.Row="2" Grid.RowSpan="4" Margin="50 11 50 40" Background="#30FFFFFF">
             <Grid.ColumnDefinitions>

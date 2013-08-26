@@ -1,4 +1,5 @@
 ﻿using System;
+using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -24,6 +25,11 @@ namespace MazikCare.MobEval.Controls
             catch (Exception)
             {
             }
+        }
+
+        private async void Lync_PointerReleased(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        {
+           await Launcher.LaunchUriAsync(new Uri("sip:mazikapp@atharvan.co.in"));
         }
     }
 }
