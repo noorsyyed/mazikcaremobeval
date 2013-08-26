@@ -41,6 +41,7 @@
                 <TextBox Grid.Row="3" Grid.Column="2" Grid.RowSpan="3" Text="{Binding Path=PatientHistory.CanManualChairDescription, Mode=TwoWay}" AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="20"/>
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Grid.RowSpan="3" Style="{StaticResource AddressTextStyle}" Text="How has your patient's condition/functional limitations changed so that they now require a power mobility device to complete their MRADL inside the home?" Margin="10 5"/>
+                <ToggleSwitch Grid.Row="6" Grid.Column="1" Grid.RowSpan="2" FontSize="20" OffContent="No" OnContent="Yes" IsOn="True" Margin="30 20 30 0"/>
                 <TextBox Grid.Row="6" Grid.Column="2" Grid.RowSpan="3" Text="{Binding Path=PatientHistory.PatientConditionInHome, Mode=TwoWay}" AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="20"/>
 
             </Grid>

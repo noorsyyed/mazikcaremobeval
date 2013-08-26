@@ -4,6 +4,16 @@ namespace MazikCare.MobEval.Datas
 {
     public class PrescriptionData : BindableBase
     {
+        public PrescriptionData()
+        {
+            this.Respiratory = "18";
+            this.IsOMCurrent = true;
+            this.IsOMMusculoskeletal = true;
+            this.IsOMGait = true;
+            this.NoteAssistance = "Needs some assistance for walking beyond 50 feet";
+            this.NoteMotion = "Cannot produce movement";
+            this.NoteGait = "Shuffling";
+        }
         private bool _isToileting;
         public bool IsToileting
         {

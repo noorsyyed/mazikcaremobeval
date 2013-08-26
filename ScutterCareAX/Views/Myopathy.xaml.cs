@@ -32,11 +32,11 @@ namespace MazikCare.MobEval.Views
         {
             this.gvMyopathy.ItemsSource = new ObservableCollection<CheckListItemSource>() 
             {
-               new CheckListItemSource(){Id="335.11", Name ="Kugelberg-Welander disease",ValueBeforePrecession="335", ValueAfterPrecession="11", FieldName="Kugelberg-Welander disease  335.11"},
-               new CheckListItemSource(){Id="330.0", Name ="Leukodystrophy",ValueBeforePrecession="330", ValueAfterPrecession="0", FieldName="Leukodystrophy  330.0"},
-               new CheckListItemSource(){Id="335.29", Name="Motor neuron  disease, other",ValueBeforePrecession="335", ValueAfterPrecession="29", FieldName="Motor neuron  disease, other  335.29"},
-               new CheckListItemSource(){Id="323.63", Name="Postinfectious myelitis",ValueBeforePrecession="323", ValueAfterPrecession="63", FieldName="Postinfectious myelitis  323.63"},
-               new CheckListItemSource(){Id="332.0", Name="Parkinson's disease",ValueBeforePrecession="332", ValueAfterPrecession="0", FieldName="Parkinson's disease  332.0"},
+               new CheckListItemSource(){Id="335.11", Name ="Dermatomyositis",ValueBeforePrecession="335", ValueAfterPrecession="11", FieldName="Dermatomyositis 710.3"},
+               new CheckListItemSource(){Id="330.0", Name ="Muscular dystrophies and other myopathies",ValueBeforePrecession="330", ValueAfterPrecession="0", FieldName="Muscular dystrophies and other myopathies  359.0-359.9"},
+               new CheckListItemSource(){Id="335.29", Name="Myasthenia gravis",ValueBeforePrecession="335", ValueAfterPrecession="29", FieldName="Myasthenia gravis 358.00-358.01"},
+               new CheckListItemSource(){Id="323.63", Name="Polymyositis",ValueBeforePrecession="323", ValueAfterPrecession="63", FieldName="Polymyositis 710.4"},
+               new CheckListItemSource(){Id="332.0", Name="Polymyositis ossificans",ValueBeforePrecession="332", ValueAfterPrecession="0", FieldName="Polymyositis ossificans 728.19"},
             };
         }
 

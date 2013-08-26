@@ -304,7 +304,7 @@
                         </Grid.RowDefinitions>
                         <Grid Grid.Column="0">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="115"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
@@ -324,7 +324,7 @@
                                 <TextBlock Style="{StaticResource TextStyle}" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="White" Text="In Room" Margin="10 -10 0 0"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Right">
-                                <TextBlock Text="{Binding Path=SettingsData.CurrentDate}" Style="{StaticResource SubheaderTextStyle}" VerticalAlignment="Center" Margin="10 0 10 10"/>
+                                <TextBlock Text="{Binding Path=SettingsData.CurrentDate}" Style="{StaticResource SubheaderTextStyle}" VerticalAlignment="Center" Margin="0 0 10 10"/>
                                 <TextBlock Text="09:30 AM" Style="{StaticResource SubheaderTextStyle}" VerticalAlignment="Center" Margin="10 0 10 10"/>
                             </StackPanel>
                             <!--<TextBlock Text="09:30 AM" Style="{StaticResource TextStyle}" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" Margin="10 0 10 10"/>-->
@@ -364,7 +364,7 @@
                             <Image Source="Assets/profile4.png" Height="100" HorizontalAlignment="Left" Grid.Row="1" Margin="10" x:Name="imgPatient2"/>
                             <StackPanel Orientation="Vertical" Margin="10" Grid.Column="1" Grid.Row="1">
                                 <TextBlock Text="Chief Complaint :" FontSize="18"/>
-                                <TextBlock Text="Multiple Sclerosis" TextWrapping="Wrap" FontSize="15"/>
+                                <TextBlock Text="Syncope with weakness" TextWrapping="Wrap" FontSize="15"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" Margin="10 0">
                                 <Ellipse Fill="#FF7ab73a" Height="20" Width="20"/>
@@ -399,7 +399,7 @@
                             <Image Source="Assets/profile7.png" Height="100" HorizontalAlignment="Left" Grid.Row="1" Margin="10" x:Name="imgPatient3"/>
                             <StackPanel Orientation="Vertical" Margin="10" Grid.Column="1" Grid.Row="1">
                                 <TextBlock Text="Chief Complaint :" FontSize="18"/>
-                                <TextBlock Text="Parkinson's Disease " TextWrapping="Wrap" FontSize="15"/>
+                                <TextBlock Text="Radiating pain in Left Thigh and Left Knee" TextWrapping="Wrap" FontSize="15"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" HorizontalAlignment="Left" Margin="10 0">
                                 <Ellipse Fill="#FF7ab73a" Height="20" Width="20"/>
@@ -434,7 +434,7 @@
                             <Image Source="Assets/profile5.png" Height="100" HorizontalAlignment="Left" Grid.Row="1" Margin="10" x:Name="imgPatient4"/>
                             <StackPanel Orientation="Vertical" Margin="10" Grid.Column="1" Grid.Row="1">
                                 <TextBlock Text="Chief Complaint :" FontSize="18"/>
-                                <TextBlock Text="Spina Bifida" TextWrapping="Wrap" FontSize="15"/>
+                                <TextBlock Text="Tingling sensation in Right ankle" TextWrapping="Wrap" FontSize="15"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" HorizontalAlignment="Left" Margin="10 0">
                                 <Ellipse Fill="#FF7ab73a" Height="20" Width="20"/>
@@ -469,7 +469,7 @@
                             <Image Source="Assets/profile6.png" Height="100" HorizontalAlignment="Left" Grid.Row="1" Margin="10" x:Name="imgPatient5"/>
                             <StackPanel Orientation="Vertical" Margin="10" Grid.Column="1" Grid.Row="1">
                                 <TextBlock Text="Chief Complaint :" FontSize="18"/>
-                                <TextBlock Text="Alzheimer's Disease" TextWrapping="Wrap" FontSize="15"/>
+                                <TextBlock Text="Paralysis of left lower extremity" TextWrapping="Wrap" FontSize="15"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" Margin="10 0">
                                 <Ellipse Fill="#FFb73a3a" Height="20" Width="20"/>
@@ -571,7 +571,7 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <TextBlock Text="BREADY, Richard" Style="{StaticResource TextStyle}" HorizontalAlignment="Left" Margin="10 0" VerticalAlignment="Top" Foreground="White"/>
-                        <TextBlock x:Name="textBlock1" Text="Haematology – Full Blood Count" Grid.Row="0" TextWrapping="Wrap" VerticalAlignment="Bottom" Grid.RowSpan="2" Margin="10 0 0 10" FontSize="20" Foreground="White"/>
+                        <TextBlock x:Name="textBlock1" Text="Haematology – Complete Blood Count" Grid.Row="0" TextWrapping="Wrap" VerticalAlignment="Bottom" Grid.RowSpan="2" Margin="10 0 0 10" FontSize="20" Foreground="White"/>
                         <TextBlock x:Name="textBlock" Text="Lab Reports" VerticalAlignment="Bottom" Margin="10 0 0 10" FontSize="20" Foreground="White" Opacity="0" Grid.Row="0" Grid.RowSpan="2"/>
                     </Grid>
                     <Grid Margin="0 12 10 0" Grid.Row="2" Height="130" Width="140" VerticalAlignment="Top" HorizontalAlignment="Left" Background="#30FFFFFF">

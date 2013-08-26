@@ -50,24 +50,24 @@
                 <ColumnDefinition Width="40"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Text="Vital Sign" Grid.Row="0" Grid.Column="0" Style="{StaticResource SubheaderTextStyle}" Margin="10 10 10 5"/>
+            <TextBlock Text="Vital Signs" Grid.Row="0" Grid.Column="0" Style="{StaticResource SubheaderTextStyle}" Margin="10 10 10 5"/>
 
             <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" >
-                <TextBlock Text="BP(Systolic/Diastolic)" Style="{StaticResource AddressTextStyle}" Margin="10 0 0 5"/>
-                <TextBlock Text="eg 120/80 mm Hg" FontSize="14" Style="{StaticResource TextStyle}" Margin="10 5 10 10"/>
+                <TextBlock Text="BP (Systolic/Diastolic)" Style="{StaticResource AddressTextStyle}" Margin="10 0 0 5"/>
+                <TextBlock Text="in mm Hg : 120/80" FontSize="14" Style="{StaticResource TextStyle}" Margin="10 5 10 10"/>
             </StackPanel>
             <TextBox Grid.Row="1" Grid.Column="1" Margin="5 5 10 5" Text="{Binding Path=PatientPhysicalAssessment.BP, Mode=TwoWay}"/>
 
-            <TextBlock Text="Weight" Grid.Row="2" Grid.Column="0" Style="{StaticResource AddressTextStyle}" Margin="10 0 10 5"/>
+            <TextBlock Text="Weight in lbs" Grid.Row="2" Grid.Column="0" Style="{StaticResource AddressTextStyle}" Margin="10 0 10 5"/>
             <TextBox Grid.Row="2" Grid.Column="1" Margin="5 5 10 5" Text="{Binding Path=PatientPhysicalAssessment.Weight, Mode=TwoWay}"/>
 
-            <TextBlock Text="Height" Grid.Row="3" Grid.Column="0" Style="{StaticResource AddressTextStyle}" Margin="10 0 10 5"/>
+            <TextBlock Text="Height in feet,inches" Grid.Row="3" Grid.Column="0" Style="{StaticResource AddressTextStyle}" Margin="10 0 10 5"/>
             <TextBox Grid.Row="3" Grid.Column="1" Margin="5 5 10 5" Text="{Binding Path=PatientPhysicalAssessment.Height, Mode=TwoWay}"/>
 
-            <TextBlock Text="Respiratory Rate" Grid.Row="4" Grid.Column="0" Style="{StaticResource AddressTextStyle}" Margin="10 0 10 5"/>
+            <TextBlock Text="Respiratory Rate per min" Grid.Row="4" Grid.Column="0" Style="{StaticResource AddressTextStyle}" Margin="10 0 10 5"/>
             <TextBox Grid.Row="4" Grid.Column="1" Margin="5 5 10 5" Text="{Binding Path=PrescriptionData.Respiratory,Mode=TwoWay}"/>
 
-            <TextBlock Text="Objectives Measures" Grid.Row="0" Grid.Column="3" Style="{StaticResource SubheaderTextStyle}" Margin="10,10,0,5" HorizontalAlignment="Left" />
+            <TextBlock Text="Objective Measures" Grid.Row="0" Grid.Column="3" Style="{StaticResource SubheaderTextStyle}" Margin="10,10,0,5" HorizontalAlignment="Left" />
             <!--<StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="4" HorizontalAlignment="Center">
                 <TextBlock Text="Yes" Style="{StaticResource SubheaderTextStyle}" Margin="10"/>
                 <TextBlock Text="No" Style="{StaticResource SubheaderTextStyle}" Margin="10"/>

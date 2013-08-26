@@ -32,11 +32,11 @@ namespace MazikCare.MobEval.Views
         {
             this.gvCongenitalSkeletalDeformities.ItemsSource = new ObservableCollection<CheckListItemSource>() 
             {
-               new CheckListItemSource(){Id="323.72", Name ="Toxic myelitis",ValueBeforePrecession="323", ValueAfterPrecession="72", FieldName="Toxic myelitis  323.72"},
-               new CheckListItemSource(){Id="334.0", Name ="Friedreich's ataxia",ValueBeforePrecession="334", ValueAfterPrecession="0", FieldName="Friedreich's ataxia  334.0"},
-               new CheckListItemSource(){Id="333.6", Name="Genetic torsion  dystonia",ValueBeforePrecession="333", ValueAfterPrecession="6", FieldName="Genetic torsion  dystonia  333.6"},
-               new CheckListItemSource(){Id="357.0", Name="Guillain-Bane",ValueBeforePrecession="357", ValueAfterPrecession="0", FieldName="Guillain-Bane  357.0"},
-               new CheckListItemSource(){Id="342.0", Name="Flaccid hemiplegia",ValueBeforePrecession="342", ValueAfterPrecession="0", FieldName="Flaccid hemiplegia  342.0"},
+               new CheckListItemSource(){Id="323.72", Name ="Other congenital anomalies of limbs",ValueBeforePrecession="323", ValueAfterPrecession="72", FieldName="Other congenital anomalies of limbs 755.50-755.9"},
+               new CheckListItemSource(){Id="334.0", Name ="Congenital dislocation of hip",ValueBeforePrecession="334", ValueAfterPrecession="0", FieldName="Congenital dislocation of hip 754.30-754.35"},
+               new CheckListItemSource(){Id="333.6", Name="Osteogenesis imperfecta",ValueBeforePrecession="333", ValueAfterPrecession="6", FieldName="Osteogenesis imperfecta 756.51"},
+               new CheckListItemSource(){Id="357.0", Name="Spina bifida",ValueBeforePrecession="357", ValueAfterPrecession="0", FieldName="Spina bifida 741.00-741.93"},
+               new CheckListItemSource(){Id="342.0", Name="Dwarfism, NEC",ValueBeforePrecession="342", ValueAfterPrecession="0", FieldName="Dwarfism, NEC  259.4"},
             };
         }
 

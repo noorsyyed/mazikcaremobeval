@@ -29,10 +29,14 @@ namespace MazikCare.MobEval.Views
         /// <param name="pageState">A dictionary of state preserved by this page during an earlier
         /// session.  This will be null the first time a page is visited.</param>
         protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
-        {            
-            this.gvGrid.ItemsSource = new ObservableCollection<string>() 
+        {
+            this.gvGrid.ItemsSource = new List< MRADL>() 
             {
-                "Feeding","Bathing","Grooming","Dressing","Toileting"
+             new MRADL {Key= "Feeding",Value="needs some assistance"},
+             new MRADL {Key="Bathing",Value="needs total assistance"},
+             new MRADL {Key="Grooming",Value="needs some assistance"},
+             new MRADL {Key="Dressing",Value="not assessed"},
+             new MRADL {Key="Toileting",Value="needs some assistance"}
              };
         }
 
@@ -49,13 +53,19 @@ namespace MazikCare.MobEval.Views
         private void Done_Click(object sender, RoutedEventArgs e)
         {
             var list = new ObservableCollection<string>();
-            foreach (string str in this.gvGrid.SelectedItems)
+            foreach (MRADL str in this.gvGrid.SelectedItems)
             {
-                list.Add(str);
+                list.Add(str.Key);
             }
 
             ((DiagnosisData)this.DefaultViewModel["DiagnosisData"]).MradlStatus = list;
             this.Frame.Navigate(typeof(AssessmentEnquiry));
         }
+    }
+
+    class MRADL
+    {
+        public string Key { get; set; }
+        public string Value { get; set; }
     }
 }

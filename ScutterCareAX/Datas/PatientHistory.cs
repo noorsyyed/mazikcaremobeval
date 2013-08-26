@@ -6,6 +6,16 @@ namespace MazikCare.MobEval.Datas
 {
     public class PatientHistory : BindableBase
     {
+        public PatientHistory()
+        {
+            RiskOfFallsOnSet = "June 2012";
+            RiskOfFallsDescription = "need assistance to walk";
+            WeaknessOnSet = "November 2012";
+            WeaknessDescription = "shortness of breath";
+            InabiliyToAmbulateDescription = "unable to walk more than 50 feet without assistance";
+            InabiliyToAmbulateOnSet = "August 2013";
+
+        }
         private string _riskOfFallsOnSet;
         public string RiskOfFallsOnSet
         {

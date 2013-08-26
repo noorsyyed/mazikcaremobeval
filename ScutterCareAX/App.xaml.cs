@@ -48,8 +48,16 @@ namespace MazikCare.MobEval
             _physical = new PatientPhysicalAssessment() 
             {
                 BP = "120/80",
-                Height = "5ft 5inches",
-                Weight = "140 lbs"
+                Height = "5ft 5 inches",
+                Weight = "140",
+                RestingPulse = "70",
+                ExertionPulse = "78",
+                HasExertionBreathShortness = true,
+                O2Sats = "Normal",
+                HasHistoryOfFalls = true,
+                HasRiskOfFalls=true,
+                HasPoorBalance = true,
+                HasPoorEndurance = true                
             };
         }
 

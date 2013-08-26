@@ -25,7 +25,12 @@
             <GridView.ItemTemplate>
                 <DataTemplate>
                     <Grid Background="#30FFFFFF" Height="50" Width="280" VerticalAlignment="Center">
-                        <TextBlock Grid.Column="0" Text="{Binding}" Margin="10 10" Style="{StaticResource GridTextStyle}" Foreground="White"/>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="{Binding Path=Key}" Margin="10 0" Style="{StaticResource GridTextStyle}" Foreground="White"/>
+                        <TextBlock Text="{Binding Path=Value}" Grid.Row="1" FontFamily="Segoe UI" Foreground="White" FontSize="12" Margin="0 0 10 0" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
                     </Grid>
                 </DataTemplate>
             </GridView.ItemTemplate>
