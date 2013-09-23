@@ -41,8 +41,8 @@ namespace MazikCare.MobEval.Views
         {
             this.gvGrid.ItemsSource = new ObservableCollection<string>() 
             {
-                "CHF","COPD","CVA","Degenrative Joint Disease","Diabetes/Neuropathy",
-                "Hemiparesis","Hemiplegia","Multiple Sclesrosis","Multiple Distrophy",
+                "Diabetic nephropathy","Diabetic neuropathy","Diabetic obesity","Diabetic foot ulcers","Diabetic Retinopathy",
+                "Cardiovascular disease","Diabetic Dental Complications","Multiple Sclesrosis","Multiple Distrophy",
                 "Osteoarthritis","Paraparesis","Paraplegia","Parkinson's Disease",
                 "Renal Failure","Rheumatoid Arthritis"
              };

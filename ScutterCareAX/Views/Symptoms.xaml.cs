@@ -41,11 +41,10 @@ namespace MazikCare.MobEval.Views
         {
             this.gvSymptoms.ItemsSource = new ObservableCollection<string>() 
             {
-                "Abnormal Gait","Amputation","Cardiac Arrhythmias","Chest Pain","Fatigue",
-                "Intermittent Claudication","Muscular Dystrophy","Weakness","Orthostasis",
-                "Paralysis","Shortness of Breath","Syncope","Tremor",
-                "Vertigo","Walking Limitationss"
- 
+                "Frequent Urination","Disproportionate thirst","Intense hunger","Weight gain","Unusual weight loss",
+                "Increased fatigue","Irritability","Blurred vision","Cuts and bruises don't heal properly or quickly",
+                "More skin and/or yeast infections","Itchy skin","Gums are red and/or swollen","Frequent gum disease/infection",
+                "Sexual dysfunction among men","Numbness or tingling, especially in your feet and hands"
             };
         }
 

@@ -165,7 +165,7 @@
                     <TextBlock Text="Plan" FontSize="26" Margin="10 10 10 10" PointerReleased="Tab_PointerReleased"/>
                     <TextBlock Text="Physical" FontSize="26" Margin="10 10 10 10" PointerReleased="Tab_PointerReleased"/>
                     <TextBlock Text="History" FontSize="26" Margin="10 10 10 10" PointerReleased="Tab_PointerReleased"/>
-                    <TextBlock Text="Mobility" FontSize="26" Margin="10 10 10 10" PointerReleased="Tab_PointerReleased"/>
+                    <TextBlock Text="Mobility" FontSize="26" Margin="10 10 10 10" PointerReleased="Tab_PointerReleased" Visibility="Collapsed"/>
                 </StackPanel>
                 <Frame x:Name="frame" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4"/>
                 
