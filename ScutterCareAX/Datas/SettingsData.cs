@@ -352,7 +352,7 @@ namespace MazikCare.MobEval.Datas
                 WoReportingComment = "I have no problem getting through doorways and sitting the tables",
                 AlertMsg1 = "Jazzy select installation class",
                 AlertMsg2 = "Shoprider installation class",
-                ChiefComplaint = "multiple sclerosis",
+                ChiefComplaint = "Diabetic Nephropathy",
                 PrimaryCarePhysician = "Dr.Alex Brown",
                 OrthopedicsSpecialist = "Dr.David Tapang",
                 AttendingNurse = "Nancy Young",

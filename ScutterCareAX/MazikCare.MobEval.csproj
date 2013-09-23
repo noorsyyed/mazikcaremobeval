@@ -334,6 +334,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Content Include="Assets\diabetes01.jpg" />
+    <Content Include="Assets\diabetes02.jpg" />
+    <Content Include="Assets\diabetes03.jpg" />
+    <Content Include="Assets\diabetes04.jpg" />
+    <Content Include="Assets\diabetes05.jpg" />
+    <Content Include="Assets\diabetes06.jpg" />
+    <Content Include="Assets\diabetesPump.jpg" />
+    <Content Include="Assets\diabetesPump01.jpg" />
     <Content Include="Assets\dr_pearlstein.png" />
     <Content Include="Assets\image1.png" />
     <Content Include="Assets\logo-small.png" />
@@ -345,6 +353,9 @@
     <Content Include="Assets\Picture2.png" />
     <Content Include="Assets\Picture3.png" />
     <Content Include="Assets\Picture4.png" />
+    <Content Include="Assets\pod_tubeless.jpg" />
+    <Content Include="Assets\pod_tubeless01.jpg" />
+    <Content Include="Assets\pod_tubeless02.jpg" />
     <Content Include="Assets\scooterstore_310-150.png" />
     <Content Include="Assets\scooterstore_620-300.png" />
     <Page Include="Controls\PatientInfoBox.xaml">
