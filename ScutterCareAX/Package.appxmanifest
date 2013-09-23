@@ -15,9 +15,9 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="MazikCare.MobEval.App">
-      <VisualElements DisplayName="MazikCare MobEval" Logo="Assets\mazikcare_150-150_mob.png" SmallLogo="Assets\logo-small.png" Description="MazikCare MobEval" ForegroundText="light" BackgroundColor="#1f497d">
+      <VisualElements DisplayName="MazikCare MobEval" Logo="Assets\mazikcare_150-150.png" SmallLogo="Assets\logo-small.png" Description="MazikCare MobEval" ForegroundText="light" BackgroundColor="#1f497d">
         <DefaultTile WideLogo="Assets\mazikcare_310-150_mob.png" ShowName="noLogos" />
-        <SplashScreen Image="Assets\mazikcare_620-300_mob.png" BackgroundColor="#1f497d" />
+        <SplashScreen Image="Assets\mazikcare_620-300.png" BackgroundColor="#1f497d" />
       </VisualElements>
       <Extensions>
         <Extension Category="windows.fileTypeAssociation">

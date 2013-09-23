@@ -132,11 +132,11 @@
                         </StackPanel>
                         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0" Margin="0 0 0 10">
                             <TextBlock Text="Chief Complaint : " Style="{StaticResource TextStyle}"/>
-                            <TextBlock Text="Mobility Evaluation-Multiple sclerosis " Style="{StaticResource SubheaderTextStyle}"/>
+                            <TextBlock Text="Diabetic Nephropathy" Style="{StaticResource SubheaderTextStyle}"/>
                         </StackPanel>
                         <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="0" Margin="0 0 0 10">
-                            <TextBlock Text="Current ambulatory assistance used : " Style="{StaticResource TextStyle}" />
-                            <TextBlock Text="Cane" TextWrapping="Wrap" Style="{StaticResource SubheaderTextStyle}"/>
+                            <TextBlock Text="Current prescription : " Style="{StaticResource TextStyle}" />
+                            <TextBlock Text="OmniPod Insulin Pump" TextWrapping="Wrap" Style="{StaticResource SubheaderTextStyle}"/>
                         </StackPanel>
                         <StackPanel Orientation="Vertical" Grid.Row="3" Grid.Column="0" Margin="0 0 0 0">
                             <TextBlock Text="No. of falls in the home : " Style="{StaticResource TextStyle}" />
@@ -148,7 +148,7 @@
                         </StackPanel>
                         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Margin="0 0 0 10">
                             <!--<TextBlock Text="Oxygen holder" Style="{StaticResource SubheaderTextStyle}"/>-->
-                            <TextBlock Text="Cane" Style="{StaticResource SubheaderTextStyle}"/>
+                            <TextBlock Text="Oxygen holder" Style="{StaticResource SubheaderTextStyle}"/>
                             <!--<TextBlock Text="Manual Wheel Chair" Style="{StaticResource SubheaderTextStyle}"/>-->
                             <!--<TextBlock Text="Adjustable height armrests" Style="{StaticResource SubheaderTextStyle}"/>
                             <TextBlock Text="Gel seat cushion" Style="{StaticResource SubheaderTextStyle}"/>-->
@@ -172,16 +172,16 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="20"/>
                         </Grid.RowDefinitions>
-                        <TextBlock Text="↘ 08 Nov 2012   Not able to walk more than 10 mtrs" TextWrapping="Wrap" Style="{StaticResource TextStyle}" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                        <TextBlock Text="↘ 08 Nov 2012   Glycemic Control" TextWrapping="Wrap" Style="{StaticResource TextStyle}" VerticalAlignment="Center" Margin="20 0 0 0"/>
                         <TextBlock Text="Doctor : Tapang, David" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Column="1" VerticalAlignment="Center"/>
 
-                        <TextBlock Text="↘ 14 Sept 2012   Trouble with knee while walking" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="1" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                        <TextBlock Text="↘ 14 Sept 2012   Renal replacement therapy" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="1" VerticalAlignment="Center" Margin="20 0 0 0"/>
                         <TextBlock Text="Doctor : Tapang, David" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
 
-                        <TextBlock Text="↘ 23 July 2012   Essential Hypertension" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="2" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                        <TextBlock Text="↘ 23 July 2012   Management of Hypertension" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="2" VerticalAlignment="Center" Margin="20 0 0 0"/>
                         <TextBlock Text="Doctor : Brown, Alex" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"/>
 
-                        <TextBlock Text="↘ 05 June 2012   Need assistance to sit and stand" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="3" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                        <TextBlock Text="↘ 05 June 2012   Management of Hypertension" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="3" VerticalAlignment="Center" Margin="20 0 0 0"/>
                         <TextBlock Text="Doctor : Tapang, David" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
 
                         <TextBlock Text="↘ 10 April 2012   Hige Cholesterol levels" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="4" VerticalAlignment="Center" Margin="20 0 0 0"/>
