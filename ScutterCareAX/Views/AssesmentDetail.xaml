@@ -160,11 +160,11 @@
 
                 <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" x:Name="spTabs">
                     <TextBlock Text="Symptom/Analysis" FontSize="26" Margin="10 10 10 10" PointerReleased="Tab_PointerReleased" Foreground="#FFFDBD51"/>
-                    <TextBlock Text="Evaluation" FontSize="26" Margin="10 10 10 10" PointerReleased="Tab_PointerReleased"/>
+                    <TextBlock Text="History" FontSize="26" Margin="10 10 10 10" PointerReleased="Tab_PointerReleased"/>
+                    <TextBlock Text="Physicals" FontSize="26" Margin="10 10 10 10" PointerReleased="Tab_PointerReleased"/>
                     <TextBlock Text="Assessment" FontSize="26" Margin="10 10 10 10" PointerReleased="Tab_PointerReleased"/>
                     <TextBlock Text="Plan" FontSize="26" Margin="10 10 10 10" PointerReleased="Tab_PointerReleased"/>
-                    <TextBlock Text="Physical" FontSize="26" Margin="10 10 10 10" PointerReleased="Tab_PointerReleased"/>
-                    <TextBlock Text="History" FontSize="26" Margin="10 10 10 10" PointerReleased="Tab_PointerReleased"/>
+                    <TextBlock Text="Evaluation" FontSize="26" Margin="10 10 10 10" PointerReleased="Tab_PointerReleased" Visibility="Collapsed"/>
                     <TextBlock Text="Mobility" FontSize="26" Margin="10 10 10 10" PointerReleased="Tab_PointerReleased" Visibility="Collapsed"/>
                 </StackPanel>
                 <Frame x:Name="frame" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4"/>
