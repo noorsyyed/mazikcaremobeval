@@ -39,6 +39,10 @@
                 <RowDefinition Height="45"/>
                 <RowDefinition Height="45"/>
                 <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
@@ -50,22 +54,28 @@
                 <ColumnDefinition Width="40"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Text="Vital Sign" Grid.Row="0" Grid.Column="0" Style="{StaticResource SubheaderTextStyle}" Margin="10 10 10 5"/>
+            <TextBlock Text="Vital Signs" Grid.Row="0" Grid.Column="0" Style="{StaticResource SubheaderTextStyle}" Margin="10 10 10 5"/>
 
-            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" >
+            <TextBlock Text="Oral Temperature(F)" Grid.Row="1" Grid.Column="0" Style="{StaticResource AddressTextStyle}" Margin="10 0 10 5"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="5 5 10 5" Text="{Binding Path=PatientPhysicalAssessment.OralTemperature, Mode=TwoWay}"/>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" >
                 <TextBlock Text="BP(Systolic/Diastolic)" Style="{StaticResource AddressTextStyle}" Margin="10 0 0 5"/>
                 <TextBlock Text="eg 120/80 mm Hg" FontSize="14" Style="{StaticResource TextStyle}" Margin="10 5 10 10"/>
             </StackPanel>
-            <TextBox Grid.Row="1" Grid.Column="1" Margin="5 5 10 5" Text="{Binding Path=PatientPhysicalAssessment.BP, Mode=TwoWay}"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Margin="5 5 10 5" Text="{Binding Path=PatientPhysicalAssessment.BP, Mode=TwoWay}"/>
 
-            <TextBlock Text="Weight" Grid.Row="2" Grid.Column="0" Style="{StaticResource AddressTextStyle}" Margin="10 0 10 5"/>
-            <TextBox Grid.Row="2" Grid.Column="1" Margin="5 5 10 5" Text="{Binding Path=PatientPhysicalAssessment.Weight, Mode=TwoWay}"/>
+            <TextBlock Text="Weight" Grid.Row="3" Grid.Column="0" Style="{StaticResource AddressTextStyle}" Margin="10 0 10 5"/>
+            <TextBox Grid.Row="3" Grid.Column="1" Margin="5 5 10 5" Text="{Binding Path=PatientPhysicalAssessment.Weight, Mode=TwoWay}"/>
 
-            <TextBlock Text="Height" Grid.Row="3" Grid.Column="0" Style="{StaticResource AddressTextStyle}" Margin="10 0 10 5"/>
-            <TextBox Grid.Row="3" Grid.Column="1" Margin="5 5 10 5" Text="{Binding Path=PatientPhysicalAssessment.Height, Mode=TwoWay}"/>
+            <TextBlock Text="Height" Grid.Row="4" Grid.Column="0" Style="{StaticResource AddressTextStyle}" Margin="10 0 10 5"/>
+            <TextBox Grid.Row="4" Grid.Column="1" Margin="5 5 10 5" Text="{Binding Path=PatientPhysicalAssessment.Height, Mode=TwoWay}"/>
 
-            <TextBlock Text="Respiratory Rate" Grid.Row="4" Grid.Column="0" Style="{StaticResource AddressTextStyle}" Margin="10 0 10 5"/>
-            <TextBox Grid.Row="4" Grid.Column="1" Margin="5 5 10 5" Text="{Binding Path=PrescriptionData.Respiratory,Mode=TwoWay}"/>
+            <TextBlock Text="Respiratory Rate" Grid.Row="5" Grid.Column="0" Style="{StaticResource AddressTextStyle}" Margin="10 0 10 5"/>
+            <TextBox Grid.Row="5" Grid.Column="1" Margin="5 5 10 5" Text="{Binding Path=PrescriptionData.Respiratory,Mode=TwoWay}"/>
+
+            <TextBlock Text="Pulse Rate(bpm)" Grid.Row="6" Grid.Column="0" Style="{StaticResource AddressTextStyle}" Margin="11,0,9,5"/>
+            <TextBox Grid.Row="6" Grid.Column="1" Margin="5 5 10 5" Text="{Binding Path=PrescriptionData.Respiratory,Mode=TwoWay}"/>
 
             <TextBlock Text="Objectives Measures" Grid.Row="0" Grid.Column="3" Style="{StaticResource SubheaderTextStyle}" Margin="10,10,0,5" HorizontalAlignment="Left" />
             <!--<StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="4" HorizontalAlignment="Center">
@@ -74,69 +84,93 @@
             </StackPanel>-->
             <TextBlock Text="Notes" Grid.Row="0" Grid.Column="5" Style="{StaticResource SubheaderTextStyle}" Margin="10 10 10 5"/>
 
-            <TextBlock Text="Current or History pressure sores" Grid.Row="1" Grid.Column="3" Style="{StaticResource AddressTextStyle}" Margin="10 0 10 5"/>
-            <ToggleSwitch Grid.Row="1" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" Margin="10 -8 10 0" IsOn="{Binding Path=PrescriptionData.IsOMCurrent,Mode=TwoWay}"/>
+            <TextBlock Text="Orthostatic Hypotension" Grid.Row="1" Grid.Column="3" Style="{StaticResource AddressTextStyle}" Margin="10 0 10 5"/>
+            <ToggleSwitch Grid.Row="1" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" Margin="10 -8 10 0" IsOn="{Binding Path=PrescriptionData.IsOrthostaticHypotension,Mode=TwoWay}"/>
             <!--<StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center">
                 <RadioButton Margin="10" IsChecked="{Binding Path=PrescriptionData.IsOMCurrent,Mode=TwoWay}"/>
                 <RadioButton Margin="10" IsChecked="{Binding Path=PrescriptionData.IsOMCurrent,Mode=TwoWay,Converter={StaticResource ResourceKey=bNeg}}"/>
             </StackPanel>-->
-            <TextBox Grid.Row="1" Grid.Column="5" Margin="5" Text="{Binding Path=PrescriptionData.NoteCurrent,Mode=TwoWay}"/>
+            <TextBox Grid.Row="1" Grid.Column="5" Margin="5" Text="{Binding Path=PrescriptionData.NoteOrthostaticHypotension,Mode=TwoWay}"/>
 
-            <TextBlock Text="Musculoskeletal Exam" Grid.Row="2" Grid.Column="3" Style="{StaticResource AddressTextStyle}" Margin="10 0 10 5"/>
-            <ToggleSwitch Grid.Row="2" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" Margin="10 -8 10 0" IsOn="{Binding Path=PrescriptionData.IsOMMusculoskeletal,Mode=TwoWay}"/>
+            <TextBlock Text="Vision Assessment" Grid.Row="2" Grid.Column="3" Style="{StaticResource AddressTextStyle}" Margin="10 0 10 5"/>
+            <ToggleSwitch Grid.Row="2" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" Margin="10 -8 10 0" IsOn="{Binding Path=PrescriptionData.IsVisionAssessment,Mode=TwoWay}"/>
             <!--<StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center">
                 <RadioButton Margin="10" IsChecked="{Binding Path=PrescriptionData.IsOMMusculoskeletal,Mode=TwoWay}"/>
                 <RadioButton Margin="10" IsChecked="{Binding Path=PrescriptionData.IsOMMusculoskeletal,Mode=TwoWay,Converter={StaticResource ResourceKey=bNeg}}"/>
             </StackPanel>-->
-            <TextBox Grid.Row="2" Grid.Column="5" Margin="5" Text="{Binding Path=PrescriptionData.NoteMusculoskeletal,Mode=TwoWay}"/>
+            <TextBox Grid.Row="2" Grid.Column="5" Margin="5" Text="{Binding Path=PrescriptionData.NoteVisionAssessment,Mode=TwoWay}"/>
 
-            <TextBlock Text="Cardio/Respiratory Exam" Grid.Row="3" Grid.Column="3" Style="{StaticResource AddressTextStyle}" Margin="10 0 10 5"/>
-            <ToggleSwitch Grid.Row="3" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" Margin="10 -8 10 0" IsOn="{Binding Path=PrescriptionData.IsOMCardio,Mode=TwoWay}"/>
+            <TextBlock Text="Ophthalmological Sensorimotor Exam" Grid.Row="3" Grid.Column="3" Style="{StaticResource AddressTextStyle}" Margin="10 0 10 5"/>
+            <ToggleSwitch Grid.Row="3" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" Margin="10 -8 10 0" IsOn="{Binding Path=PrescriptionData.IsOSExam,Mode=TwoWay}"/>
             <!--<StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="4" HorizontalAlignment="Center">
                 <RadioButton Margin="10" IsChecked="{Binding Path=PrescriptionData.IsOMCardio,Mode=TwoWay}"/>
                 <RadioButton Margin="10" IsChecked="{Binding Path=PrescriptionData.IsOMCardio,Mode=TwoWay,Converter={StaticResource ResourceKey=bNeg}}"/>
             </StackPanel>-->
-            <TextBox Grid.Row="3" Grid.Column="5" Margin="5" Text="{Binding Path=PrescriptionData.NoteCardio,Mode=TwoWay}"/>
+            <TextBox Grid.Row="3" Grid.Column="5" Margin="5" Text="{Binding Path=PrescriptionData.NoteOSExam,Mode=TwoWay}"/>
 
-            <TextBlock Text="Neurologic Exam" Grid.Row="4" Grid.Column="3" Style="{StaticResource AddressTextStyle}" Margin="10 0 10 5"/>
-            <ToggleSwitch Grid.Row="4" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" Margin="10 -8 10 0" IsOn="{Binding Path=PrescriptionData.IsOMNeurologic,Mode=TwoWay}"/>
+            <TextBlock Text="- Cataract" Grid.Row="4" Grid.Column="3" Style="{StaticResource AddressTextStyle}" Margin="40 0 10 5"/>
+            <ToggleSwitch Grid.Row="4" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" Margin="10 -8 10 0" IsOn="{Binding Path=PrescriptionData.IsOSCatractExam,Mode=TwoWay}"/>
             <!--<StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="4" HorizontalAlignment="Center">
                 <RadioButton Margin="10" IsChecked="{Binding Path=PrescriptionData.IsOMNeurologic,Mode=TwoWay}"/>
                 <RadioButton Margin="10" IsChecked="{Binding Path=PrescriptionData.IsOMNeurologic,Mode=TwoWay,Converter={StaticResource ResourceKey=bNeg}}"/>
             </StackPanel>-->
-            <TextBox Grid.Row="4" Grid.Column="5" Margin="5" Text="{Binding Path=PrescriptionData.NoteNeurologic,Mode=TwoWay}"/>
+            <TextBox Grid.Row="4" Grid.Column="5" Margin="5" Text="{Binding Path=PrescriptionData.NoteOSCatractExam,Mode=TwoWay}"/>
 
-            <TextBlock Text="Functional Ambulatory Exam" Grid.Row="5" Grid.Column="3" Style="{StaticResource AddressTextStyle}" Margin="10 0 10 5"/>
-            <ToggleSwitch Grid.Row="5" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" Margin="10 -8 10 0" IsOn="{Binding Path=PrescriptionData.IsOMAmbulatory,Mode=TwoWay}"/>
+            <TextBlock Text="- Retina" Grid.Row="5" Grid.Column="3" Style="{StaticResource AddressTextStyle}" Margin="40 0 10 5"/>
+            <ToggleSwitch Grid.Row="5" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" Margin="10 -8 10 0" IsOn="{Binding Path=PrescriptionData.IsOSRetinaExam,Mode=TwoWay}"/>
+            <!--<StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="4" HorizontalAlignment="Center">
+                <RadioButton Margin="10" IsChecked="{Binding Path=PrescriptionData.IsOMNeurologic,Mode=TwoWay}"/>
+                <RadioButton Margin="10" IsChecked="{Binding Path=PrescriptionData.IsOMNeurologic,Mode=TwoWay,Converter={StaticResource ResourceKey=bNeg}}"/>
+            </StackPanel>-->
+            <TextBox Grid.Row="5" Grid.Column="5" Margin="5" Text="{Binding Path=PrescriptionData.NoteOSRetinaExam,Mode=TwoWay}"/>
+
+            <TextBlock Text="Cardiovascular System Exam" Grid.Row="6" Grid.Column="3" Style="{StaticResource AddressTextStyle}" Margin="10 0 10 5"/>
+            <ToggleSwitch Grid.Row="6" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" Margin="10 -8 10 0" IsOn="{Binding Path=PrescriptionData.IsCSExam,Mode=TwoWay}"/>
             <!--<StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="4" HorizontalAlignment="Center">
                 <RadioButton Margin="10" IsChecked="{Binding Path=PrescriptionData.IsOMAmbulatory,Mode=TwoWay}"/>
                 <RadioButton Margin="10" IsChecked="{Binding Path=PrescriptionData.IsOMAmbulatory,Mode=TwoWay,Converter={StaticResource ResourceKey=bNeg}}"/>
             </StackPanel>-->
-            <TextBox Grid.Row="5" Grid.Column="5" Margin="5" Text="{Binding Path=PrescriptionData.NoteAmbulatory,Mode=TwoWay}"/>
-            
-            <TextBlock Text="- Gait Pattern" Grid.Row="6" Grid.Column="3" Style="{StaticResource AddressTextStyle}" Margin="40 0 10 5"/>
-            <ToggleSwitch Grid.Row="6" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" Margin="10 -8 10 0" IsOn="{Binding Path=PrescriptionData.IsOMGait,Mode=TwoWay}"/>
+            <TextBox Grid.Row="6" Grid.Column="5" Margin="5" Text="{Binding Path=PrescriptionData.NoteCSExam,Mode=TwoWay}"/>
+
+            <TextBlock Text="- Arterial Pulses - Quantitative" Grid.Row="7" Grid.Column="3" Style="{StaticResource AddressTextStyle}" Margin="40 0 10 5"/>
+            <ToggleSwitch Grid.Row="7" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" Margin="10 -8 10 0" IsOn="{Binding Path=PrescriptionData.IsArterialPulse,Mode=TwoWay}"/>
             <!--<StackPanel Orientation="Horizontal" Grid.Row="6" Grid.Column="4" HorizontalAlignment="Center">
                 <RadioButton Margin="10" IsChecked="{Binding Path=PrescriptionData.IsOMGait,Mode=TwoWay}"/>
                 <RadioButton Margin="10" IsChecked="{Binding Path=PrescriptionData.IsOMGait,Mode=TwoWay,Converter={StaticResource ResourceKey=bNeg}}"/>
             </StackPanel>-->
-            <TextBox Grid.Row="6" Grid.Column="5" Margin="5" Text="{Binding Path=PrescriptionData.NoteGait,Mode=TwoWay}"/>
-            
-            <TextBlock Text="- Level of Assistance" Grid.Row="7" Grid.Column="3" Style="{StaticResource AddressTextStyle}" Margin="40 0 10 5"/>
-            <ToggleSwitch Grid.Row="7" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" Margin="10 -8 10 0" IsOn="{Binding Path=PrescriptionData.IsOMAssistance,Mode=TwoWay}"/>
+            <TextBox Grid.Row="7" Grid.Column="5" Margin="5" Text="{Binding Path=PrescriptionData.NoteArterialPulse,Mode=TwoWay}"/>
+
+            <TextBlock Text="Neurological System Exam" Grid.Row="8" Grid.Column="3" Style="{StaticResource AddressTextStyle}" Margin="10 0 10 5"/>
+            <ToggleSwitch Grid.Row="8" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" Margin="10 -8 10 0" IsOn="{Binding Path=PrescriptionData.IsNSExam,Mode=TwoWay}"/>
             <!--<StackPanel Orientation="Horizontal" Grid.Row="7" Grid.Column="4" HorizontalAlignment="Center">
                 <RadioButton Margin="10" IsChecked="{Binding Path=PrescriptionData.IsOMAssistance,Mode=TwoWay}"/>
                 <RadioButton Margin="10" IsChecked="{Binding Path=PrescriptionData.IsOMAssistance,Mode=TwoWay,Converter={StaticResource ResourceKey=bNeg}}"/>
             </StackPanel>-->
-            <TextBox Grid.Row="7" Grid.Column="5" Margin="5" Text="{Binding Path=PrescriptionData.NoteAssistance,Mode=TwoWay}"/>
-            
-            <TextBlock Text="- Range of Motion" Grid.Row="8" Grid.Column="3" Style="{StaticResource AddressTextStyle}" Margin="40 0 10 5"/>
-            <ToggleSwitch Grid.Row="8" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" Margin="10 -8 10 0" Padding="0 0 -20 0" IsOn="{Binding Path=PrescriptionData.IsOMMotion,Mode=TwoWay}"/>
+            <TextBox Grid.Row="8" Grid.Column="5" Margin="5" Text="{Binding Path=PrescriptionData.NoteNSExam,Mode=TwoWay}"/>
+
+            <TextBlock Text="- Vibration Test Foot Using Tuning Fork" Grid.Row="9" Grid.Column="3" Style="{StaticResource AddressTextStyle}" Margin="40 0 10 5"/>
+            <ToggleSwitch Grid.Row="9" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" Margin="10 -8 10 0" Padding="0 0 -20 0" IsOn="{Binding Path=PrescriptionData.IsNSTuningFork,Mode=TwoWay}"/>
             <!--<StackPanel Orientation="Horizontal" Grid.Row="8" Grid.Column="4" HorizontalAlignment="Center">
                 <RadioButton Margin="10" IsChecked="{Binding Path=PrescriptionData.IsOMMotion,Mode=TwoWay}"/>
                 <RadioButton Margin="10" IsChecked="{Binding Path=PrescriptionData.IsOMMotion,Mode=TwoWay,Converter={StaticResource ResourceKey=bNeg}}"/>
             </StackPanel>-->
-            <TextBox Grid.Row="8" Grid.Column="5" Margin="5" Text="{Binding Path=PrescriptionData.NoteMotion,Mode=TwoWay}"/>
+            <TextBox Grid.Row="9" Grid.Column="5" Margin="5" Text="{Binding Path=PrescriptionData.NoteNSTuningFork,Mode=TwoWay}"/>
+
+            <TextBlock Text="- Sensation Vibration Decrease" Grid.Row="10" Grid.Column="3" Style="{StaticResource AddressTextStyle}" Margin="40 0 10 5"/>
+            <ToggleSwitch Grid.Row="10" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" Margin="10 -8 10 0" Padding="0 0 -20 0" IsOn="{Binding Path=PrescriptionData.IsNSVibrationDecrease,Mode=TwoWay}"/>
+            <!--<StackPanel Orientation="Horizontal" Grid.Row="8" Grid.Column="4" HorizontalAlignment="Center">
+                <RadioButton Margin="10" IsChecked="{Binding Path=PrescriptionData.IsOMMotion,Mode=TwoWay}"/>
+                <RadioButton Margin="10" IsChecked="{Binding Path=PrescriptionData.IsOMMotion,Mode=TwoWay,Converter={StaticResource ResourceKey=bNeg}}"/>
+            </StackPanel>-->
+            <TextBox Grid.Row="10" Grid.Column="5" Margin="5" Text="{Binding Path=PrescriptionData.NoteNSVibrationDecrease,Mode=TwoWay}"/>
+
+            <TextBlock Text="- DTR Reflex Patterns" Grid.Row="11" Grid.Column="3" Style="{StaticResource AddressTextStyle}" Margin="40 0 10 5"/>
+            <ToggleSwitch Grid.Row="11" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" Margin="10 -8 10 0" Padding="0 0 -20 0" IsOn="{Binding Path=PrescriptionData.IsNSDTRReflexPatterns,Mode=TwoWay}"/>
+            <!--<StackPanel Orientation="Horizontal" Grid.Row="8" Grid.Column="4" HorizontalAlignment="Center">
+                <RadioButton Margin="10" IsChecked="{Binding Path=PrescriptionData.IsOMMotion,Mode=TwoWay}"/>
+                <RadioButton Margin="10" IsChecked="{Binding Path=PrescriptionData.IsOMMotion,Mode=TwoWay,Converter={StaticResource ResourceKey=bNeg}}"/>
+            </StackPanel>-->
+            <TextBox Grid.Row="11" Grid.Column="5" Margin="5" Text="{Binding Path=PrescriptionData.NoteNSDTRReflexPatterns,Mode=TwoWay}"/>
         </Grid>
 
         <VisualStateManager.VisualStateGroups>

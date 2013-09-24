@@ -69,7 +69,7 @@ namespace MazikCare.MobEval.Views
                     toNavigate = typeof(AssessmentPlan);
                     break;
                 case "Physical":
-                    toNavigate = typeof(AssesmentPhysical);
+                    toNavigate = typeof(AssessmentEvaluation);
                     break;
                 case "History":
                     toNavigate = typeof(AssesmentHistory);

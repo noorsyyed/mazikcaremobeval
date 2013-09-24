@@ -32,6 +32,32 @@ namespace MazikCare.MobEval.Datas
             }
         }
 
+        private string _pulseRate;
+        public string PulseRate
+        {
+            get
+            {
+                return this._pulseRate;
+            }
+            set
+            {
+                this.SetProperty(ref this._pulseRate, value, "Weight");
+            }
+        }
+
+        private string _oralTemperature;
+        public string OralTemperature
+        {
+            get
+            {
+                return this._oralTemperature;
+            }
+            set
+            {
+                this.SetProperty(ref this._oralTemperature, value, "Weight");
+            }
+        }
+
         private string _bp;
         public string BP
         {
