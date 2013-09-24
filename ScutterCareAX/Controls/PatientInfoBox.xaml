@@ -56,15 +56,15 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="20"/>
             </Grid.RowDefinitions>
-            <TextBlock Text="Life Style " FontSize="26" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Margin="10 5 0 0"/>
+            <TextBlock Text="Vital signs" FontSize="26" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Margin="10 5 0 0"/>
 
-            <TextBlock Text="Current Risk" Style="{StaticResource TextStyle}" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="Current risk" Style="{StaticResource TextStyle}" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBlock Text="24%" Style="{StaticResource SubheaderTextStyle}" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="Orange" Margin="0 5"/>
 
-            <TextBlock Text="Target Risk" Style="{StaticResource TextStyle}" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="Target risk" Style="{StaticResource TextStyle}" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBlock Text="10%" Style="{StaticResource SubheaderTextStyle}" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="LimeGreen" Margin="0 5"/>
 
-            <TextBlock Text="Proj. Risk" Style="{StaticResource TextStyle}" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="Proj. risk" Style="{StaticResource TextStyle}" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBlock Text="24%" Style="{StaticResource SubheaderTextStyle}" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="Cyan" Margin="0 5"/>
 
 
@@ -82,7 +82,7 @@
                 <TextBlock Text="{Binding Path=SettingsData.HeightInInches, Mode=TwoWay}" Style="{StaticResource SubheaderTextStyle}" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="LimeGreen" Margin="0 5"/>
                 <TextBlock Text="inches" Style="{StaticResource SubheaderTextStyle}" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="LimeGreen" Margin="0 5"/>
             </StackPanel>
-            <TextBlock Text="Cholesterol Level (Target &lt; 5mmgl)" Style="{StaticResource TextStyle}" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10 0 0 5"/>
+            <TextBlock Text="Cholesterol level (Target &lt; 5mmgl)" Style="{StaticResource TextStyle}" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10 0 0 5"/>
             <ProgressBar Value="7.8" Minimum="2" Maximum="9" Height="10" Width="300" Margin="10 0 20 0" Foreground="YellowGreen" Background="DarkRed" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="6" ToolTipService.ToolTip="{Binding RelativeSource={RelativeSource Self},Path=Value}"/>
 
             <TextBlock Text="BMI (Target  20)" Style="{StaticResource TextStyle}" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="7" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10 0 0 5"/>
@@ -91,7 +91,7 @@
             <TextBlock Text="Blood Pressure (Target  120/80)" Style="{StaticResource TextStyle}" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="9" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10 0 0 5"/>
             <ProgressBar Value="130" Minimum="100" Maximum="150" Height="10" Width="300" Margin="10 0 20 0" Foreground="YellowGreen" Background="DarkRed" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="10" ToolTipService.ToolTip="{Binding RelativeSource={RelativeSource Self},Path=Value}"/>
 
-            <TextBlock Text="Sugar Level (Target  100 - 110)" Style="{StaticResource TextStyle}" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="11" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10 0 0 5"/>
+            <TextBlock Text="Sugar level (Target  100 - 110)" Style="{StaticResource TextStyle}" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="11" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10 0 0 5"/>
             <ProgressBar Value="105" Minimum="85" Maximum="150" Height="10" Width="300" Margin="10 0 20 0" Foreground="YellowGreen" Background="DarkRed" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="12" ToolTipService.ToolTip="{Binding RelativeSource={RelativeSource Self},Path=Value}"/>
         </Grid>
 
