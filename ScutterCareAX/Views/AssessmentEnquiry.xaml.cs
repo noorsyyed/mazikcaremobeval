@@ -29,19 +29,19 @@ namespace MazikCare.MobEval.Views
         /// session.  This will be null the first time a page is visited.</param>
         protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
-            var data = (DiagnosisData)this.DefaultViewModel["DiagnosisData"];
-            if (data.MradlStatus != null)
-            {
-                this.grdMRADL.Visibility = Visibility.Visible;
-            }
-            if (data.AmbulatoryStatus != null)
-            {
-                this.grdAmbulatory.Visibility = Visibility.Visible;
-            }
-            if (data.PovStatus != null)
-            {
-                this.grdPOV.Visibility = Visibility.Visible;
-            }
+            //var data = (DiagnosisData)this.DefaultViewModel["DiagnosisData"];
+            //if (data.MradlStatus != null)
+            //{
+            //    this.grdMRADL.Visibility = Visibility.Visible;
+            //}
+            //if (data.AmbulatoryStatus != null)
+            //{
+            //    this.grdAmbulatory.Visibility = Visibility.Visible;
+            //}
+            //if (data.PovStatus != null)
+            //{
+            //    this.grdPOV.Visibility = Visibility.Visible;
+            //}
 
         }
 

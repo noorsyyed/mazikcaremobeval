@@ -288,8 +288,8 @@ namespace MazikCare.MobEval.Views
 
                 StorageFile page1 = await Package.Current.InstalledLocation.GetFileAsync(@"Datas\page1.png");
                 StorageFile page2 = await Package.Current.InstalledLocation.GetFileAsync(@"Datas\page2.png");
-                StorageFile page3 = await Package.Current.InstalledLocation.GetFileAsync(@"Datas\page3.png");
-                StorageFile page4 = await Package.Current.InstalledLocation.GetFileAsync(@"Datas\page4.png");
+                //StorageFile page3 = await Package.Current.InstalledLocation.GetFileAsync(@"Datas\page3.png");
+                //StorageFile page4 = await Package.Current.InstalledLocation.GetFileAsync(@"Datas\page4.png");
                 StorageFile page5 = await Package.Current.InstalledLocation.GetFileAsync(@"Datas\page5.png");
 
                 this._pdf = await ApplicationData.Current.LocalFolder.CreateFileAsync(@"Data\Prescription.pdf", CreationCollisionOption.ReplaceExisting);
@@ -302,7 +302,7 @@ namespace MazikCare.MobEval.Views
                         Siberix.Sparkle.PDF.Document document = new Siberix.Sparkle.PDF.Document();
 
                         // Info
-                        document.Info.Title = "Scooter Store AX";
+                        document.Info.Title = "Mazik Care";
                         document.Info.Author = "Mazik Global";
                         document.Info.Creator = "Mazik Tech Solutions, Hyderabad, India";
 
@@ -314,8 +314,8 @@ namespace MazikCare.MobEval.Views
                         // Page
                         document.AddPage(845, 1195);
                         document.AddPage(850, 1100);
-                        document.AddPage(850, 1100);
-                        document.AddPage(850, 1100);
+                        //document.AddPage(850, 1100);
+                        //document.AddPage(850, 1100);
                         document.AddPage(850, 1100);
 
                         var font = new Siberix.Sparkle.Graphics.Font(await DBHelper.GetResourceStreamAsync(@"Datas\calibrib.ttf"), 17);
@@ -331,178 +331,179 @@ namespace MazikCare.MobEval.Views
                         page.Graphics.DrawImage(image, 1, 1, image.Width, image.Height);
 
                         //medical condtion
-                        if (diagData.MedicalCondition != null)
-                            foreach (var item in diagData.MedicalCondition)
-                            {
-                                switch (item)
-                                {
-                                    case "CHF":
-                                        page.Graphics.DrawString(31, 457, "X");
-                                        break;
-                                    case "COPD":
-                                        page.Graphics.DrawString(182, 457, "X");
-                                        break;
-                                    case "CVA":
-                                        page.Graphics.DrawString(354, 456, "X");
-                                        break;
-                                    case "Degenrative Joint Disease":
-                                        page.Graphics.DrawString(513, 457, "X");
-                                        break;
-                                    case "Diabetes/Neuropathy":
-                                        page.Graphics.DrawString(673, 457, "X");
-                                        break;
+                        #region medical condition
+                        //if (diagData.MedicalCondition != null)
+                        //    foreach (var item in diagData.MedicalCondition)
+                        //    {
+                        //        switch (item)
+                        //        {
+                        //            case "CHF":
+                        //                page.Graphics.DrawString(31, 457, "X");
+                        //                break;
+                        //            case "COPD":
+                        //                page.Graphics.DrawString(182, 457, "X");
+                        //                break;
+                        //            case "CVA":
+                        //                page.Graphics.DrawString(354, 456, "X");
+                        //                break;
+                        //            case "Degenrative Joint Disease":
+                        //                page.Graphics.DrawString(513, 457, "X");
+                        //                break;
+                        //            case "Diabetes/Neuropathy":
+                        //                page.Graphics.DrawString(673, 457, "X");
+                        //                break;
 
-                                    case "Hemiparesis":
-                                        page.Graphics.DrawString(31, 502, "X");
-                                        break;
-                                    case "Hemiplegia":
-                                        page.Graphics.DrawString(182, 502, "X");
-                                        break;
-                                    case "Multiple Sclesrosis":
-                                        page.Graphics.DrawString(354, 502, "X");
-                                        break;
-                                    case "Multiple Distrophy":
-                                        page.Graphics.DrawString(513, 502, "X");
-                                        break;
-                                    case "Osteoarthritis":
-                                        page.Graphics.DrawString(673, 502, "X");
-                                        break;
+                        //            case "Hemiparesis":
+                        //                page.Graphics.DrawString(31, 502, "X");
+                        //                break;
+                        //            case "Hemiplegia":
+                        //                page.Graphics.DrawString(182, 502, "X");
+                        //                break;
+                        //            case "Multiple Sclesrosis":
+                        //                page.Graphics.DrawString(354, 502, "X");
+                        //                break;
+                        //            case "Multiple Distrophy":
+                        //                page.Graphics.DrawString(513, 502, "X");
+                        //                break;
+                        //            case "Osteoarthritis":
+                        //                page.Graphics.DrawString(673, 502, "X");
+                        //                break;
 
-                                    case "Paraparesis":
-                                        page.Graphics.DrawString(31, 548, "X");
-                                        break;
-                                    case "Paraplegia":
-                                        page.Graphics.DrawString(182, 548, "X");
-                                        break;
-                                    case "Parkinson's Disease":
-                                        page.Graphics.DrawString(354, 548, "X");
-                                        break;
-                                    case "Renal Failure":
-                                        page.Graphics.DrawString(513, 548, "X");
-                                        break;
-                                    case "Rheumatoid Arthritis":
-                                        page.Graphics.DrawString(673, 548, "X");
-                                        break;
+                        //            case "Paraparesis":
+                        //                page.Graphics.DrawString(31, 548, "X");
+                        //                break;
+                        //            case "Paraplegia":
+                        //                page.Graphics.DrawString(182, 548, "X");
+                        //                break;
+                        //            case "Parkinson's Disease":
+                        //                page.Graphics.DrawString(354, 548, "X");
+                        //                break;
+                        //            case "Renal Failure":
+                        //                page.Graphics.DrawString(513, 548, "X");
+                        //                break;
+                        //            case "Rheumatoid Arthritis":
+                        //                page.Graphics.DrawString(673, 548, "X");
+                        //                break;
 
-                                }
-                            }
+                        //        }
+                        //    }
 
-                        //Symptoms condtion
-                        if (diagData.Symptoms != null)
-                            foreach (var item in diagData.Symptoms)
-                            {
-                                switch (item)
-                                {
-                                    case "Abnormal Gait":
-                                        page.Graphics.DrawString(30, 647, "X");
-                                        break;
-                                    case "Amputation":
-                                        page.Graphics.DrawString(180, 647, "X");
-                                        break;
-                                    case "Cardiac Arrhythmias":
-                                        page.Graphics.DrawString(353, 647, "X");
-                                        break;
-                                    case "Chest Pain":
-                                        page.Graphics.DrawString(513, 647, "X");
-                                        break;
-                                    case "Fatigue":
-                                        page.Graphics.DrawString(672, 646, "X");
-                                        break;
+                        ////Symptoms condtion
+                        //if (diagData.Symptoms != null)
+                        //    foreach (var item in diagData.Symptoms)
+                        //    {
+                        //        switch (item)
+                        //        {
+                        //            case "Abnormal Gait":
+                        //                page.Graphics.DrawString(30, 647, "X");
+                        //                break;
+                        //            case "Amputation":
+                        //                page.Graphics.DrawString(180, 647, "X");
+                        //                break;
+                        //            case "Cardiac Arrhythmias":
+                        //                page.Graphics.DrawString(353, 647, "X");
+                        //                break;
+                        //            case "Chest Pain":
+                        //                page.Graphics.DrawString(513, 647, "X");
+                        //                break;
+                        //            case "Fatigue":
+                        //                page.Graphics.DrawString(672, 646, "X");
+                        //                break;
 
-                                    case "Intermittent Claudication":
-                                        page.Graphics.DrawString(30, 692, "X");
-                                        break;
-                                    case "Muscular Dystrophy":
-                                        page.Graphics.DrawString(180, 692, "X");
-                                        break;
-                                    case "Orthostasis":
-                                        page.Graphics.DrawString(353, 692, "X");
-                                        break;
-                                    case "Paralysis":
-                                        page.Graphics.DrawString(513, 692, "X");
-                                        break;
-                                    case "Shortness of Breath":
-                                        page.Graphics.DrawString(673, 692, "X");
-                                        break;
+                        //            case "Intermittent Claudication":
+                        //                page.Graphics.DrawString(30, 692, "X");
+                        //                break;
+                        //            case "Muscular Dystrophy":
+                        //                page.Graphics.DrawString(180, 692, "X");
+                        //                break;
+                        //            case "Orthostasis":
+                        //                page.Graphics.DrawString(353, 692, "X");
+                        //                break;
+                        //            case "Paralysis":
+                        //                page.Graphics.DrawString(513, 692, "X");
+                        //                break;
+                        //            case "Shortness of Breath":
+                        //                page.Graphics.DrawString(673, 692, "X");
+                        //                break;
 
-                                    case "Syncope":
-                                        page.Graphics.DrawString(30, 738, "X");
-                                        break;
-                                    case "Tremor":
-                                        page.Graphics.DrawString(180, 738, "X");
-                                        break;
-                                    case "Vertigo":
-                                        page.Graphics.DrawString(353, 738, "X");
-                                        break;
-                                    case "Walking Limitationss":
-                                        page.Graphics.DrawString(513, 738, "X");
-                                        break;
-                                    case "Weakness":
-                                        page.Graphics.DrawString(673, 738, "X");
-                                        break;
-                                }
-                            }
+                        //            case "Syncope":
+                        //                page.Graphics.DrawString(30, 738, "X");
+                        //                break;
+                        //            case "Tremor":
+                        //                page.Graphics.DrawString(180, 738, "X");
+                        //                break;
+                        //            case "Vertigo":
+                        //                page.Graphics.DrawString(353, 738, "X");
+                        //                break;
+                        //            case "Walking Limitationss":
+                        //                page.Graphics.DrawString(513, 738, "X");
+                        //                break;
+                        //            case "Weakness":
+                        //                page.Graphics.DrawString(673, 738, "X");
+                        //                break;
+                        //        }
+                        //    }
 
-                        //Pain Loacations
-                        if (diagData.PainLocation != null)
-                            foreach (var item in diagData.PainLocation)
-                            {
-                                switch (item)
-                                {
-                                    case "Head":
-                                        page.Graphics.DrawString(30, 827, "X");
-                                        break;
-                                    case "Face":
-                                        page.Graphics.DrawString(180, 828, "X");
-                                        break;
-                                    case "Neck":
-                                        page.Graphics.DrawString(355, 828, "X");
-                                        break;
-                                    case "Chest":
-                                        page.Graphics.DrawString(515, 828, "X");
-                                        break;
-                                    case "Abdomen":
-                                        page.Graphics.DrawString(675, 828, "X");
-                                        break;
+                        ////Pain Loacations
+                        //if (diagData.PainLocation != null)
+                        //    foreach (var item in diagData.PainLocation)
+                        //    {
+                        //        switch (item)
+                        //        {
+                        //            case "Head":
+                        //                page.Graphics.DrawString(30, 827, "X");
+                        //                break;
+                        //            case "Face":
+                        //                page.Graphics.DrawString(180, 828, "X");
+                        //                break;
+                        //            case "Neck":
+                        //                page.Graphics.DrawString(355, 828, "X");
+                        //                break;
+                        //            case "Chest":
+                        //                page.Graphics.DrawString(515, 828, "X");
+                        //                break;
+                        //            case "Abdomen":
+                        //                page.Graphics.DrawString(675, 828, "X");
+                        //                break;
 
-                                    case "Pelvis/Groin":
-                                        page.Graphics.DrawString(30, 855, "X");
-                                        break;
-                                    case "Upper Back":
-                                        page.Graphics.DrawString(180, 855, "X");
-                                        break;
-                                    case "Lower Back":
-                                        page.Graphics.DrawString(355, 855, "X");
-                                        break;
-                                    case "Sacrum":
-                                        page.Graphics.DrawString(515, 855, "X");
-                                        break;
-                                    case "R/L Shoulder":
-                                        page.Graphics.DrawString(675, 855, "X");
-                                        break;
+                        //            case "Pelvis/Groin":
+                        //                page.Graphics.DrawString(30, 855, "X");
+                        //                break;
+                        //            case "Upper Back":
+                        //                page.Graphics.DrawString(180, 855, "X");
+                        //                break;
+                        //            case "Lower Back":
+                        //                page.Graphics.DrawString(355, 855, "X");
+                        //                break;
+                        //            case "Sacrum":
+                        //                page.Graphics.DrawString(515, 855, "X");
+                        //                break;
+                        //            case "R/L Shoulder":
+                        //                page.Graphics.DrawString(675, 855, "X");
+                        //                break;
 
-                                    case "R/L Arm":
-                                        page.Graphics.DrawString(30, 880, "X");
-                                        break;
-                                    case "R/L Elbow":
-                                        page.Graphics.DrawString(180, 880, "X");
-                                        break;
-                                    case "R/L Wrist/Hand":
-                                        page.Graphics.DrawString(355, 880, "X");
-                                        break;
-                                    case "R/L Hip/Thigh":
-                                        page.Graphics.DrawString(515, 880, "X");
-                                        break;
-                                    case "R/L Knee":
-                                        page.Graphics.DrawString(675, 880, "X");
-                                        break;
+                        //            case "R/L Arm":
+                        //                page.Graphics.DrawString(30, 880, "X");
+                        //                break;
+                        //            case "R/L Elbow":
+                        //                page.Graphics.DrawString(180, 880, "X");
+                        //                break;
+                        //            case "R/L Wrist/Hand":
+                        //                page.Graphics.DrawString(355, 880, "X");
+                        //                break;
+                        //            case "R/L Hip/Thigh":
+                        //                page.Graphics.DrawString(515, 880, "X");
+                        //                break;
+                        //            case "R/L Knee":
+                        //                page.Graphics.DrawString(675, 880, "X");
+                        //                break;
 
-                                    case "R/L Ankle/Foot":
-                                        page.Graphics.DrawString(30, 915, "X");
-                                        break;
-                                }
-                            }
-
+                        //            case "R/L Ankle/Foot":
+                        //                page.Graphics.DrawString(30, 915, "X");
+                        //                break;
+                        //        }
+                        //    }
+                        #endregion
                         string city = "City", state = "State", zip = "Zip";
 
                         string[] cityState = app.SettingsData.CityState.Split(',');
@@ -562,18 +563,19 @@ namespace MazikCare.MobEval.Views
                         image = new Siberix.Sparkle.Graphics.Image(await page2.OpenStreamForReadAsync());
                         page.Graphics.DrawImage(image, 1, 1, image.Width, image.Height);
 
-                        page.Graphics.DrawString(120, 130, GetYesNo(app.PatientPhysicalAssessment.HasCurrentPressureSores));
-                        page.Graphics.DrawString(290, 130, GetYesNo(app.PatientPhysicalAssessment.HasHistoryPressureSores));
+                        //page.Graphics.DrawString(120, 130, GetYesNo(app.PatientPhysicalAssessment.HasCurrentPressureSores));
+                        //page.Graphics.DrawString(290, 130, GetYesNo(app.PatientPhysicalAssessment.HasHistoryPressureSores));
                         page.Graphics.DrawString(400, 130, app.PatientPhysicalAssessment.Locations);
                         page.Graphics.DrawString(540, 130, app.PatientPhysicalAssessment.Stage);
-                        page.Graphics.DrawString(740, 130, GetYesNo(app.PatientPhysicalAssessment.CanShiftWeight));
+                        //page.Graphics.DrawString(740, 130, GetYesNo(app.PatientPhysicalAssessment.CanShiftWeight));
 
-                        page.Graphics.DrawString(120, 180, GetYesNo(app.PatientPhysicalAssessment.HasPoorBalance));
-                        page.Graphics.DrawString(290, 180, GetYesNo(app.PatientPhysicalAssessment.HasPoorEndurance));
-                        page.Graphics.DrawString(430, 180, GetYesNo(app.PatientPhysicalAssessment.HasHistoryOfFalls));
-                        page.Graphics.DrawString(570, 180, GetYesNo(app.PatientPhysicalAssessment.HasRiskOfFalls));
-                        page.Graphics.DrawString(740, 180, GetYesNo(app.PatientPhysicalAssessment.HasSignificantEdema));
-
+                        //page.Graphics.DrawString(120, 180, GetYesNo(app.PatientPhysicalAssessment.HasPoorBalance));
+                        //page.Graphics.DrawString(290, 180, GetYesNo(app.PatientPhysicalAssessment.HasPoorEndurance));
+                        //page.Graphics.DrawString(430, 180, GetYesNo(app.PatientPhysicalAssessment.HasHistoryOfFalls));
+                        //page.Graphics.DrawString(570, 180, GetYesNo(app.PatientPhysicalAssessment.HasRiskOfFalls));
+                        //page.Graphics.DrawString(740, 180, GetYesNo(app.PatientPhysicalAssessment.HasSignificantEdema));
+                        page.Graphics.DrawString(20, 380, "Diabetes Mellitus");
+                        page.Graphics.DrawString(280, 380, app.SettingsData.ChiefComplaint);
                         //
 
                         if (diagData.WalkStatus != null)
@@ -703,13 +705,13 @@ namespace MazikCare.MobEval.Views
                         page.Graphics.Flush();
 
                         //page 3
-                        page = document.Pages[2];
+                        //page = document.Pages[2];
 
-                        page.Graphics.Font = font;
-                        page.Graphics.Brush = Siberix.Sparkle.Graphics.Brushes.Black;
+                        //page.Graphics.Font = font;
+                        //page.Graphics.Brush = Siberix.Sparkle.Graphics.Brushes.Black;
 
-                        image = new Siberix.Sparkle.Graphics.Image(await page3.OpenStreamForReadAsync());
-                        page.Graphics.DrawImage(image, 1, 1, image.Width, image.Height);
+                        //image = new Siberix.Sparkle.Graphics.Image(await page3.OpenStreamForReadAsync());
+                        //page.Graphics.DrawImage(image, 1, 1, image.Width, image.Height);
 
                         //page.Graphics.DrawString(82, 206, data.IsFeeding);
                         //if (data.IsFeeding)
@@ -723,53 +725,53 @@ namespace MazikCare.MobEval.Views
                         //if (data.IsToileting)
                         //    page.Graphics.DrawString(481, 285, "X");
 
-                        if (diagData.MradlStatus != null)
-                        {
-                            if (diagData.MradlStatus.Contains("Feeding"))
-                                page.Graphics.DrawString(65, 285, "X");
-                            if (diagData.MradlStatus.Contains("Bathing"))
-                                page.Graphics.DrawString(167, 285, "X");
-                            if (diagData.MradlStatus.Contains("Grooming"))
-                                page.Graphics.DrawString(269, 285, "X");
-                            if (diagData.MradlStatus.Contains("Dressing"))
-                                page.Graphics.DrawString(384, 285, "X");
-                            if (diagData.MradlStatus.Contains("Toileting"))
-                                page.Graphics.DrawString(485, 285, "X");
-                        }
+                        //if (diagData.MradlStatus != null)
+                        //{
+                        //    if (diagData.MradlStatus.Contains("Feeding"))
+                        //        page.Graphics.DrawString(65, 285, "X");
+                        //    if (diagData.MradlStatus.Contains("Bathing"))
+                        //        page.Graphics.DrawString(167, 285, "X");
+                        //    if (diagData.MradlStatus.Contains("Grooming"))
+                        //        page.Graphics.DrawString(269, 285, "X");
+                        //    if (diagData.MradlStatus.Contains("Dressing"))
+                        //        page.Graphics.DrawString(384, 285, "X");
+                        //    if (diagData.MradlStatus.Contains("Toileting"))
+                        //        page.Graphics.DrawString(485, 285, "X");
+                        //}
 
-                        //
+                        ////
 
-                        if (app.PatientHistory.CanCaneWalker)
-                            page.Graphics.DrawString(67, 515, "X");
-                        else
-                            page.Graphics.DrawString(140, 515, "X");
+                        //if (app.PatientHistory.CanCaneWalker)
+                        //    page.Graphics.DrawString(67, 515, "X");
+                        //else
+                        //    page.Graphics.DrawString(140, 515, "X");
 
-                        page.Graphics.DrawString(66, 554, app.PatientHistory.CanCaneWalkerDescription);
+                        //page.Graphics.DrawString(66, 554, app.PatientHistory.CanCaneWalkerDescription);
 
-                        if (app.PatientHistory.CanCaneWalker)
-                            page.Graphics.DrawString(67, 683, "X");
-                        else
-                            page.Graphics.DrawString(140, 683, "X");
+                        //if (app.PatientHistory.CanCaneWalker)
+                        //    page.Graphics.DrawString(67, 683, "X");
+                        //else
+                        //    page.Graphics.DrawString(140, 683, "X");
 
-                        page.Graphics.DrawString(66, 730, app.PatientHistory.CanManualChairDescription);
-                        page.Graphics.DrawString(66, 852, app.PatientHistory.PatientConditionInHome);
+                        //page.Graphics.DrawString(66, 730, app.PatientHistory.CanManualChairDescription);
+                        //page.Graphics.DrawString(66, 852, app.PatientHistory.PatientConditionInHome);
 
 
-                        page.Graphics.Flush();
+                        //page.Graphics.Flush();
 
                         //page 4
-                        page = document.Pages[3];
+                        //page = document.Pages[3];
 
-                        page.Graphics.Font = font;
-                        page.Graphics.Brush = Siberix.Sparkle.Graphics.Brushes.Black;
+                        //page.Graphics.Font = font;
+                        //page.Graphics.Brush = Siberix.Sparkle.Graphics.Brushes.Black;
 
-                        image = new Siberix.Sparkle.Graphics.Image(await page4.OpenStreamForReadAsync());
-                        page.Graphics.DrawImage(image, 1, 1, image.Width, image.Height);
+                        ////image = new Siberix.Sparkle.Graphics.Image(await page4.OpenStreamForReadAsync());
+                        ////page.Graphics.DrawImage(image, 1, 1, image.Width, image.Height);
 
-                        page.Graphics.Flush();
+                        //page.Graphics.Flush();
 
                         //page 5
-                        page = document.Pages[4];
+                        page = document.Pages[2];
 
                         page.Graphics.Font = font;
                         page.Graphics.Brush = Siberix.Sparkle.Graphics.Brushes.Black;

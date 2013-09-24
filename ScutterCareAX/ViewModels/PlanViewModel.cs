@@ -26,8 +26,8 @@ namespace MazikCare.MobEval.ViewModels
 "Patient Education - Diabetes",
 "Diabetes Patient Education - Blood Glucose Monitor",
 "Diabetes Patient Education - Blood Glucose Monitor Home",
-"Patient Education - Home Insulin Administration"
-"Patient Education - Diabetic Foot Care"
+"Patient Education - Home Insulin Administration",
+"Patient Education - Diabetic Foot Care",
 "Inquiry And Counseling: Medication Admin And Compliance",
 "Self-help Group - Weight Watching",
             };

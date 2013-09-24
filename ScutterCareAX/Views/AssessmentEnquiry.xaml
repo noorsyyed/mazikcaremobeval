@@ -8,6 +8,7 @@
     xmlns:common="using:MazikCare.MobEval.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vms="using:MazikCare.MobEval.ViewModels"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -16,177 +17,33 @@
         <x:String x:Key="AppName">My Application</x:String>
     </Page.Resources>
 
-    <!--
-        This grid acts as a root panel for the page that defines two rows:
-        * Row 0 contains the back button and page title
-        * Row 1 contains the rest of the page layout
-    -->
-    <Grid Style="{StaticResource LayoutRootStyle}" Background="Transparent">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
-        <Grid>
+    <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollMode="Disabled" ScrollViewer.HorizontalScrollMode="Enabled" ScrollViewer.ZoomMode="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+        <Grid Style="{StaticResource LayoutRootStyle}" Background="Transparent">
+            <Grid.DataContext>
+                <vms:AssessmentViewModel/>
+            </Grid.DataContext>
             <Grid.ColumnDefinitions>
-                <!--<ColumnDefinition Width="300"/>-->
-                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <Grid Grid.Column="0">
+            <Grid >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-
-                <Button Content="MRADLs" Grid.Row="0" Margin="10 5" Click="MRADL_Click"/>
-
-                <Grid x:Name="grdMRADL" HorizontalAlignment="Stretch" Grid.Row="1" Visibility="Collapsed">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="100"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="400"/>
-                    </Grid.ColumnDefinitions>
-                    <ItemsControl Grid.Row="0" Margin="10 5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding Path=DiagnosisData.MradlStatus}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Grid Width="200" VerticalAlignment="Center">
-                                    <TextBlock Text="{Binding}" HorizontalAlignment="Stretch" Style="{StaticResource GridTextStyle}" Foreground="White" Margin="10,5,0,5"/>
-                                </Grid>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapGrid />
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                    </ItemsControl>
-
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" >
-                        <TextBlock Text="Reason : " Style="{StaticResource TextStyle}" Margin="10 5"/>
-                        <TextBlock TextWrapping="Wrap" Text="{Binding Path=PrescriptionData.MridlReason,Mode=TwoWay}" Style="{StaticResource TextStyle}" Margin="10 0 0 0"/>
-                    </StackPanel>
-                </Grid>
-
-                <Button Content="Current Ambulatory" Grid.Row="2" Margin="10 5" Click="Ambulatory_Click"/>
-
-                <Grid x:Name="grdAmbulatory" HorizontalAlignment="Stretch" Grid.Row="3" Visibility="Collapsed">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="100"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="400"/>
-                    </Grid.ColumnDefinitions>
-                    <ItemsControl Grid.Row="0" Margin="10 5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding Path=DiagnosisData.AmbulatoryStatus}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Grid Width="200" VerticalAlignment="Center">
-                                    <TextBlock Text="{Binding}" HorizontalAlignment="Stretch" Style="{StaticResource GridTextStyle}" Foreground="White" Margin="10,5,0,5"/>
-                                </Grid>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapGrid />
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                    </ItemsControl>
-                    
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" >
-                        <TextBlock Text="Reason : " Style="{StaticResource TextStyle}" Margin="10 5"/>
-                        <TextBlock TextWrapping="Wrap" Text="{Binding Path=PrescriptionData.AmbulatorylReason,Mode=TwoWay}" Style="{StaticResource TextStyle}" Margin="10 0 0 0"/>
-                    </StackPanel>
-                </Grid>
-
-                <Button Content="POV/Scooter" Grid.Row="4" Margin="10 5" Click="POV_Click"/>
-
-                <Grid x:Name="grdPOV" HorizontalAlignment="Stretch" Grid.Row="5" Visibility="Collapsed">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="100"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="400"/>
-                    </Grid.ColumnDefinitions>
-                    <ItemsControl Grid.Row="0" Margin="10 5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding Path=DiagnosisData.AmbulatoryStatus}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Grid Width="200" VerticalAlignment="Center">
-                                    <TextBlock Text="{Binding}" HorizontalAlignment="Stretch" Style="{StaticResource GridTextStyle}" Foreground="White" Margin="10,5,0,5"/>
-                                </Grid>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapGrid />
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                    </ItemsControl>
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" >
-                        <TextBlock Text="Reason : " Style="{StaticResource TextStyle}" Margin="10 5"/>
-                        <TextBlock TextWrapping="Wrap" Text="{Binding Path=PrescriptionData.POVReason,Mode=TwoWay}" Style="{StaticResource TextStyle}" Margin="10 0 0 0"/>
-                    </StackPanel>
-                </Grid>
-
-            </Grid>
-
-            <!--<Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-
-                <TextBlock Grid.Row="0" Text="Current Ambulatory" Margin="5 10" Style="{StaticResource SubheaderTextStyle}"/>
-
-                <CheckBox Grid.Row="1" Content="Cane" Margin="10 0" FontSize="18" IsChecked="{Binding Path=PrescriptionData.IsCane,Mode=TwoWay}"/>
-                <CheckBox Grid.Row="2" Content="Walker" Margin="10 0" FontSize="18" IsChecked="{Binding Path=PrescriptionData.IsWalker,Mode=TwoWay}"/>
-                <CheckBox Grid.Row="3" Content="Manual Wheelchair (MWC)" Margin="10 0" FontSize="18" IsChecked="{Binding Path=PrescriptionData.IsMWC,Mode=TwoWay}"/>
-
-                <TextBlock Grid.Row="6" Text="Reason : " Style="{StaticResource SubheaderTextStyle}" Margin="10 5"/>
-                <TextBox Grid.Row="7" Grid.RowSpan="3" Margin="10 0" AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Text="{Binding Path=PrescriptionData.AmbulatorylReason,Mode=TwoWay}"/>
-
+                <TextBlock Text="Assessment" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
+                <GridView ItemsSource="{Binding AssessmentList}" Grid.Row="1" SelectionMode="Multiple">
+                    <GridView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Background="#30FFFFFF" Height="50" Width="350" VerticalAlignment="Center">
+                                <TextBlock Grid.Column="0" Text="{Binding}" Margin="10 10" Style="{StaticResource GridTextStyle}" Foreground="White"/>
+                            </Grid>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                </GridView>
             </Grid>
-
-            <Grid Grid.Column="2">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-
-                <TextBlock Grid.Row="0" Text="POV/Scooter" Style="{StaticResource SubheaderTextStyle}" Margin="5 10"/>
-
-                <CheckBox Grid.Row="1" Content="Joystick" Margin="10 0" FontSize="18" IsChecked="{Binding Path=PrescriptionData.IsJoystick,Mode=TwoWay}"/>
-                <CheckBox Grid.Row="2" Content="Elevating leg rests" Margin="10 0" FontSize="18" IsChecked="{Binding Path=PrescriptionData.IsElevating,Mode=TwoWay}"/>
-                <CheckBox Grid.Row="3" Content="Fully reclining back" Margin="10 0" FontSize="18" IsChecked="{Binding Path=PrescriptionData.IsFully,Mode=TwoWay}"/>
-                <CheckBox Grid.Row="4" Content="Speacial seat cushion" Margin="10 0" FontSize="18" IsChecked="{Binding Path=PrescriptionData.IsSpeacial,Mode=TwoWay}"/>
-
-            </Grid>-->
-
         </Grid>
+    </ScrollViewer>
 
         <VisualStateManager.VisualStateGroups>
 
@@ -217,5 +74,4 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-    </Grid>
 </common:LayoutAwarePage>
