@@ -149,10 +149,10 @@ namespace MazikCare.MobEval
                 }
 
 
-                this.lblPatient2.Text = prosp[2].parmName;
+                //this.lblPatient2.Text = prosp[2].parmName;
                 try
                 {
-                    this.imgPatient2.Source = await srv.GetPatientImage(prosp[2].parmRecId);
+                    //this.imgPatient2.Source = await srv.GetPatientImage(prosp[2].parmRecId);
                 }
                 catch (Exception)
                 {
