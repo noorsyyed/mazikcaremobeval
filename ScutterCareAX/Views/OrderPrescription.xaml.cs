@@ -46,28 +46,22 @@ namespace MazikCare.MobEval.Views
                 },
                 new OrderItem()
                 {
-                    Image="../Assets/image1.png",
-                     Name="Spitfire EX 1420 Travel Scooter Freedom Package",
+                    Image="../Assets/diabetes02.jpg",
+                     Name="Glucophage XR 500mg",
                      Id="000142_202"
                 },
                 new OrderItem()
                 {
-                    Image="../Assets/image1.png",
-                     Name="Pride Mobility Go-Go Ultra X 4-Wheel Travel Scooter",
+                    Image="../Assets/diabetes06.jpg",
+                     Name="Glucometer",
                      Id="000155_202"
                 },
                 new OrderItem()
                 {
-                    Image="../Assets/image1.png",
-                     Name="ActiveCare Prowler 3310 Scooter 3-Wheel",
+                    Image="../Assets/pod_tubeless02.jpg",
+                     Name="OmniPod Insulin Pump",
                      Id="000161_202"
                 },
-                new OrderItem()
-                {
-                    Image="../Assets/image1.png",
-                     Name="EV Rider Royale 4 Wheel Scooter",
-                     Id="000162_202"
-                },                
             };
 
             this.DefaultViewModel["DiagnosisDatas"] = new ObservableCollection<string>() 

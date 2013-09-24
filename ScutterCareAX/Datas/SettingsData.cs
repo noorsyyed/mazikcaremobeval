@@ -339,6 +339,19 @@ namespace MazikCare.MobEval.Datas
             }
         }
 
+        private string _secondaryPatient;
+        public string SecondaryPatient
+        {
+            get
+            {
+                return this._secondaryPatient;
+            }
+            set
+            {
+                this.SetProperty(ref this._secondaryPatient, value, "Weight");
+            }
+        }
+
         public static SettingsData LoadDefault()
         {
             return new SettingsData()
@@ -356,7 +369,7 @@ namespace MazikCare.MobEval.Datas
                 PrimaryCarePhysician = "Dr.Alex Brown",
                 OrthopedicsSpecialist = "Dr.David Tapang",
                 AttendingNurse = "Nancy Young",
-
+                SecondaryPatient="Rita Keeter",
                 Tile2Title = "Sales Quote-Confirmation",
                 Tile2Content = "Iansoprazole 15 mg tablets – take 1 tablet once a day",
                 HeightInFeet = "5",
