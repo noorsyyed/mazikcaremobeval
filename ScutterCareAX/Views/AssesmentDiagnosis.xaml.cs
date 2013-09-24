@@ -38,12 +38,7 @@ namespace MazikCare.MobEval.Views
         /// session.  This will be null the first time a page is visited.</param>
         protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
-            if (((DiagnosisData)this.DefaultViewModel["DiagnosisData"]).MedicalCondition == null)
-                this.grdMedicalCondition.Height = 0;
-            if (((DiagnosisData)this.DefaultViewModel["DiagnosisData"]).Symptoms == null)
-                this.grdSymptoms.Height = 0;
-            if (((DiagnosisData)this.DefaultViewModel["DiagnosisData"]).PainLocation == null)
-                this.grdPainLocation.Height = 0;
+           
         }
 
         /// <summary>
@@ -56,19 +51,6 @@ namespace MazikCare.MobEval.Views
         {
         }
 
-        private void Medical_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(MedicalConditons));
-        }
-
-        private void Symptoms_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Symptoms));
-        }
-
-        private void PainLocation_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(PainLocation));
-        }
+       
     }
 }
