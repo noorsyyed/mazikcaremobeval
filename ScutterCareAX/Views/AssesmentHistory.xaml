@@ -8,6 +8,7 @@
     xmlns:common="using:MazikCare.MobEval.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vms="using:MazikCare.MobEval.ViewModels"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -18,165 +19,70 @@
         <common:RBValueConverter x:Key="ValueConverter"/>
     </Page.Resources>
 
-    <Grid Style="{StaticResource LayoutRootStyle}" Background="Transparent">
-        <Grid>
+    <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollMode="Disabled" ScrollViewer.HorizontalScrollMode="Enabled" ScrollViewer.ZoomMode="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+        <Grid Style="{StaticResource LayoutRootStyle}" Background="Transparent">
+            <Grid.DataContext>
+                <vms:HistoryViewModel/>
+            </Grid.DataContext>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="830"/>
-                <ColumnDefinition Width="650"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+
             </Grid.ColumnDefinitions>
 
-            <Grid Grid.Column="0">
+            <Grid >
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
+                <TextBlock Text="Past Medical History" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
+                <GridView ItemsSource="{Binding PastMedicalHistoryList}" Grid.Row="1" SelectionMode="Multiple">
+                    <GridView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Background="#30FFFFFF" Height="50" Width="280" VerticalAlignment="Center">
+                                <TextBlock Grid.Column="0" Text="{Binding}" Margin="10 10" Style="{StaticResource GridTextStyle}" Foreground="White"/>
+                            </Grid>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                </GridView>
 
-                <TextBlock Text="Functional Ambulatory Limitations" Grid.Row="0" Margin="5 10" Style="{StaticResource SubheaderTextStyle}"/>
-
-                <Grid Grid.Row="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="100"/>
-                        <RowDefinition Height="40"/>
-                        <RowDefinition Height="40"/>
-                        <RowDefinition Height="40"/>
-                        <RowDefinition Height="40"/>
-                        <RowDefinition Height="40"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="280"/>
-                        <ColumnDefinition Width="100"/>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition Width="150"/>
-                    </Grid.ColumnDefinitions>
-
-                    <Button Content="Gait/Walk Pattern" Margin="5 10" FontSize="18" VerticalAlignment="Center" Click="Walk_Click"/>
-
-                    <!-- Visibility="Collapsed"-->
-                    <Grid x:Name="grdWalk" HorizontalAlignment="Stretch"  Grid.Column="1" Grid.ColumnSpan="3">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="100"/>
-                        </Grid.RowDefinitions>
-                        <ItemsControl Grid.Row="0" Margin="10 5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding Path=DiagnosisData.WalkStatus}">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <Grid Width="90" VerticalAlignment="Center">
-                                        <TextBlock Text="{Binding}" HorizontalAlignment="Stretch" Style="{StaticResource GridTextStyle}" Foreground="White" Margin="10,5,0,5"/>
-                                    </Grid>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                            <ItemsControl.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <WrapGrid />
-                                </ItemsPanelTemplate>
-                            </ItemsControl.ItemsPanel>
-                        </ItemsControl>
-                    </Grid>
-
-                    <!--Row 1-->
-                    <TextBlock Text="Limitation" Grid.Row="1"  Margin="5 10" FontSize="18"/>
-                    <TextBlock Text="Onset" Grid.Row="1" Grid.Column="1"  Margin="5 10" FontSize="18" HorizontalAlignment="Center"/>
-                    <TextBlock Text="Description" Grid.Row="1" Grid.Column="2"  Margin="5 10" FontSize="18" HorizontalAlignment="Center"/>
-                    <TextBlock Text="Diagnosis" Grid.Row="1" Grid.Column="3"  Margin="5 10" FontSize="18" HorizontalAlignment="Center"/>
-
-                    <!--row 2-->
-                    <TextBlock Style="{StaticResource AddressTextStyle}" Text="Balance/History or Risk of Falls" Grid.Row="2"  Margin="10 5"/>
-                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=PatientHistory.RiskOfFallsOnSet, Mode=TwoWay}" Margin="10 5"/>
-                    <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=PatientHistory.RiskOfFallsDescription, Mode=TwoWay}" Margin="10 5"/>
-                    <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding Path=PatientHistory.RiskOfFallsDiagnosis, Mode=TwoWay}" Margin="10 5"/>
-
-                    <!--row 3-->
-                    <TextBlock Style="{StaticResource AddressTextStyle}" Text="Fatigue/Weakness" Grid.Row="3"  Margin="10 5"/>
-                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=PatientHistory.WeaknessOnSet, Mode=TwoWay}" Margin="10 5"/>
-                    <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding Path=PatientHistory.WeaknessDescription, Mode=TwoWay}" Margin="10 5"/>
-                    <TextBox Grid.Row="3" Grid.Column="3" Text="{Binding Path=PatientHistory.WeaknessDiagnosis, Mode=TwoWay}" Margin="10 5"/>
-
-                    <!--row 4-->
-                    <TextBlock Style="{StaticResource AddressTextStyle}" Text="Inability to Ambulate" Grid.Row="4"  Margin="10 5"/>
-                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=PatientHistory.InabiliyToAmbulateOnSet, Mode=TwoWay}" Margin="10 5"/>
-                    <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding Path=PatientHistory.InabiliyToAmbulateDescription, Mode=TwoWay}" Margin="10 5"/>
-                    <TextBox Grid.Row="4" Grid.Column="3" Text="{Binding Path=PatientHistory.InabiliyToAmbulateDiagnosis, Mode=TwoWay}" Margin="10 5"/>
-
-                    <!--row 5-->
-                    <TextBlock Style="{StaticResource AddressTextStyle}" Text="Other" Grid.Row="5"  Margin="10 5"/>
-                    <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=PatientHistory.OtherOnSet, Mode=TwoWay}" Margin="10 5"/>
-                    <TextBox Grid.Row="5" Grid.Column="2" Text="{Binding Path=PatientHistory.OtherDescription, Mode=TwoWay}" Margin="10 5"/>
-                    <TextBox Grid.Row="5" Grid.Column="3" Text="{Binding Path=PatientHistory.OtherDiagnosis, Mode=TwoWay}" Margin="10 5"/>
-                </Grid>
             </Grid>
 
-            <Grid Grid.Column="1">
+            <Grid Grid.Column="1" Margin="10 0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
+                <TextBlock Text="Social History" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
+                <GridView ItemsSource="{Binding SocialHistoryList}" Grid.Row="1" SelectionMode="Multiple">
+                    <GridView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Background="#30FFFFFF" Height="50" Width="280" VerticalAlignment="Center">
+                                <TextBlock Grid.Column="0" Text="{Binding}" Margin="10 10" Style="{StaticResource GridTextStyle}" Foreground="White"/>
+                            </Grid>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                </GridView>
+            </Grid>
 
-                <TextBlock Grid.Row="0" Text="Physical Limitations" Margin="5 10" Style="{StaticResource SubheaderTextStyle}"/>
-
-                <Grid Grid.Row="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="250"/>
-                        <ColumnDefinition Width="60"/>
-                        <ColumnDefinition Width="100"/>
-                        <ColumnDefinition Width="80"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-
-                    <TextBlock Style="{StaticResource AddressTextStyle}" Text="Mild" Grid.Column="1" HorizontalAlignment="Center" Margin="5"/>
-                    <TextBlock Style="{StaticResource AddressTextStyle}" Text="Moderate" Grid.Column="2" HorizontalAlignment="Center" Margin="5"/>
-                    <TextBlock Style="{StaticResource AddressTextStyle}" Text="Severe" Margin="5" Grid.Column="3" HorizontalAlignment="Center"/>
-                    <TextBlock Style="{StaticResource AddressTextStyle}" Text="Note" Margin="5" Grid.Column="4" HorizontalAlignment="Center"/>
-
-                    <TextBlock Style="{StaticResource AddressTextStyle}" Text="Upper Body Weakness" Margin="5 10" Grid.Row="1"/>
-                    <!--IsChecked="{Binding Path=ModelPatientHistory.UpperBodyWeaknessType, Mode=TwoWay, Converter={StaticResource ValueConverter}, ConverterParameter=LF}"-->
-                    <RadioButton Margin="5 10" FontSize="18" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" GroupName="g1" IsChecked="{Binding Path=PatientHistory.UpperBodyWeaknessType, Mode=TwoWay, Converter={StaticResource ValueConverter}, ConverterParameter=Mild}"/>
-                    <RadioButton Margin="5 10" FontSize="18" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" GroupName="g1" IsChecked="{Binding Path=PatientHistory.UpperBodyWeaknessType, Mode=TwoWay, Converter={StaticResource ValueConverter}, ConverterParameter=Moderate}"/>
-                    <RadioButton Margin="5 10" FontSize="18" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center" GroupName="g1" IsChecked="{Binding Path=PatientHistory.UpperBodyWeaknessType, Mode=TwoWay, Converter={StaticResource ValueConverter}, ConverterParameter=Severe}"/>
-                    <TextBox Margin="5 10" Grid.Column="4" Grid.Row="1" Text="{Binding Path=PatientHistory.UpperBodyWeaknessDescription, Mode=TwoWay}"/>
-
-                    <TextBlock Style="{StaticResource AddressTextStyle}" Text="Upper Body Pain" Margin="5 10" Grid.Row="2"/>
-                    <RadioButton Margin="5 10" FontSize="18" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" GroupName="g2" IsChecked="{Binding Path=PatientHistory.UpperBodyPainType, Mode=TwoWay, Converter={StaticResource ValueConverter}, ConverterParameter=Mild}"/>
-                    <RadioButton Margin="5 10" FontSize="18" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" GroupName="g2" IsChecked="{Binding Path=PatientHistory.UpperBodyPainType, Mode=TwoWay, Converter={StaticResource ValueConverter}, ConverterParameter=Moderate}"/>
-                    <RadioButton Margin="5 10" FontSize="18" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Center" GroupName="g2" IsChecked="{Binding Path=PatientHistory.UpperBodyPainType, Mode=TwoWay, Converter={StaticResource ValueConverter}, ConverterParameter=Severe}"/>
-                    <TextBox Margin="5 10" Grid.Column="4" Grid.Row="2" Text="{Binding Path=PatientHistory.UpperBodyPainDescription, Mode=TwoWay}"/>
-
-                    <TextBlock Style="{StaticResource AddressTextStyle}" Text="Upper Body Range of Motion" Margin="5 10" Grid.Row="3"/>
-                    <RadioButton Margin="5 10" FontSize="18" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" GroupName="g3" IsChecked="{Binding Path=PatientHistory.UpperBodyRangeOfMotionType, Mode=TwoWay, Converter={StaticResource ValueConverter}, ConverterParameter=Mild}"/>
-                    <RadioButton Margin="5 10" FontSize="18" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" GroupName="g3" IsChecked="{Binding Path=PatientHistory.UpperBodyRangeOfMotionType, Mode=TwoWay, Converter={StaticResource ValueConverter}, ConverterParameter=Moderate}"/>
-                    <RadioButton Margin="5 10" FontSize="18" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center" GroupName="g3" IsChecked="{Binding Path=PatientHistory.UpperBodyRangeOfMotionType, Mode=TwoWay, Converter={StaticResource ValueConverter}, ConverterParameter=Severe}"/>
-                    <TextBox Margin="5 10" Grid.Column="4" Grid.Row="3" Text="{Binding Path=PatientHistory.UpperBodyRangeOfMotionDescription, Mode=TwoWay}"/>
-
-                    <TextBlock Style="{StaticResource AddressTextStyle}" Text="Lower Body Weakness" Margin="5 10" Grid.Row="4"/>
-                    <RadioButton Margin="5 10" FontSize="18" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" GroupName="g4" IsChecked="{Binding Path=PatientHistory.LowerBodyWeaknessType, Mode=TwoWay, Converter={StaticResource ValueConverter}, ConverterParameter=Mild}"/>
-                    <RadioButton Margin="5 10" FontSize="18" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center" GroupName="g4" IsChecked="{Binding Path=PatientHistory.LowerBodyWeaknessType, Mode=TwoWay, Converter={StaticResource ValueConverter}, ConverterParameter=Moderate}"/>
-                    <RadioButton Margin="5 10" FontSize="18" Grid.Column="3" Grid.Row="4" HorizontalAlignment="Center" GroupName="g4" IsChecked="{Binding Path=PatientHistory.LowerBodyWeaknessType, Mode=TwoWay, Converter={StaticResource ValueConverter}, ConverterParameter=Severe}"/>
-                    <TextBox Margin="5 10" Grid.Column="4" Grid.Row="4" Text="{Binding Path=PatientHistory.LowerBodyWeaknessDescription, Mode=TwoWay}"/>
-
-                    <TextBlock Style="{StaticResource AddressTextStyle}" Text="Lower Body Pain" Margin="5 10" Grid.Row="5"/>
-                    <RadioButton Margin="5 10" FontSize="18" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" GroupName="g5" IsChecked="{Binding Path=PatientHistory.LowerBodyPainType, Mode=TwoWay, Converter={StaticResource ValueConverter}, ConverterParameter=Mild}"/>
-                    <RadioButton Margin="5 10" FontSize="18" Grid.Column="2" Grid.Row="5" HorizontalAlignment="Center" GroupName="g5" IsChecked="{Binding Path=PatientHistory.LowerBodyPainType, Mode=TwoWay, Converter={StaticResource ValueConverter}, ConverterParameter=Moderate}"/>
-                    <RadioButton Margin="5 10" FontSize="18" Grid.Column="3" Grid.Row="5" HorizontalAlignment="Center" GroupName="g5" IsChecked="{Binding Path=PatientHistory.LowerBodyPainType, Mode=TwoWay, Converter={StaticResource ValueConverter}, ConverterParameter=Severe}"/>
-                    <TextBox Margin="5 10" Grid.Column="4" Grid.Row="5" Text="{Binding Path=PatientHistory.LowerBodyPainDescription, Mode=TwoWay}"/>
-
-                    <TextBlock Style="{StaticResource AddressTextStyle}" Text="Lower Body Range of Motion" Margin="5 10" Grid.Row="6"/>
-                    <RadioButton Margin="5 10" FontSize="18" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Center" GroupName="g6" IsChecked="{Binding Path=PatientHistory.LowerBodyRangeOfMotionType, Mode=TwoWay, Converter={StaticResource ValueConverter}, ConverterParameter=Mild}"/>
-                    <RadioButton Margin="5 10" FontSize="18" Grid.Column="2" Grid.Row="6" HorizontalAlignment="Center" GroupName="g6" IsChecked="{Binding Path=PatientHistory.LowerBodyRangeOfMotionType, Mode=TwoWay, Converter={StaticResource ValueConverter}, ConverterParameter=Moderate}"/>
-                    <RadioButton Margin="5 10" FontSize="18" Grid.Column="3" Grid.Row="6" HorizontalAlignment="Center" GroupName="g6" IsChecked="{Binding Path=PatientHistory.LowerBodyRangeOfMotionType, Mode=TwoWay, Converter={StaticResource ValueConverter}, ConverterParameter=Severe}"/>
-                    <TextBox Margin="5 10" Grid.Column="4" Grid.Row="6" Text="{Binding Path=PatientHistory.LowerBodyRangeOfMotionDescription, Mode=TwoWay}"/>
-                </Grid>
+            <Grid Grid.Column="2" Margin="10 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="History of Endocrine Disorder" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
+                <GridView ItemsSource="{Binding EndocrineDisorderList}" Grid.Row="1" SelectionMode="Multiple">
+                    <GridView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Background="#30FFFFFF" Height="50" Width="280" VerticalAlignment="Center">
+                                <TextBlock Grid.Column="0" Text="{Binding}" Margin="10 10" Style="{StaticResource GridTextStyle}" Foreground="White"/>
+                            </Grid>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                </GridView>
             </Grid>
         </Grid>
+    </ScrollViewer>
 
-    </Grid>
 </common:LayoutAwarePage>
