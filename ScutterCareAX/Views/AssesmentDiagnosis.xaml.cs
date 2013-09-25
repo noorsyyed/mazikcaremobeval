@@ -1,6 +1,7 @@
 ﻿using MazikCare.MobEval.Datas;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using Windows.Foundation;
@@ -49,6 +50,57 @@ namespace MazikCare.MobEval.Views
         /// <param name="pageState">An empty dictionary to be populated with serializable state.</param>
         protected override void SaveState(Dictionary<String, Object> pageState)
         {
+        }
+
+        private void gvGenitourinary_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var app = (App)Application.Current;
+            if (app.GenitourinarySymptomsList == null)
+            {
+                app.GenitourinarySymptomsList = new ObservableCollection<string>();
+            }
+            else
+            {
+                app.GenitourinarySymptomsList.Clear();
+            }
+            foreach (string item in this.gvGenitourinary.SelectedItems)
+            {
+                app.GenitourinarySymptomsList.Add(item);
+            }
+        }
+
+        private void gvEndocrineSymptoms_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var app = (App)Application.Current;
+            if (app.EndocrineSymptomsList == null)
+            {
+                app.EndocrineSymptomsList = new ObservableCollection<string>();
+            }
+            else
+            {
+                app.EndocrineSymptomsList.Clear();
+            }
+            foreach (string item in this.gvEndocrineSymptoms.SelectedItems)
+            {
+                app.EndocrineSymptomsList.Add(item);
+            }
+        }
+
+        private void gvNeurologicalSymptom_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var app = (App)Application.Current;
+            if (app.NeurologicalSymptomList == null)
+            {
+                app.NeurologicalSymptomList = new ObservableCollection<string>();
+            }
+            else
+            {
+                app.NeurologicalSymptomList.Clear();
+            }
+            foreach (string item in this.gvNeurologicalSymptom.SelectedItems)
+            {
+                app.NeurologicalSymptomList.Add(item);
+            }
         }
 
        

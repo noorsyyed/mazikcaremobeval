@@ -38,7 +38,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Genitourinary Symptoms" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
-                <GridView ItemsSource="{Binding GenitourinarySymptomList}" Grid.Row="1" SelectionMode="Multiple">
+                <GridView ItemsSource="{Binding GenitourinarySymptomList}" Grid.Row="1" SelectionMode="Multiple" Name="gvGenitourinary" Tapped="gvGenitourinary_Tapped">
                     <GridView.ItemTemplate>
                         <DataTemplate>
                             <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">
@@ -55,7 +55,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Endocrine Symptoms" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
-                <GridView ItemsSource="{Binding EndocrineSymptomList}" Grid.Row="1" SelectionMode="Multiple">
+                <GridView ItemsSource="{Binding EndocrineSymptomList}" Grid.Row="1" SelectionMode="Multiple" Name="gvEndocrineSymptoms" Tapped="gvEndocrineSymptoms_Tapped">
                     <GridView.ItemTemplate>
                         <DataTemplate>
                             <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">
@@ -72,7 +72,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Neurological Symptoms" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
-                <GridView ItemsSource="{Binding NeurologicalSymptomList}" Grid.Row="1" SelectionMode="Multiple">
+                <GridView ItemsSource="{Binding NeurologicalSymptomList}" Grid.Row="1" SelectionMode="Multiple" Name="gvNeurologicalSymptom" Tapped="gvNeurologicalSymptom_Tapped">
                     <GridView.ItemTemplate>
                         <DataTemplate>
                             <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">

@@ -504,6 +504,30 @@ namespace MazikCare.MobEval.Views
                         //        }
                         //    }
                         #endregion
+
+                        if (app.GenitourinarySymptomsList != null)
+                        {
+                            if (app.GenitourinarySymptomsList.Contains("Urinary frequency increased"))
+                                page.Graphics.DrawString(515, 500, "X");
+                            if (app.GenitourinarySymptomsList.Contains("Frequent, small amounts of urine"))
+                                page.Graphics.DrawString(675, 500, "X");
+                            if (app.GenitourinarySymptomsList.Contains("Frequent, full-bladder emptying (polyuria)"))
+                                page.Graphics.DrawString(33, 827, "X");
+                            if (app.GenitourinarySymptomsList.Contains("Urinary frequency more than twice at night (nocturia)"))
+                                page.Graphics.DrawString(183, 827, "X");
+                            if (app.GenitourinarySymptomsList.Contains("Vaginal itching or burning"))
+                                page.Graphics.DrawString(32, 555, "X");
+                            //if (app.GenitourinarySymptomsList.Contains("Date of last menstruation"))
+                            //    page.Graphics.DrawString(218, 468, "X");
+                            //if (app.GenitourinarySymptomsList.Contains("Menses abnormal"))
+                            //    page.Graphics.DrawString(218, 468, "X");
+                            //if (app.GenitourinarySymptomsList.Contains("Missed the most recent menstrual period"))
+                            //    page.Graphics.DrawString(218, 468, "X");
+                            //if (app.GenitourinarySymptomsList.Contains("Missed the most recent period and preceding period(s)"))
+                            //    page.Graphics.DrawString(218, 468, "X");
+                            //if (app.GenitourinarySymptomsList.Contains("Patient thinks she may be pregnant"))
+                            //    page.Graphics.DrawString(218, 468, "X");
+                        }
                         string city = "City", state = "State", zip = "Zip";
 
                         string[] cityState = app.SettingsData.CityState.Split(',');
@@ -577,23 +601,24 @@ namespace MazikCare.MobEval.Views
                         page.Graphics.DrawString(20, 380, "Diabetes Mellitus");
                         page.Graphics.DrawString(280, 380, app.SettingsData.ChiefComplaint);
                         //
+                        
 
-                        if (diagData.WalkStatus != null)
-                        {
-                            if (diagData.WalkStatus.Contains("Normal"))
-                                page.Graphics.DrawString(218, 468, "X");
-                            if (diagData.WalkStatus.Contains("Ataxic"))
-                                page.Graphics.DrawString(444, 468, "X");
-                            if (diagData.WalkStatus.Contains("Shuﬄing"))
-                                page.Graphics.DrawString(653, 468, "X");
+                        //if (diagData.WalkStatus != null)
+                        //{
+                        //    if (diagData.WalkStatus.Contains("Normal"))
+                        //        page.Graphics.DrawString(218, 468, "X");
+                        //    if (diagData.WalkStatus.Contains("Ataxic"))
+                        //        page.Graphics.DrawString(444, 468, "X");
+                        //    if (diagData.WalkStatus.Contains("Shuﬄing"))
+                        //        page.Graphics.DrawString(653, 468, "X");
 
-                            if (diagData.WalkStatus.Contains("Mod. Assist"))
-                                page.Graphics.DrawString(218, 490, "X");
-                            if (diagData.WalkStatus.Contains("Max. Assist"))
-                                page.Graphics.DrawString(444, 490, "X");
-                            if (diagData.WalkStatus.Contains("Non-Ambulatory"))
-                                page.Graphics.DrawString(653, 490, "X");
-                        }
+                        //    if (diagData.WalkStatus.Contains("Mod. Assist"))
+                        //        page.Graphics.DrawString(218, 490, "X");
+                        //    if (diagData.WalkStatus.Contains("Max. Assist"))
+                        //        page.Graphics.DrawString(444, 490, "X");
+                        //    if (diagData.WalkStatus.Contains("Non-Ambulatory"))
+                        //        page.Graphics.DrawString(653, 490, "X");
+                        //}
 
                         page.Graphics.DrawString(210, 543, app.PatientHistory.RiskOfFallsOnSet);
                         page.Graphics.DrawString(305, 543, app.PatientHistory.RiskOfFallsDescription);

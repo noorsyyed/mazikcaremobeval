@@ -1,5 +1,6 @@
 ﻿using MazikCare.MobEval.Datas;
 using System;
+using System.Collections.ObjectModel;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
@@ -170,6 +171,10 @@ namespace MazikCare.MobEval
             get;
             set;
         }
+
+        public ObservableCollection<string> GenitourinarySymptomsList { get; set; }
+        public ObservableCollection<string> EndocrineSymptomsList { get; set; }
+        public ObservableCollection<string> NeurologicalSymptomList { get; set; }
 
         public Patient Patient
         {
