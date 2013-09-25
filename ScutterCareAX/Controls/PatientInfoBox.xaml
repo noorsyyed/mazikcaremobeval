@@ -23,7 +23,7 @@
 
         <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0" Margin="50 0 20 0">
             <Image x:Name="imgPatient" Source="../Assets/profile2.png" Height="150" Width="150" HorizontalAlignment="Left"/>
-            <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0" Margin="50 0 20 10">
+            <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0" Margin="30 0 20 10">
                 <TextBlock Text="{Binding Path=Patient.Name}" Style="{StaticResource SubheaderTextStyle}"/>
                 <TextBlock Text="{Binding Path=Patient.DOB}" Style="{StaticResource MediumTextStyle}"/>
                 <TextBlock Text="{Binding Path=Patient.Gender}" Style="{StaticResource MediumTextStyle}"/>

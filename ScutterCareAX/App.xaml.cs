@@ -203,7 +203,7 @@ namespace MazikCare.MobEval
                         return new Patient()
                         {
                             Name = "Bruce Caine",
-                            Address = "2604 East  Dempster St",
+                            Address = "2604 Dempster St",
                             City = "Park Ridge IL 60016.",
                             PhoneNumber = "Tel : 1 312 345 6789",
                             DOB = "78 Years",
@@ -217,7 +217,7 @@ namespace MazikCare.MobEval
                     return new Patient()
                     {
                         Name = "Bruce Caine",
-                        Address = "2604 East  Dempster St",
+                        Address = "2604 Dempster St",
                         City = "Park Ridge IL 60016.",
                         PhoneNumber = "Tel : 1 312 345 6789",
                         DOB = "78 Years",
