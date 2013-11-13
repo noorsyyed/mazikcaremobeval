@@ -37,7 +37,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Past Medical History" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
-                <GridView ItemsSource="{Binding PastMedicalHistoryList}" Grid.Row="1" SelectionMode="Multiple">
+                <GridView ItemsSource="{Binding PastMedicalHistoryList}" Grid.Row="1" SelectionMode="Multiple" Tapped="DGPastMedHist_Tapped" x:Name="DGPastMedHist">
                     <GridView.ItemTemplate>
                         <DataTemplate>
                             <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">
@@ -55,7 +55,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Social History" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
-                <GridView ItemsSource="{Binding SocialHistoryList}" Grid.Row="1" SelectionMode="Multiple">
+                <GridView ItemsSource="{Binding SocialHistoryList}" Grid.Row="1" SelectionMode="Multiple" x:Name="DGSocialHist" Tapped="DGSocialHist_Tapped">
                     <GridView.ItemTemplate>
                         <DataTemplate>
                             <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">
@@ -72,7 +72,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="History of Endocrine Disorder" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
-                <GridView ItemsSource="{Binding EndocrineDisorderList}" Grid.Row="1" SelectionMode="Multiple">
+                <GridView ItemsSource="{Binding EndocrineDisorderList}" Grid.Row="1" SelectionMode="Multiple" x:Name="DGEndocrineDisorder" Tapped="DGEndocrineDisorder_Tapped">
                     <GridView.ItemTemplate>
                         <DataTemplate>
                             <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">

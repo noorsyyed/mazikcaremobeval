@@ -18,6 +18,7 @@ using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
+using System.Linq;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -505,29 +506,71 @@ namespace MazikCare.MobEval.Views
                         //    }
                         #endregion
 
-                        if (app.GenitourinarySymptomsList != null)
-                        {
-                            if (app.GenitourinarySymptomsList.Contains("Urinary frequency increased"))
-                                page.Graphics.DrawString(515, 500, "X");
-                            if (app.GenitourinarySymptomsList.Contains("Frequent, small amounts of urine"))
-                                page.Graphics.DrawString(675, 500, "X");
-                            if (app.GenitourinarySymptomsList.Contains("Frequent, full-bladder emptying (polyuria)"))
-                                page.Graphics.DrawString(33, 827, "X");
-                            if (app.GenitourinarySymptomsList.Contains("Urinary frequency more than twice at night (nocturia)"))
-                                page.Graphics.DrawString(183, 827, "X");
-                            if (app.GenitourinarySymptomsList.Contains("Vaginal itching or burning"))
-                                page.Graphics.DrawString(32, 555, "X");
-                            //if (app.GenitourinarySymptomsList.Contains("Date of last menstruation"))
-                            //    page.Graphics.DrawString(218, 468, "X");
-                            //if (app.GenitourinarySymptomsList.Contains("Menses abnormal"))
-                            //    page.Graphics.DrawString(218, 468, "X");
-                            //if (app.GenitourinarySymptomsList.Contains("Missed the most recent menstrual period"))
-                            //    page.Graphics.DrawString(218, 468, "X");
-                            //if (app.GenitourinarySymptomsList.Contains("Missed the most recent period and preceding period(s)"))
-                            //    page.Graphics.DrawString(218, 468, "X");
-                            //if (app.GenitourinarySymptomsList.Contains("Patient thinks she may be pregnant"))
-                            //    page.Graphics.DrawString(218, 468, "X");
-                        }
+
+                        page.Graphics.DrawString(29, 453, "Genitourinary Symptoms");
+                        int sympYCoordinate = 453;
+                        int sympXCoordinate = 40;
+                        page.Graphics.Font = font1;
+                        FillSymptomsSection(app.GenitourinarySymptomsList, page, ref sympYCoordinate, ref sympXCoordinate);
+
+                        page.Graphics.Font = font;
+                        sympYCoordinate += 20;
+                        page.Graphics.DrawString(29, sympYCoordinate, "Endocrine Symptoms");
+                        page.Graphics.Font = font1;
+                        FillSymptomsSection(app.EndocrineSymptomsList, page, ref sympYCoordinate, ref sympXCoordinate);
+
+                        page.Graphics.Font = font;
+                        sympYCoordinate += 20;
+                        page.Graphics.DrawString(29, sympYCoordinate, "Skin Symptoms");
+                        page.Graphics.Font = font1;
+                        FillSymptomsSection(app.SkinSymptomList, page, ref sympYCoordinate, ref sympXCoordinate);
+
+                        sympXCoordinate = 440;
+                        sympYCoordinate = 453;
+                        page.Graphics.Font = font;                        
+                        page.Graphics.DrawString(430, sympYCoordinate, "Neurological Symptoms");
+                        sympYCoordinate += 20;
+                        page.Graphics.Font = font1;
+                        FillSymptomsSection(app.NeurologicalSymptomList, page, ref sympYCoordinate, ref sympXCoordinate);
+                                                
+                        page.Graphics.Font = font;
+                        sympYCoordinate += 20;
+                        page.Graphics.DrawString(430, sympYCoordinate, "Gastrointestinal Symptoms");
+                        page.Graphics.Font = font1;
+                        FillSymptomsSection(app.GastroIntestinalSymptomList, page, ref sympYCoordinate, ref sympXCoordinate);
+
+                        page.Graphics.Font = font;
+                        sympYCoordinate += 20;
+                        page.Graphics.DrawString(430, sympYCoordinate, "Systemic Symptoms");
+                        page.Graphics.Font = font1;
+                        FillSymptomsSection(app.SystemicSymptomList, page, ref sympYCoordinate, ref sympXCoordinate);
+
+                        page.Graphics.Font = font;
+                        sympYCoordinate += 20;
+                        page.Graphics.DrawString(430, sympYCoordinate, "Eye Symptoms");
+                        page.Graphics.Font = font1;
+                        FillSymptomsSection(app.EyeSymptomList, page, ref sympYCoordinate, ref sympXCoordinate);
+
+                        page.Graphics.Font = font;
+                        sympYCoordinate += 20;
+                        page.Graphics.DrawString(430, sympYCoordinate, "Cardiovascular Symptoms");
+                        page.Graphics.Font = font1;
+                        FillSymptomsSection(app.CardiovascularSymptomList, page, ref sympYCoordinate, ref sympXCoordinate);
+
+                        page.Graphics.Font = font;
+                        sympYCoordinate += 20;
+                        page.Graphics.DrawString(430, sympYCoordinate, "Psychological Symptoms");
+                        page.Graphics.Font = font1;
+                        FillSymptomsSection(app.PsychologicalSymptomList, page, ref sympYCoordinate, ref sympXCoordinate);
+
+
+                        page.Graphics.Font = font;
+                        sympYCoordinate += 20;
+                        page.Graphics.DrawString(430, sympYCoordinate, "Pediatric Symptoms");
+                        page.Graphics.Font = font1;
+                        FillSymptomsSection(app.GastroIntestinalSymptomList, page, ref sympYCoordinate, ref sympXCoordinate);
+
+                        
                         string city = "City", state = "State", zip = "Zip";
 
                         string[] cityState = app.SettingsData.CityState.Split(',');
@@ -598,27 +641,41 @@ namespace MazikCare.MobEval.Views
                         //page.Graphics.DrawString(430, 180, GetYesNo(app.PatientPhysicalAssessment.HasHistoryOfFalls));
                         //page.Graphics.DrawString(570, 180, GetYesNo(app.PatientPhysicalAssessment.HasRiskOfFalls));
                         //page.Graphics.DrawString(740, 180, GetYesNo(app.PatientPhysicalAssessment.HasSignificantEdema));
-                        page.Graphics.DrawString(20, 380, "Diabetes Mellitus");
-                        page.Graphics.DrawString(280, 380, app.SettingsData.ChiefComplaint);
-                        //
-                        
 
-                        //if (diagData.WalkStatus != null)
-                        //{
-                        //    if (diagData.WalkStatus.Contains("Normal"))
-                        //        page.Graphics.DrawString(218, 468, "X");
-                        //    if (diagData.WalkStatus.Contains("Ataxic"))
-                        //        page.Graphics.DrawString(444, 468, "X");
-                        //    if (diagData.WalkStatus.Contains("Shuﬄing"))
-                        //        page.Graphics.DrawString(653, 468, "X");
 
-                        //    if (diagData.WalkStatus.Contains("Mod. Assist"))
-                        //        page.Graphics.DrawString(218, 490, "X");
-                        //    if (diagData.WalkStatus.Contains("Max. Assist"))
-                        //        page.Graphics.DrawString(444, 490, "X");
-                        //    if (diagData.WalkStatus.Contains("Non-Ambulatory"))
-                        //        page.Graphics.DrawString(653, 490, "X");
-                        //}
+                        int histYCoordinate = 370;
+                        page.Graphics.DrawString(30, histYCoordinate, "Past Medical History");
+                        page.Graphics.Font = font1;
+                        foreach (var item in app.PastMedicalHistoryList)
+                        {
+                            histYCoordinate += 20;
+                            page.Graphics.DrawEllipse(40, histYCoordinate + 5, 10, 10, Siberix.Sparkle.Graphics.PaintMode.Fill);
+                            page.Graphics.DrawString(60, histYCoordinate, item);
+
+                        }
+                        histYCoordinate += 40;
+                        page.Graphics.Font = font;
+                        page.Graphics.DrawString(30, histYCoordinate, "Social History");
+                        page.Graphics.Font = font1;
+                        foreach (var item in app.SocialHistoryList)
+                        {
+                            histYCoordinate += 20;
+                            page.Graphics.DrawEllipse(40, histYCoordinate + 5, 10, 10, Siberix.Sparkle.Graphics.PaintMode.Fill);
+                            page.Graphics.DrawString(60, histYCoordinate, item);
+
+                        }
+
+                        histYCoordinate += 40;
+                        page.Graphics.Font = font;
+                        page.Graphics.DrawString(30, histYCoordinate, "History of Endocrine disorder");
+                        page.Graphics.Font = font1;
+                        foreach (var item in app.EndocrineDisorderList)
+                        {
+                            histYCoordinate += 20;
+                            page.Graphics.DrawEllipse(40, histYCoordinate + 5, 10, 10, Siberix.Sparkle.Graphics.PaintMode.Fill);
+                            page.Graphics.DrawString(60, histYCoordinate, item);
+
+                        }
 
                         page.Graphics.DrawString(210, 543, app.PatientHistory.RiskOfFallsOnSet);
                         page.Graphics.DrawString(305, 543, app.PatientHistory.RiskOfFallsDescription);
@@ -901,6 +958,17 @@ namespace MazikCare.MobEval.Views
                 }
             }
             return this._pdf;
+        }
+
+        private static int FillSymptomsSection(ObservableCollection<string> collection, Siberix.Sparkle.PDF.IPage page,ref int sympYCoordinate,ref int sympXCoordinate)
+        {
+            foreach (var item in collection)
+            {
+                sympYCoordinate += 20;
+                page.Graphics.DrawEllipse(sympXCoordinate, sympYCoordinate + 5, 10, 10, Siberix.Sparkle.Graphics.PaintMode.Fill);
+                page.Graphics.DrawString(sympXCoordinate + 15, sympYCoordinate, item);
+            }
+            return sympYCoordinate;
         }
 
         /// <summary>
