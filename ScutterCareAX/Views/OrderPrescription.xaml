@@ -193,7 +193,7 @@
 
                 </Grid>
                 
-                <Frame x:Name="chkListFrame" Grid.Column="2"/>
+                <Frame x:Name="chkListFrame" Grid.Column="2" Visibility="Collapsed"/>
 
             </Grid>
         </ScrollViewer>

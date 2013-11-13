@@ -40,7 +40,7 @@
                 <GridView ItemsSource="{Binding PastMedicalHistoryList}" Grid.Row="1" SelectionMode="Multiple">
                     <GridView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Background="#30FFFFFF" Height="50" Width="280" VerticalAlignment="Center">
+                            <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">
                                 <TextBlock Grid.Column="0" Text="{Binding}" Margin="10 10" Style="{StaticResource GridTextStyle}" Foreground="White"/>
                             </Grid>
                         </DataTemplate>
@@ -58,7 +58,7 @@
                 <GridView ItemsSource="{Binding SocialHistoryList}" Grid.Row="1" SelectionMode="Multiple">
                     <GridView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Background="#30FFFFFF" Height="50" Width="280" VerticalAlignment="Center">
+                            <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">
                                 <TextBlock Grid.Column="0" Text="{Binding}" Margin="10 10" Style="{StaticResource GridTextStyle}" Foreground="White"/>
                             </Grid>
                         </DataTemplate>
@@ -75,7 +75,7 @@
                 <GridView ItemsSource="{Binding EndocrineDisorderList}" Grid.Row="1" SelectionMode="Multiple">
                     <GridView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Background="#30FFFFFF" Height="50" Width="280" VerticalAlignment="Center">
+                            <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">
                                 <TextBlock Grid.Column="0" Text="{Binding}" Margin="10 10" Style="{StaticResource GridTextStyle}" Foreground="White"/>
                             </Grid>
                         </DataTemplate>

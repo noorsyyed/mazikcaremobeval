@@ -62,6 +62,8 @@
                     <ColumnDefinition Width="420"/>
                     <ColumnDefinition Width="300"/>
                     <ColumnDefinition Width="320"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="320"/>
                     <ColumnDefinition Width="310"/>
                     <ColumnDefinition Width="400"/>
                     <ColumnDefinition Width="380"/>
@@ -69,8 +71,8 @@
                     <ColumnDefinition Width="40"/>
                 </Grid.ColumnDefinitions>
 
-                <ctrl:PatientInfoBox/>                
-         
+                <ctrl:PatientInfoBox/>
+
                 <!--<Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -133,31 +135,14 @@
                         </StackPanel>
                         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0" Margin="0 0 0 10">
                             <TextBlock Text="Chief Complaint : " Style="{StaticResource SubheaderTextStyle}" Margin="0 0 0 10"/>
-                            <TextBlock Text="Type 1 Diabetes Mellitus 250.01" Style="{StaticResource TextStyle}" Margin="0 0 0 5"/>
-                            <TextBlock Text="HTN 401.09" Style="{StaticResource TextStyle}" Margin="0 0 0 5"/>
+                            <TextBlock Text="Type 1 Diabetes Mellitus" Style="{StaticResource TextStyle}" Margin="0 0 0 5"/>
                         </StackPanel>
-                        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="0" Margin="0 0 0 10">
-                            <TextBlock Text="Current prescription : " Style="{StaticResource SubheaderTextStyle}" Margin="0 0 0 5"/>
-                            <TextBlock Text="OmniPod Insulin Pump" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Margin="0 0 0 5"/>
-                            <TextBlock Text="Lipitor 10mg" Style="{StaticResource TextStyle}" Margin="0 0 0 5"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Vertical" Grid.Row="3" Grid.Column="0" Margin="0 0 0 10">
-                            <TextBlock Text="Past Medical History : " Style="{StaticResource SubheaderTextStyle}" Margin="0 0 0 10"/>
-                            <TextBlock Text="Type Diabetes Mellitus for 10 years" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Margin="0 0 0 5"/>
-                            <TextBlock Text="Hospitalized March 2012 for Hyperglycemia" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Margin="0 0 0 5"/>
-                        </StackPanel>
-
                         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="2" Margin="0 0 0 10">
-                            <TextBlock Text="Prior Prescription :" Style="{StaticResource SubheaderTextStyle}" Margin="0 0 0 10"/>
-                            <TextBlock Text="Lipitor 10mg" Style="{StaticResource TextStyle}" Margin="0 0 0 5"/>
-                            <TextBlock Text="Wellbutrin XL 300mg" Style="{StaticResource TextStyle}" Margin="0 0 0 5"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="2" Margin="0 0 0 10">
                             <TextBlock Text="Allergies :" Style="{StaticResource SubheaderTextStyle}" Margin="0 0 0 10"/>
                             <TextBlock Text="Demoerol" Style="{StaticResource TextStyle}" Margin="0 0 0 5"/>
                             <TextBlock Text="Codine" Style="{StaticResource TextStyle}" Margin="0 0 0 5"/>
                         </StackPanel>
-                        <StackPanel Orientation="Vertical" Grid.Row="3" Grid.Column="2" Margin="0 0 0 10">
+                        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="0" Margin="0 0 0 10">
                             <TextBlock Text="Social History :" Style="{StaticResource SubheaderTextStyle}" Margin="0 0 0 10"/>
                             <TextBlock Text="Alcohol: Occasionally" Style="{StaticResource TextStyle}" Margin="0 0 0 5"/>
                             <TextBlock Text="Smoking: Nonsmoker" Style="{StaticResource TextStyle}" Margin="0 0 0 5"/>
@@ -165,81 +150,118 @@
                     </Grid>
 
                     <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0" Margin="0 15 0 10">
-                        <TextBlock Text="Most Recent Activities " FontSize="23"/>
+                        <TextBlock Text="Most Recent Activities " FontSize="26"/>
                     </StackPanel>
-                    <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="0 6 30 40" >
+
+                    <Grid Background="#30FFFFFF" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="0 6 30 40">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="0.45*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="20"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="↘ 08 Nov 2012   Glycemic Control" TextWrapping="Wrap" Style="{StaticResource TextStyle}" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                        <TextBlock Text="Doctor : Tapang, David" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Column="1" VerticalAlignment="Center"/>
+
+                        <TextBlock Text="↘ 14 Sept 2012   Renal replacement therapy" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="1" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                        <TextBlock Text="Doctor : Tapang, David" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
+
+                        <TextBlock Text="↘ 23 July 2012   Management of Hypertension" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="2" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                        <TextBlock Text="Doctor : Brown, Alex" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"/>
+
+                        <TextBlock Text="↘ 05 June 2012   Management of Hypertension" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="3" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                        <TextBlock Text="Doctor : Tapang, David" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
+
+                        <TextBlock Text="↘ 10 April 2012   Hige Cholesterol levels" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="4" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                        <TextBlock Text="Doctor : Barnett, Dave" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"/>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Column="3" Grid.ColumnSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="1" Grid.ColumnSpan="2">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <Grid Background="#30FFFFFF">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="0.45*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="35"/>
-                                <RowDefinition Height="35"/>
-                                <RowDefinition Height="35"/>
-                                <RowDefinition Height="35"/>
-                                <RowDefinition Height="35"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="20"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Text="↘ 08 Nov 2012   Glycemic Control" TextWrapping="Wrap" Style="{StaticResource TextStyle}" VerticalAlignment="Center" Margin="20 0 0 0"/>
-                            <TextBlock Text="Doctor : Tapang, David" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Column="1" VerticalAlignment="Center"/>
-
-                            <TextBlock Text="↘ 14 Sept 2012   Renal replacement therapy" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="1" VerticalAlignment="Center" Margin="20 0 0 0"/>
-                            <TextBlock Text="Doctor : Tapang, David" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
-
-                            <TextBlock Text="↘ 23 July 2012   Management of Hypertension" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="2" VerticalAlignment="Center" Margin="20 0 0 0"/>
-                            <TextBlock Text="Doctor : Brown, Alex" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"/>
-
-                            <TextBlock Text="↘ 05 June 2012   Management of Hypertension" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="3" VerticalAlignment="Center" Margin="20 0 0 0"/>
-                            <TextBlock Text="Doctor : Tapang, David" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
-
-                            <TextBlock Text="↘ 10 April 2012   Hige Cholesterol levels" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="4" VerticalAlignment="Center" Margin="20 0 0 0"/>
-                            <TextBlock Text="Doctor : Barnett, Dave" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"/>
-                        </Grid>
-                        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0" Margin="0 15 0 10">
-                            <TextBlock Text="Medication History" FontSize="23"/>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="300"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" Margin="0 0 0 10" >
+                            <TextBlock Text="Visit Reason " FontSize="26" Foreground="Transparent"/>
                         </StackPanel>
-                        <Grid Grid.Row="2" Background="#30FFFFFF">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="0.45*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="35"/>
-                                <RowDefinition Height="35"/>
-                                <RowDefinition Height="35"/>
-                                <RowDefinition Height="35"/>
-                                <RowDefinition Height="35"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="20"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Text="↘ 08 Nov 2012   Diovan 320mg" TextWrapping="Wrap" Style="{StaticResource TextStyle}" VerticalAlignment="Center" Margin="20 0 0 0"/>
-                            <TextBlock Text="Doctor : Tapang, David" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Column="1" VerticalAlignment="Center"/>
-
-                            <TextBlock Text="↘ 14 Sept 2012   Lipitor 10mg" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="1" VerticalAlignment="Center" Margin="20 0 0 0"/>
-                            <TextBlock Text="Doctor : Tapang, David" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
-
-                            <TextBlock Text="↘ 23 July 2012   Glucophage XR 500mg" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="2" VerticalAlignment="Center" Margin="20 0 0 0"/>
-                            <TextBlock Text="Doctor : Brown, Alex" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"/>
-
-                            <TextBlock Text="↘ 05 June 2012   Ibuprofen 400mg" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="3" VerticalAlignment="Center" Margin="20 0 0 0"/>
-                            <TextBlock Text="Doctor : Tapang, David" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
-
-                            <TextBlock Text="↘ 10 April 2012   Duricef 500mg" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="4" VerticalAlignment="Center" Margin="20 0 0 0"/>
-                            <TextBlock Text="Doctor : Barnett, Dave" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"/>
-                        </Grid>
-
+                        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0" Margin="0 0 0 10">
+                            <TextBlock Text="Current prescription : " Style="{StaticResource SubheaderTextStyle}" Margin="0 0 0 5"/>
+                            <TextBlock Text="OmniPod Insulin Pump" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Margin="0 0 0 5"/>
+                            <TextBlock Text="Lipitor 10mg" Style="{StaticResource TextStyle}" Margin="0 0 0 5"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="2" Margin="0 0 0 10">
+                            <TextBlock Text="Prior Prescription :" Style="{StaticResource SubheaderTextStyle}" Margin="0 0 0 10"/>
+                            <TextBlock Text="Lipitor 10mg" Style="{StaticResource TextStyle}" Margin="0 0 0 5"/>
+                            <TextBlock Text="Wellbutrin XL 300mg" Style="{StaticResource TextStyle}" Margin="0 0 0 5"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="0" Margin="0 0 0 10">
+                            <TextBlock Text="Past Medical History : " Style="{StaticResource SubheaderTextStyle}" Margin="0 0 0 10"/>
+                            <TextBlock Text="Type Diabetes Mellitus for 10 years" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Margin="0 0 0 5"/>
+                            <TextBlock Text="Hospitalized March 2012 for Hyperglycemia" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Margin="0 0 0 5"/>
+                        </StackPanel>
                     </Grid>
 
+                    <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0" Margin="0 15 0 10">
+                        <TextBlock Text="Medication History" FontSize="26"/>
+                    </StackPanel>
+
+                    <Grid Background="#30FFFFFF" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="0 6 30 40">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="0.45*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="20"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="↘ 08 Nov 2012   Diovan 320mg" TextWrapping="Wrap" Style="{StaticResource TextStyle}" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                        <TextBlock Text="Doctor : Tapang, David" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Column="1" VerticalAlignment="Center"/>
+
+                        <TextBlock Text="↘ 14 Sept 2012   Lipitor 10mg" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="1" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                        <TextBlock Text="Doctor : Tapang, David" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
+
+                        <TextBlock Text="↘ 23 July 2012   Glucophage XR 500mg" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="2" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                        <TextBlock Text="Doctor : Brown, Alex" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"/>
+
+                        <TextBlock Text="↘ 05 June 2012   Ibuprofen 400mg" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="3" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                        <TextBlock Text="Doctor : Tapang, David" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
+
+                        <TextBlock Text="↘ 10 April 2012   Duricef 500mg" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="4" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                        <TextBlock Text="Doctor : Barnett, Dave" TextWrapping="Wrap" Style="{StaticResource TextStyle}" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"/>
+                    </Grid>
                 </Grid>
 
-                <Grid Grid.Column="3" Margin="0 0 0 20">
+                <Grid Grid.Column="5" Margin="0 0 0 20">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
@@ -279,7 +301,7 @@
                 </Grid>
 
                 <!-- </Grid>-->
-                <Grid Grid.Column="4" Margin="0 0 0 40">
+                <Grid Grid.Column="6" Margin="0 0 0 40">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
@@ -403,7 +425,7 @@
                     </Chart:Chart>
                 </Grid>-->
 
-                <Grid Grid.Column="5" Margin="0 0 0 40">
+                <Grid Grid.Column="7" Margin="0 0 0 40">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>

@@ -32,22 +32,21 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <Grid >
+            <Grid Margin="10 0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="Systemic Symptoms" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
-                <GridView ItemsSource="{Binding SystemicSymptomList}" Grid.Row="1" SelectionMode="Multiple">
+                <TextBlock Text="Genitourinary Symptoms" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
+                <GridView ItemsSource="{Binding GenitourinarySymptomList}" Grid.Row="1" SelectionMode="Multiple" Name="gvGenitourinary" Tapped="gvGenitourinary_Tapped">
                     <GridView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Background="#30FFFFFF" Height="50" Width="280" VerticalAlignment="Center">
+                            <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">
                                 <TextBlock Grid.Column="0" Text="{Binding}" Margin="10 10" Style="{StaticResource GridTextStyle}" Foreground="White"/>
                             </Grid>
                         </DataTemplate>
                     </GridView.ItemTemplate>
                 </GridView>
-
             </Grid>
 
             <Grid Grid.Column="1" Margin="10 0">
@@ -55,11 +54,11 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="Eye Symptoms" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
-                <GridView ItemsSource="{Binding EyeSymptomList}" Grid.Row="1" SelectionMode="Multiple">
+                <TextBlock Text="Endocrine Symptoms" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
+                <GridView ItemsSource="{Binding EndocrineSymptomList}" Grid.Row="1" SelectionMode="Multiple" Name="gvEndocrineSymptoms" Tapped="gvEndocrineSymptoms_Tapped">
                     <GridView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Background="#30FFFFFF" Height="50" Width="280" VerticalAlignment="Center">
+                            <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">
                                 <TextBlock Grid.Column="0" Text="{Binding}" Margin="10 10" Style="{StaticResource GridTextStyle}" Foreground="White"/>
                             </Grid>
                         </DataTemplate>
@@ -72,11 +71,11 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="Cardiovascular Symptoms" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
-                <GridView ItemsSource="{Binding CardiovascularSymptomList}" Grid.Row="1" SelectionMode="Multiple">
+                <TextBlock Text="Neurological Symptoms" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
+                <GridView ItemsSource="{Binding NeurologicalSymptomList}" Grid.Row="1" SelectionMode="Multiple" Name="gvNeurologicalSymptom" Tapped="gvNeurologicalSymptom_Tapped">
                     <GridView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Background="#30FFFFFF" Height="50" Width="280" VerticalAlignment="Center">
+                            <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">
                                 <TextBlock Grid.Column="0" Text="{Binding}" Margin="10 10" Style="{StaticResource GridTextStyle}" Foreground="White"/>
                             </Grid>
                         </DataTemplate>
@@ -93,7 +92,7 @@
                 <GridView ItemsSource="{Binding GastroIntestinalSymptomList}" Grid.Row="1" SelectionMode="Multiple">
                     <GridView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Background="#30FFFFFF" Height="50" Width="280" VerticalAlignment="Center">
+                            <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">
                                 <TextBlock Grid.Column="0" Text="{Binding}" Margin="10 10" Style="{StaticResource GridTextStyle}" Foreground="White"/>
                             </Grid>
                         </DataTemplate>
@@ -101,21 +100,22 @@
                 </GridView>
             </Grid>
 
-            <Grid Grid.Column="4" Margin="10 0">
+            <Grid Grid.Column="4">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="Genitourinary Symptoms" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
-                <GridView ItemsSource="{Binding GenitourinarySymptomList}" Grid.Row="1" SelectionMode="Multiple">
+                <TextBlock Text="Systemic Symptoms" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
+                <GridView ItemsSource="{Binding SystemicSymptomList}" Grid.Row="1" SelectionMode="Multiple">
                     <GridView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Background="#30FFFFFF" Height="50" Width="280" VerticalAlignment="Center">
+                            <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">
                                 <TextBlock Grid.Column="0" Text="{Binding}" Margin="10 10" Style="{StaticResource GridTextStyle}" Foreground="White"/>
                             </Grid>
                         </DataTemplate>
                     </GridView.ItemTemplate>
                 </GridView>
+
             </Grid>
 
             <Grid Grid.Column="5" Margin="10 0">
@@ -123,11 +123,28 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="Endocrine Symptoms" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
-                <GridView ItemsSource="{Binding EndocrineSymptomList}" Grid.Row="1" SelectionMode="Multiple">
+                <TextBlock Text="Eye Symptoms" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
+                <GridView ItemsSource="{Binding EyeSymptomList}" Grid.Row="1" SelectionMode="Multiple">
                     <GridView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Background="#30FFFFFF" Height="50" Width="280" VerticalAlignment="Center">
+                            <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">
+                                <TextBlock Grid.Column="0" Text="{Binding}" Margin="10 10" Style="{StaticResource GridTextStyle}" Foreground="White"/>
+                            </Grid>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                </GridView>
+            </Grid>
+            
+            <Grid Grid.Column="6" Margin="10 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Cardiovascular Symptoms" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
+                <GridView ItemsSource="{Binding CardiovascularSymptomList}" Grid.Row="1" SelectionMode="Multiple">
+                    <GridView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">
                                 <TextBlock Grid.Column="0" Text="{Binding}" Margin="10 10" Style="{StaticResource GridTextStyle}" Foreground="White"/>
                             </Grid>
                         </DataTemplate>
@@ -135,22 +152,6 @@
                 </GridView>
             </Grid>
 
-            <Grid Grid.Column="6" Margin="10 0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <TextBlock Text="Neurological Symptoms" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
-                <GridView ItemsSource="{Binding NeurologicalSymptomList}" Grid.Row="1" SelectionMode="Multiple">
-                    <GridView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid Background="#30FFFFFF" Height="50" Width="280" VerticalAlignment="Center">
-                                <TextBlock Grid.Column="0" Text="{Binding}" Margin="10 10" Style="{StaticResource GridTextStyle}" Foreground="White"/>
-                            </Grid>
-                        </DataTemplate>
-                    </GridView.ItemTemplate>
-                </GridView>
-            </Grid>
 
             <Grid Grid.Column="7" Margin="10 0">
                 <Grid.RowDefinitions>
@@ -161,7 +162,7 @@
                 <GridView ItemsSource="{Binding PsychologicalSymptomList}" Grid.Row="1" SelectionMode="Multiple">
                     <GridView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Background="#30FFFFFF" Height="50" Width="280" VerticalAlignment="Center">
+                            <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">
                                 <TextBlock Grid.Column="0" Text="{Binding}" Margin="10 10" Style="{StaticResource GridTextStyle}" Foreground="White"/>
                             </Grid>
                         </DataTemplate>
@@ -178,7 +179,7 @@
                 <GridView ItemsSource="{Binding SkinSymptomList}" Grid.Row="1" SelectionMode="Multiple">
                     <GridView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Background="#30FFFFFF" Height="50" Width="280" VerticalAlignment="Center">
+                            <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">
                                 <TextBlock Grid.Column="0" Text="{Binding}" Margin="10 10" Style="{StaticResource GridTextStyle}" Foreground="White"/>
                             </Grid>
                         </DataTemplate>
@@ -195,7 +196,7 @@
                 <GridView ItemsSource="{Binding PediatricScreeningList}" Grid.Row="1" SelectionMode="Multiple">
                     <GridView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Background="#30FFFFFF" Height="50" Width="280" VerticalAlignment="Center">
+                            <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">
                                 <TextBlock Grid.Column="0" Text="{Binding}" Margin="10 10" Style="{StaticResource GridTextStyle}" Foreground="White"/>
                             </Grid>
                         </DataTemplate>

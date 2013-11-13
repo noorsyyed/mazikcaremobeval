@@ -10,93 +10,95 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Style="{StaticResource LayoutRootStyle}" Background="Transparent">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="280"/>
-                <ColumnDefinition Width="150"/>
-                <ColumnDefinition Width="80"/>
-                <ColumnDefinition Width="230"/>
-                <ColumnDefinition Width="150"/>
-            </Grid.ColumnDefinitions>
+    <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollMode="Disabled" ScrollViewer.HorizontalScrollMode="Enabled" ScrollViewer.ZoomMode="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+        <Grid  Background="Transparent">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
 
-            <!--Column 1-->
+                <!--Column 1-->
 
-            <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="0" Text="Pulse (Resting)" Margin="10 5"/>
-            <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding Path=PatientPhysicalAssessment.RestingPulse, Mode=TwoWay}" Margin="10 5"/>
+                <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="0" Text="Pulse (Resting)" Margin="10 5"/>
+                <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding Path=PatientPhysicalAssessment.RestingPulse, Mode=TwoWay}" Margin="10 5"/>
 
-            <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="1" Text="Pulse (Exertion)" Margin="10 5"/>
-            <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding Path=PatientPhysicalAssessment.ExertionPulse, Mode=TwoWay}"  Margin="10 5"/>
+                <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="1" Text="Pulse (Exertion)" Margin="10 5"/>
+                <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding Path=PatientPhysicalAssessment.ExertionPulse, Mode=TwoWay}"  Margin="10 5"/>
 
-            <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="2" Grid.Column="0" Text="Shortness of Breath at Rest ?" Margin="10 5"/>
-            <ToggleSwitch Grid.Row="2" Grid.Column="1" FontSize="20" OffContent="No" OnContent="Yes" IsOn="{Binding Path=PatientPhysicalAssessment.HasRestBreathShortness, Mode=TwoWay}" Margin="0 -8 0 0"/>
+                <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="2" Grid.Column="0" Text="Shortness of Breath at Rest ?" Margin="10 5"/>
+                <ToggleSwitch Grid.Row="2" Grid.Column="1" FontSize="20" OffContent="No" OnContent="Yes" IsOn="{Binding Path=PatientPhysicalAssessment.HasRestBreathShortness, Mode=TwoWay}" Margin="0 -8 0 0"/>
 
-            <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="3" Grid.Column="0" Text="Shortness of Breath w/Exertion?" Margin="10 5"/>
-            <ToggleSwitch Grid.Row="3" Grid.Column="1" FontSize="20" OffContent="No" OnContent="Yes" IsOn="{Binding Path=PatientPhysicalAssessment.HasExertionBreathShortness, Mode=TwoWay}" Margin="0 -8 0 0"/>
+                <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="3" Grid.Column="0" Text="Shortness of Breath w/Exertion?" Margin="10 5"/>
+                <ToggleSwitch Grid.Row="3" Grid.Column="1" FontSize="20" OffContent="No" OnContent="Yes" IsOn="{Binding Path=PatientPhysicalAssessment.HasExertionBreathShortness, Mode=TwoWay}" Margin="0 -8 0 0"/>
 
 
-            <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="0" Margin="10 5" >
-                <TextBlock Style="{StaticResource AddressTextStyle}" Text="Is "/>
-                <TextBlock Style="{StaticResource AddressTextStyle}" Text=" O"/>
-                <TextBlock Style="{StaticResource AddressTextStyle}" Text="2" FontSize="14" VerticalAlignment="Bottom"/>
-                <TextBlock Style="{StaticResource AddressTextStyle}" Text=" Required?"/>
-            </StackPanel>
-            <ToggleSwitch Grid.Row="4" Grid.Column="1" FontSize="20" OffContent="No" OnContent="Yes" IsOn="{Binding Path=PatientPhysicalAssessment.IsO2Required, Mode=TwoWay}" Margin="0 -8 0 0"/>
+                <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="0" Margin="10 5" >
+                    <TextBlock Style="{StaticResource AddressTextStyle}" Text="Is "/>
+                    <TextBlock Style="{StaticResource AddressTextStyle}" Text=" O"/>
+                    <TextBlock Style="{StaticResource AddressTextStyle}" Text="2" FontSize="14" VerticalAlignment="Bottom"/>
+                    <TextBlock Style="{StaticResource AddressTextStyle}" Text=" Required?"/>
+                </StackPanel>
+                <ToggleSwitch Grid.Row="4" Grid.Column="1" FontSize="20" OffContent="No" OnContent="Yes" IsOn="{Binding Path=PatientPhysicalAssessment.IsO2Required, Mode=TwoWay}" Margin="0 -8 0 0"/>
 
-            <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="5" Grid.Column="0" Text="Number of Litres?" Margin="10 5"/>
-            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=PatientPhysicalAssessment.NoofLitres, Mode=TwoWay}" Margin="10 5"/>
+                <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="5" Grid.Column="0" Text="Number of Litres?" Margin="10 5"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=PatientPhysicalAssessment.NoofLitres, Mode=TwoWay}" Margin="10 5"/>
 
-            <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.Column="0" Margin="10 5" >
-                <TextBlock Style="{StaticResource AddressTextStyle}" Text="O"/>
-                <TextBlock Style="{StaticResource AddressTextStyle}" Text="2" FontSize="14" VerticalAlignment="Bottom"/>
-                <TextBlock Style="{StaticResource AddressTextStyle}" Text=" Sats?"/>
-            </StackPanel>
-            <TextBox  Grid.Row="6" Grid.Column="1" Text="{Binding Path=PatientPhysicalAssessment.O2Sats, Mode=TwoWay}" Margin="10 5"/>
+                <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.Column="0" Margin="10 5" >
+                    <TextBlock Style="{StaticResource AddressTextStyle}" Text="O"/>
+                    <TextBlock Style="{StaticResource AddressTextStyle}" Text="2" FontSize="14" VerticalAlignment="Bottom"/>
+                    <TextBlock Style="{StaticResource AddressTextStyle}" Text=" Sats?"/>
+                </StackPanel>
+                <TextBox  Grid.Row="6" Grid.Column="1" Text="{Binding Path=PatientPhysicalAssessment.O2Sats, Mode=TwoWay}" Margin="10 5"/>
 
-            <!--Column 2-->
-            <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Column="3" Text="Current Pressure Sores?" Margin="10 5"/>
-            <ToggleSwitch Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" IsOn="{Binding Path=PatientPhysicalAssessment.HasCurrentPressureSores, Mode=TwoWay}" Margin="0 -8 0 0"/>
+                <!--Column 2-->
+                <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Column="3" Text="Current Pressure Sores?" Margin="10 5"/>
+                <ToggleSwitch Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" IsOn="{Binding Path=PatientPhysicalAssessment.HasCurrentPressureSores, Mode=TwoWay}" Margin="0 -8 0 0"/>
 
-            <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="1" Grid.Column="3" Text="History of Pressure Sores?" Margin="10 5"/>
-            <ToggleSwitch Grid.Row="1" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" IsOn="{Binding Path=PatientPhysicalAssessment.HasHistoryPressureSores, Mode=TwoWay}" Margin="0 -8 0 0"/>
+                <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="1" Grid.Column="3" Text="History of Pressure Sores?" Margin="10 5"/>
+                <ToggleSwitch Grid.Row="1" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" IsOn="{Binding Path=PatientPhysicalAssessment.HasHistoryPressureSores, Mode=TwoWay}" Margin="0 -8 0 0"/>
 
-            <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="2" Grid.Column="3" Text="Locations?" Margin="10 5"/>
-            <TextBox Grid.Row="2" Grid.Column="4" Text="{Binding Path=PatientPhysicalAssessment.Locations, Mode=TwoWay}" Margin="10 5"/>
+                <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="2" Grid.Column="3" Text="Locations?" Margin="10 5"/>
+                <TextBox Grid.Row="2" Grid.Column="4" Text="{Binding Path=PatientPhysicalAssessment.Locations, Mode=TwoWay}" Margin="10 5"/>
 
-            <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="3" Grid.Column="3" Text="Stage?" Margin="10 5"/>
-            <TextBox Grid.Row="3" Grid.Column="4" Text="{Binding Path=PatientPhysicalAssessment.Stage, Mode=TwoWay}" Margin="10 5"/>
+                <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="3" Grid.Column="3" Text="Stage?" Margin="10 5"/>
+                <TextBox Grid.Row="3" Grid.Column="4" Text="{Binding Path=PatientPhysicalAssessment.Stage, Mode=TwoWay}" Margin="10 5"/>
 
-            <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="4" Grid.Column="3" Text="Able to Shift Weight?" Margin="10 5"/>
-            <ToggleSwitch Grid.Row="4" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" IsOn="{Binding Path=PatientPhysicalAssessment.CanShiftWeight, Mode=TwoWay}" Margin="0 -8 0 0"/>
+                <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="4" Grid.Column="3" Text="Able to Shift Weight?" Margin="10 5"/>
+                <ToggleSwitch Grid.Row="4" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" IsOn="{Binding Path=PatientPhysicalAssessment.CanShiftWeight, Mode=TwoWay}" Margin="0 -8 0 0"/>
 
-            <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="5" Grid.Column="3" Text="Poor Balance?" Margin="10 5"/>
-            <ToggleSwitch Grid.Row="5" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" IsOn="{Binding Path=PatientPhysicalAssessment.HasPoorBalance, Mode=TwoWay}" Margin="0 -8 0 0"/>
+                <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="5" Grid.Column="3" Text="Poor Balance?" Margin="10 5"/>
+                <ToggleSwitch Grid.Row="5" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" IsOn="{Binding Path=PatientPhysicalAssessment.HasPoorBalance, Mode=TwoWay}" Margin="0 -8 0 0"/>
 
-            <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="6" Grid.Column="3" Text="Poor Endurance?" Margin="10 5"/>
-            <ToggleSwitch Grid.Row="6" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" IsOn="{Binding Path=PatientPhysicalAssessment.HasPoorEndurance, Mode=TwoWay}" Margin="0 -8 0 0"/>
+                <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="6" Grid.Column="3" Text="Poor Endurance?" Margin="10 5"/>
+                <ToggleSwitch Grid.Row="6" Grid.Column="4" FontSize="20" OffContent="No" OnContent="Yes" IsOn="{Binding Path=PatientPhysicalAssessment.HasPoorEndurance, Mode=TwoWay}" Margin="0 -8 0 0"/>
 
-            <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="7" Grid.Column="0" Text="History of Falls?" Margin="10 5"/>
-            <ToggleSwitch Grid.Row="7" Grid.Column="1" FontSize="20" OffContent="No" OnContent="Yes" IsOn="{Binding Path=PatientPhysicalAssessment.HasHistoryOfFalls, Mode=TwoWay}" Margin="0 -8 0 0"/>
+                <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="7" Grid.Column="0" Text="History of Falls?" Margin="10 5"/>
+                <ToggleSwitch Grid.Row="7" Grid.Column="1" FontSize="20" OffContent="No" OnContent="Yes" IsOn="{Binding Path=PatientPhysicalAssessment.HasHistoryOfFalls, Mode=TwoWay}" Margin="0 -8 0 0"/>
 
-            <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="8" Grid.Column="0" Text="Risk of Falls?" Margin="10 5"/>
-            <ToggleSwitch Grid.Row="8" Grid.Column="1" FontSize="20" OffContent="No" OnContent="Yes" IsOn="{Binding Path=PatientPhysicalAssessment.HasRiskOfFalls, Mode=TwoWay}" Margin="0 -8 0 0"/>
+                <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="8" Grid.Column="0" Text="Risk of Falls?" Margin="10 5"/>
+                <ToggleSwitch Grid.Row="8" Grid.Column="1" FontSize="20" OffContent="No" OnContent="Yes" IsOn="{Binding Path=PatientPhysicalAssessment.HasRiskOfFalls, Mode=TwoWay}" Margin="0 -8 0 0"/>
 
-            <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="9" Grid.Column="0" Text="Signiﬁcant Edema?" Margin="10 5"/>
-            <ToggleSwitch Grid.Row="9" Grid.Column="1" FontSize="20" OffContent="No" OnContent="Yes" IsOn="{Binding Path=PatientPhysicalAssessment.HasSignificantEdema, Mode=TwoWay}" Margin="0 -8 0 0"/>
+                <TextBlock Style="{StaticResource AddressTextStyle}" Grid.Row="9" Grid.Column="0" Text="Signiﬁcant Edema?" Margin="10 5"/>
+                <ToggleSwitch Grid.Row="9" Grid.Column="1" FontSize="20" OffContent="No" OnContent="Yes" IsOn="{Binding Path=PatientPhysicalAssessment.HasSignificantEdema, Mode=TwoWay}" Margin="0 -8 0 0"/>
 
+            </Grid>
         </Grid>
-    </Grid>
+    </ScrollViewer>
 </common:LayoutAwarePage>

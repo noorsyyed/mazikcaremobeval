@@ -1,5 +1,6 @@
 ﻿using MazikCare.MobEval.Datas;
 using System;
+using System.Collections.ObjectModel;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
@@ -171,6 +172,10 @@ namespace MazikCare.MobEval
             set;
         }
 
+        public ObservableCollection<string> GenitourinarySymptomsList { get; set; }
+        public ObservableCollection<string> EndocrineSymptomsList { get; set; }
+        public ObservableCollection<string> NeurologicalSymptomList { get; set; }
+
         public Patient Patient
         {
             get
@@ -203,7 +208,7 @@ namespace MazikCare.MobEval
                         return new Patient()
                         {
                             Name = "Bruce Caine",
-                            Address = "2604 East  Dempster St",
+                            Address = "2604 Dempster St",
                             City = "Park Ridge IL 60016.",
                             PhoneNumber = "Tel : 1 312 345 6789",
                             DOB = "78 Years",
@@ -217,7 +222,7 @@ namespace MazikCare.MobEval
                     return new Patient()
                     {
                         Name = "Bruce Caine",
-                        Address = "2604 East  Dempster St",
+                        Address = "2604 Dempster St",
                         City = "Park Ridge IL 60016.",
                         PhoneNumber = "Tel : 1 312 345 6789",
                         DOB = "78 Years",
