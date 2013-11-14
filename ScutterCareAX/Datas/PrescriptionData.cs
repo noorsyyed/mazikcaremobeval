@@ -549,5 +549,160 @@ namespace MazikCare.MobEval.Datas
                 this.SetProperty(ref this._lON, value, "LON");
             }
         }
+
+        private string noteOrthostaticHypotension;
+        public string NoteOrthostaticHypotension
+        {
+            get { return noteOrthostaticHypotension; }
+            set { SetProperty(ref noteOrthostaticHypotension, value); }
+        }
+
+        private string noteVisionAssessment;
+        public string NoteVisionAssessment
+        {
+            get { return noteVisionAssessment; }
+            set { SetProperty(ref noteVisionAssessment, value); }
+        }
+
+        private string noteOSExam;
+        public string NoteOSExam
+        {
+            get { return noteOSExam; }
+            set { SetProperty(ref noteOSExam, value); }
+        }
+
+        private string noteOSCatractExam;
+        public string NoteOSCatractExam
+        {
+            get { return noteOSCatractExam; }
+            set { SetProperty(ref noteOSCatractExam, value); }
+        }
+
+        private string noteOSRetinaExam;
+        public string NoteOSRetinaExam
+        {
+            get { return noteOSRetinaExam; }
+            set { SetProperty(ref noteOSRetinaExam, value); }
+        }
+
+        private string noteCSExam;
+        public string NoteCSExam
+        {
+            get { return noteCSExam; }
+            set { SetProperty(ref noteCSExam, value); }
+        }
+
+        private string noteArterialPulse;
+        public string NoteArterialPulse
+        {
+            get { return noteArterialPulse; }
+            set { SetProperty(ref noteArterialPulse, value); }
+        }
+
+        private string noteNSExam;
+        public string NoteNSExam
+        {
+            get { return noteNSExam; }
+            set { SetProperty(ref noteNSExam, value); }
+        }
+
+        private string noteNSTuningFork;
+        public string NoteNSTuningFork
+        {
+            get { return noteNSTuningFork; }
+            set { SetProperty(ref noteNSTuningFork, value); }
+        }
+
+        private string noteNSVibrationDecrease;
+        public string NoteNSVibrationDecrease
+        {
+            get { return noteNSVibrationDecrease; }
+            set { SetProperty(ref noteNSVibrationDecrease, value); }
+        }
+
+        private string noteNSDTRReflexPatterns;
+        public string NoteNSDTRReflexPatterns
+        {
+            get { return noteNSDTRReflexPatterns; }
+            set { SetProperty(ref noteNSDTRReflexPatterns, value); }
+        }
+
+        private bool isOrthostaticHypotension;
+        public bool IsOrthostaticHypotension
+        {
+            get { return isOrthostaticHypotension; }
+            set { SetProperty(ref isOrthostaticHypotension, value); }
+        }
+
+        private bool isVisionAssessment;
+        public bool IsVisionAssessment
+        {
+            get { return isVisionAssessment; }
+            set { SetProperty(ref isVisionAssessment, value); }
+        }
+
+        private bool isOSExam;
+        public bool IsOSExam
+        {
+            get { return isOSExam; }
+            set { SetProperty(ref isOSExam, value); }
+        }
+
+        private bool isOSCatractExam;
+        public bool IsOSCatractExam
+        {
+            get { return isOSCatractExam; }
+            set { SetProperty(ref isOSCatractExam, value); }
+        }
+
+        private bool isOSRetinaExam;
+        public bool IsOSRetinaExam
+        {
+            get { return isOSRetinaExam; }
+            set { SetProperty(ref isOSRetinaExam, value); }
+        }
+
+        private bool isCSExam;
+        public bool IsCSExam
+        {
+            get { return isCSExam; }
+            set { SetProperty(ref isCSExam, value); }
+        }
+
+        private bool isArterialPulse;
+        public bool IsArterialPulse
+        {
+            get { return isArterialPulse; }
+            set { SetProperty(ref isArterialPulse, value); }
+        }
+
+        private bool isNSExam;
+        public bool IsNSExam
+        {
+            get { return isNSExam; }
+            set { SetProperty(ref isNSExam, value); }
+        }
+
+        private bool isNSTuningFork;
+        public bool IsNSTuningFork
+        {
+            get { return isNSTuningFork; }
+            set { SetProperty(ref isNSTuningFork, value); }
+        }
+
+        private bool isNSVibrationDecrease;
+        public bool IsNSVibrationDecrease
+        {
+            get { return isNSVibrationDecrease; }
+            set { SetProperty(ref isNSVibrationDecrease, value); }
+        }
+
+        private bool isNSDTRReflexPatterns;
+        public bool IsNSDTRReflexPatterns
+        {
+            get { return isNSDTRReflexPatterns; }
+            set { SetProperty(ref isNSDTRReflexPatterns, value); }
+        }
+
     }
 }

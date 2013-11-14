@@ -41,7 +41,7 @@ namespace MazikCare.MobEval.Datas
             }
             set
             {
-                this.SetProperty(ref this._pulseRate, value, "Weight");
+                this.SetProperty(ref this._pulseRate, value);
             }
         }
 
@@ -54,7 +54,7 @@ namespace MazikCare.MobEval.Datas
             }
             set
             {
-                this.SetProperty(ref this._oralTemperature, value, "Weight");
+                this.SetProperty(ref this._oralTemperature, value);
             }
         }
 
