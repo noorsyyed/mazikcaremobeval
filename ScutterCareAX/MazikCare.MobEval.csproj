@@ -345,6 +345,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Content Include="Assets\Check.png" />
     <Content Include="Assets\diabetes01.jpg" />
     <Content Include="Assets\diabetes02.jpg" />
     <Content Include="Assets\diabetes03.jpg" />

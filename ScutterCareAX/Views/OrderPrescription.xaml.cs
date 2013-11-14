@@ -292,6 +292,8 @@ namespace MazikCare.MobEval.Views
                 StorageFile page3 = await Package.Current.InstalledLocation.GetFileAsync(@"Datas\page3.png");
                 //StorageFile page4 = await Package.Current.InstalledLocation.GetFileAsync(@"Datas\page4.png");
                 StorageFile page5 = await Package.Current.InstalledLocation.GetFileAsync(@"Datas\page5.png");
+                StorageFile check = await Package.Current.InstalledLocation.GetFileAsync(@"Assets\Check.png");
+                var checkImage = new Siberix.Sparkle.Graphics.Image(await check.OpenStreamForReadAsync());
 
                 this._pdf = await ApplicationData.Current.LocalFolder.CreateFileAsync(@"Data\Prescription.pdf", CreationCollisionOption.ReplaceExisting);
                 var signStream = await this.GetLocalResource("Sign.png");
@@ -318,7 +320,7 @@ namespace MazikCare.MobEval.Views
                         document.AddPage(850, 1100);
                         //document.AddPage(850, 1100);
                         //document.AddPage(850, 1100);
-                        document.AddPage(520, 673);
+                        document.AddPage(850, 1100);
 
                         var font = new Siberix.Sparkle.Graphics.Font(await DBHelper.GetResourceStreamAsync(@"Datas\calibrib.ttf"), 17);
                         var font1 = new Siberix.Sparkle.Graphics.Font(await DBHelper.GetResourceStreamAsync(@"Datas\calibriz.ttf"), 15);
@@ -459,17 +461,17 @@ namespace MazikCare.MobEval.Views
 
                         image = new Siberix.Sparkle.Graphics.Image(await page2.OpenStreamForReadAsync());
                         page.Graphics.DrawImage(image, 1, 1, image.Width, image.Height);
-                        page.Graphics.DrawString(!app.PrescriptionData.IsOrthostaticHypotension ? 367 : 402, 150, "X");
-                        page.Graphics.DrawString(!app.PrescriptionData.IsVisionAssessment ? 367 : 402, 187, "X");
-                        page.Graphics.DrawString(!app.PrescriptionData.IsOSExam ? 367 : 402, 232, "X");
-                        page.Graphics.DrawString(!app.PrescriptionData.IsOSCatractExam ? 367 : 402, 267, "X");
-                        page.Graphics.DrawString(!app.PrescriptionData.IsOSRetinaExam ? 367 : 402, 308, "X");
-                        page.Graphics.DrawString(!app.PrescriptionData.IsCSExam ? 367 : 402, 358, "X");
-                        page.Graphics.DrawString(!app.PrescriptionData.IsArterialPulse ? 367 : 402, 400, "X");
-                        page.Graphics.DrawString(!app.PrescriptionData.IsNSExam ? 367 : 402, 451, "X");
-                        page.Graphics.DrawString(!app.PrescriptionData.IsNSTuningFork ? 367 : 402, 497, "X");
-                        page.Graphics.DrawString(!app.PrescriptionData.IsNSVibrationDecrease ? 367 : 402, 541, "X");
-                        page.Graphics.DrawString(!app.PrescriptionData.IsNSDTRReflexPatterns ? 367 : 402, 588, "X");
+                        page.Graphics.DrawImage(checkImage, !app.PrescriptionData.IsOrthostaticHypotension ? 367 : 402, 150, 30, 30);
+                        page.Graphics.DrawImage(checkImage, !app.PrescriptionData.IsVisionAssessment ? 367 : 402, 187, 30, 30);
+                        page.Graphics.DrawImage(checkImage, !app.PrescriptionData.IsOSExam ? 367 : 402, 232, 30, 30);
+                        page.Graphics.DrawImage(checkImage, !app.PrescriptionData.IsOSCatractExam ? 367 : 402, 267, 30, 30);
+                        page.Graphics.DrawImage(checkImage, !app.PrescriptionData.IsOSRetinaExam ? 367 : 402, 308, 30, 30);
+                        page.Graphics.DrawImage(checkImage, !app.PrescriptionData.IsCSExam ? 367 : 402, 358, 30, 30);
+                        page.Graphics.DrawImage(checkImage, !app.PrescriptionData.IsArterialPulse ? 367 : 402, 400, 30, 30);
+                        page.Graphics.DrawImage(checkImage, !app.PrescriptionData.IsNSExam ? 367 : 402, 451, 30, 30);
+                        page.Graphics.DrawImage(checkImage, !app.PrescriptionData.IsNSTuningFork ? 367 : 402, 497, 30, 30);
+                        page.Graphics.DrawImage(checkImage, !app.PrescriptionData.IsNSVibrationDecrease ? 367 : 402, 541, 30, 30);
+                        page.Graphics.DrawImage(checkImage, !app.PrescriptionData.IsNSDTRReflexPatterns ? 367 : 402, 588, 30, 30);
 
                         page.Graphics.DrawString(456, 150, app.PrescriptionData.NoteOrthostaticHypotension);
                         page.Graphics.DrawString(456, 187, app.PrescriptionData.NoteVisionAssessment);
@@ -561,14 +563,14 @@ namespace MazikCare.MobEval.Views
                         if (app.PatientHistory.UpperBodyWeaknessType != null)
                             switch (app.PatientHistory.UpperBodyWeaknessType)
                             {
-                                case "Mild": page.Graphics.DrawString(195, 743, "X");
+                                case "Mild": page.Graphics.DrawImage(checkImage,195, 743, 30, 30);
                                     break;
 
-                                case "Moderate": page.Graphics.DrawString(305, 743, "X");
+                                case "Moderate": page.Graphics.DrawImage(checkImage,305, 743, 30, 30);
                                     page.Graphics.DrawString(330, 770, app.PatientHistory.UpperBodyWeaknessDescription);
                                     break;
 
-                                case "Severe": page.Graphics.DrawString(580, 743, "X");
+                                case "Severe": page.Graphics.DrawImage(checkImage, 580, 743, 30,30);
                                     page.Graphics.DrawString(610, 770, app.PatientHistory.UpperBodyWeaknessDescription);
                                     break;
                             }
@@ -576,14 +578,14 @@ namespace MazikCare.MobEval.Views
                         if (app.PatientHistory.UpperBodyPainType != null)
                             switch (app.PatientHistory.UpperBodyPainType)
                             {
-                                case "Mild": page.Graphics.DrawString(195, 800, "X");
+                                case "Mild": page.Graphics.DrawImage(checkImage,195, 800, 30, 30);
                                     break;
 
-                                case "Moderate": page.Graphics.DrawString(305, 800, "X");
+                                case "Moderate": page.Graphics.DrawImage(checkImage, 305, 800, 30, 30);
                                     page.Graphics.DrawString(330, 825, app.PatientHistory.UpperBodyPainDescription);
                                     break;
 
-                                case "Severe": page.Graphics.DrawString(580, 800, "X");
+                                case "Severe": page.Graphics.DrawImage(checkImage, 580, 800, 30, 30);
                                     page.Graphics.DrawString(610, 828, app.PatientHistory.UpperBodyPainDescription);
                                     break;
                             }
@@ -591,14 +593,14 @@ namespace MazikCare.MobEval.Views
                         if (app.PatientHistory.UpperBodyRangeOfMotionType != null)
                             switch (app.PatientHistory.UpperBodyRangeOfMotionType)
                             {
-                                case "Mild": page.Graphics.DrawString(195, 860, "X");
+                                case "Mild": page.Graphics.DrawImage(checkImage, 195, 860, 30, 30);
                                     break;
 
-                                case "Moderate": page.Graphics.DrawString(305, 860, "X");
+                                case "Moderate": page.Graphics.DrawImage(checkImage, 305, 860, 30, 30);
                                     page.Graphics.DrawString(330, 883, app.PatientHistory.UpperBodyRangeOfMotionDescription);
                                     break;
 
-                                case "Severe": page.Graphics.DrawString(580, 860, "X");
+                                case "Severe": page.Graphics.DrawImage(checkImage, 580, 860, 30, 30);
                                     page.Graphics.DrawString(610, 886, app.PatientHistory.UpperBodyRangeOfMotionDescription);
                                     break;
                             }
@@ -606,14 +608,14 @@ namespace MazikCare.MobEval.Views
                         if (app.PatientHistory.LowerBodyWeaknessType != null)
                             switch (app.PatientHistory.LowerBodyWeaknessType)
                             {
-                                case "Mild": page.Graphics.DrawString(195, 917, "X");
+                                case "Mild": page.Graphics.DrawImage(checkImage, 195, 917, 30, 30);
                                     break;
 
-                                case "Moderate": page.Graphics.DrawString(305, 917, "X");
+                                case "Moderate": page.Graphics.DrawImage(checkImage, 305, 917, 30, 30);
                                     page.Graphics.DrawString(330, 942, app.PatientHistory.LowerBodyWeaknessDescription);
                                     break;
 
-                                case "Severe": page.Graphics.DrawString(580, 917, "X");
+                                case "Severe": page.Graphics.DrawImage(checkImage, 580, 917, 30, 30);
                                     page.Graphics.DrawString(610, 946, app.PatientHistory.LowerBodyWeaknessDescription);
                                     break;
                             }
@@ -621,14 +623,14 @@ namespace MazikCare.MobEval.Views
                         if (app.PatientHistory.LowerBodyPainType != null)
                             switch (app.PatientHistory.LowerBodyPainType)
                             {
-                                case "Mild": page.Graphics.DrawString(195, 975, "X");
+                                case "Mild": page.Graphics.DrawImage(checkImage, 195, 975, 30, 30);
                                     break;
 
-                                case "Moderate": page.Graphics.DrawString(305, 975, "X");
+                                case "Moderate": page.Graphics.DrawImage(checkImage, 305, 975, 30, 30);
                                     page.Graphics.DrawString(330, 1000, app.PatientHistory.LowerBodyPainDescription);
                                     break;
 
-                                case "Severe": page.Graphics.DrawString(580, 975, "X");
+                                case "Severe": page.Graphics.DrawImage(checkImage, 580, 975, 30, 30);
                                     page.Graphics.DrawString(610, 1003, app.PatientHistory.LowerBodyPainDescription);
                                     break;
                             }
@@ -636,14 +638,14 @@ namespace MazikCare.MobEval.Views
                         if (app.PatientHistory.LowerBodyRangeOfMotionType != null)
                             switch (app.PatientHistory.LowerBodyRangeOfMotionType)
                             {
-                                case "Mild": page.Graphics.DrawString(195, 1034, "X");
+                                case "Mild": page.Graphics.DrawImage(checkImage, 195, 1034, 30, 30);
                                     break;
 
-                                case "Moderate": page.Graphics.DrawString(305, 1034, "X");
+                                case "Moderate": page.Graphics.DrawImage(checkImage, 305, 1034, 30, 30);
                                     page.Graphics.DrawString(330, 1056, app.PatientHistory.LowerBodyRangeOfMotionDescription);
                                     break;
 
-                                case "Severe": page.Graphics.DrawString(580, 1034, "X");
+                                case "Severe": page.Graphics.DrawImage(checkImage, 580, 1034, 30, 30);
                                     page.Graphics.DrawString(610, 1058, app.PatientHistory.LowerBodyRangeOfMotionDescription);
                                     break;
                             }
@@ -669,16 +671,16 @@ namespace MazikCare.MobEval.Views
                         if (signStream != Stream.Null)
                         {
                             var signImage = new Siberix.Sparkle.Graphics.Image(signStream);
-                            page.Graphics.DrawImage(signImage, 240, 570, signImage.Width * 0.27F, signImage.Height * 0.27F);
+                            page.Graphics.DrawImage(signImage, 370, 925, signImage.Width * 0.27F, signImage.Height * 0.27F);
                         }
                         var smallerFont = new Siberix.Sparkle.Graphics.Font(await DBHelper.GetResourceStreamAsync(@"Datas\calibrib.ttf"), 12);
 
                         //Order Prescription Details
-                       // page.Graphics.DrawString(677, 191, DateTime.Today.ToString("dd MMM yyyy"));
-                       // page.Graphics.DrawString(364, 315, app.SettingsData.Name);
+                        // page.Graphics.DrawString(677, 191, DateTime.Today.ToString("dd MMM yyyy"));
+                        // page.Graphics.DrawString(364, 315, app.SettingsData.Name);
                         //page.Graphics.DrawString(376, 392, data.OrderItem == null ? string.Empty : data.OrderItem.Name);
                         page.Graphics.Font = smallerFont;
-                        page.Graphics.DrawString(240, 630, DateTime.Today.ToString("dd MMM yyyy"));
+                        page.Graphics.DrawString(370, 1032, DateTime.Today.ToString("dd MMM yyyy"));
 
                         int ICSCount = 1;
                         var nerologyList = app.MobilityData.NeurologicalCondition as ObservableCollection<CheckListItemSource>;
