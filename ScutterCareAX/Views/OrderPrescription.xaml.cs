@@ -461,17 +461,17 @@ namespace MazikCare.MobEval.Views
 
                         image = new Siberix.Sparkle.Graphics.Image(await page2.OpenStreamForReadAsync());
                         page.Graphics.DrawImage(image, 1, 1, image.Width, image.Height);
-                        page.Graphics.DrawImage(checkImage, !app.PrescriptionData.IsOrthostaticHypotension ? 367 : 402, 150, 30, 30);
-                        page.Graphics.DrawImage(checkImage, !app.PrescriptionData.IsVisionAssessment ? 367 : 402, 187, 30, 30);
-                        page.Graphics.DrawImage(checkImage, !app.PrescriptionData.IsOSExam ? 367 : 402, 232, 30, 30);
-                        page.Graphics.DrawImage(checkImage, !app.PrescriptionData.IsOSCatractExam ? 367 : 402, 267, 30, 30);
-                        page.Graphics.DrawImage(checkImage, !app.PrescriptionData.IsOSRetinaExam ? 367 : 402, 308, 30, 30);
-                        page.Graphics.DrawImage(checkImage, !app.PrescriptionData.IsCSExam ? 367 : 402, 358, 30, 30);
-                        page.Graphics.DrawImage(checkImage, !app.PrescriptionData.IsArterialPulse ? 367 : 402, 400, 30, 30);
-                        page.Graphics.DrawImage(checkImage, !app.PrescriptionData.IsNSExam ? 367 : 402, 451, 30, 30);
-                        page.Graphics.DrawImage(checkImage, !app.PrescriptionData.IsNSTuningFork ? 367 : 402, 497, 30, 30);
-                        page.Graphics.DrawImage(checkImage, !app.PrescriptionData.IsNSVibrationDecrease ? 367 : 402, 541, 30, 30);
-                        page.Graphics.DrawImage(checkImage, !app.PrescriptionData.IsNSDTRReflexPatterns ? 367 : 402, 588, 30, 30);
+                        page.Graphics.DrawImage(checkImage, app.PrescriptionData.IsOrthostaticHypotension ? 367 : 402, 150, 30, 30);
+                        page.Graphics.DrawImage(checkImage, app.PrescriptionData.IsVisionAssessment ? 367 : 402, 187, 30, 30);
+                        page.Graphics.DrawImage(checkImage, app.PrescriptionData.IsOSExam ? 367 : 402, 232, 30, 30);
+                        page.Graphics.DrawImage(checkImage, app.PrescriptionData.IsOSCatractExam ? 367 : 402, 267, 30, 30);
+                        page.Graphics.DrawImage(checkImage, app.PrescriptionData.IsOSRetinaExam ? 367 : 402, 308, 30, 30);
+                        page.Graphics.DrawImage(checkImage, app.PrescriptionData.IsCSExam ? 367 : 402, 358, 30, 30);
+                        page.Graphics.DrawImage(checkImage, app.PrescriptionData.IsArterialPulse ? 367 : 402, 400, 30, 30);
+                        page.Graphics.DrawImage(checkImage, app.PrescriptionData.IsNSExam ? 367 : 402, 451, 30, 30);
+                        page.Graphics.DrawImage(checkImage, app.PrescriptionData.IsNSTuningFork ? 367 : 402, 497, 30, 30);
+                        page.Graphics.DrawImage(checkImage, app.PrescriptionData.IsNSVibrationDecrease ? 367 : 402, 541, 30, 30);
+                        page.Graphics.DrawImage(checkImage, app.PrescriptionData.IsNSDTRReflexPatterns ? 367 : 402, 588, 30, 30);
 
                         page.Graphics.DrawString(456, 150, app.PrescriptionData.NoteOrthostaticHypotension);
                         page.Graphics.DrawString(456, 187, app.PrescriptionData.NoteVisionAssessment);
