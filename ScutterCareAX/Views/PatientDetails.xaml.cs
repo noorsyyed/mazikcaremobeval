@@ -1,4 +1,4 @@
-﻿using Bing.Maps;
+﻿
 using ModernUI.Toolkit.Data.Charting.Charts.Series;
 using System;
 using System.Collections.Generic;

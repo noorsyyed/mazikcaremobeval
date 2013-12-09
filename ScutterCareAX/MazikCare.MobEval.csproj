@@ -109,13 +109,10 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <SDKReference Include="Bing.Maps.Xaml, Version=1.113.0601.1">
-      <Name>Bing Maps for C#, C++, or Visual Basic %28Bing.Maps.Xaml, Version=1.113.0601.1%29</Name>
-    </SDKReference>
     <SDKReference Include="Microsoft.VCLibs, Version=11.0">
       <Name>Microsoft Visual C++ Runtime Package</Name>
     </SDKReference>
-    <SDKReference Include="SQLite.WinRT, Version=3.8.0.2">
+    <SDKReference Include="SQLite.WinRT, Version=3.8.1">
       <Name>SQLite for Windows Runtime</Name>
     </SDKReference>
   </ItemGroup>
