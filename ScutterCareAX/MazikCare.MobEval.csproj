@@ -210,6 +210,9 @@
     <Compile Include="Views\DiagnosisCondition.xaml.cs">
       <DependentUpon>DiagnosisCondition.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\DrawImageView.xaml.cs">
+      <DependentUpon>DrawImageView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MedicalConditons.xaml.cs">
       <DependentUpon>MedicalConditons.xaml</DependentUpon>
     </Compile>
@@ -295,6 +298,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\DrawImageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Myopathy.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -335,6 +342,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Content Include="Assets\Check.png" />
     <Content Include="Assets\diabetes01.jpg" />
     <Content Include="Assets\diabetes02.jpg" />
     <Content Include="Assets\diabetes03.jpg" />
@@ -572,6 +580,12 @@
     <Reference Include="Siberix.PDFSparkle, Version=1.0.85.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\Siberix.PDFSparkle.dll</HintPath>
+    </Reference>
+    <Reference Include="WinRTXamlToolkit">
+      <HintPath>..\packages\winrtxamltoolkit.1.5.3.8\lib\netcore45\WinRTXamlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="WriteableBitmapEx.WinRT">
+      <HintPath>..\packages\WriteableBitmapEx.1.0.8.0\lib\NetCore45\WriteableBitmapEx.WinRT.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

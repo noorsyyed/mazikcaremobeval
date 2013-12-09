@@ -29,8 +29,22 @@ namespace MazikCare.MobEval
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            PastMedicalHistoryList = new ObservableCollection<string>();
+            SocialHistoryList = new ObservableCollection<string>();
+            EndocrineDisorderList = new ObservableCollection<string>();
+            
+            SystemicSymptomList =new ObservableCollection<string>();
+            EyeSymptomList = new ObservableCollection<string>();
+            CardiovascularSymptomList =new ObservableCollection<string>();
+            GastroIntestinalSymptomList  = new ObservableCollection<string>();
+            PediatricScreeningList = new ObservableCollection<string>();
+            SkinSymptomList = new ObservableCollection<string>();
+            PsychologicalSymptomList = new ObservableCollection<string>();
 
-            this.LoadData();
+            GenitourinarySymptomsList = new ObservableCollection<string>();
+            EndocrineSymptomsList = new ObservableCollection<string>();
+            NeurologicalSymptomList = new ObservableCollection<string>();
+            this.LoadData();            
         }
 
         private async void LoadData()
@@ -46,7 +60,7 @@ namespace MazikCare.MobEval
             this.DiagnosisData = new DiagnosisData();
             this._patientHistory = new PatientHistory();
             this.MobilityData = new MobilityData();
-            _physical = new PatientPhysicalAssessment()
+            _physical = new PatientPhysicalAssessment() 
             {
                 BP = "120/80",
                 Height = "5ft 5inches",
@@ -185,9 +199,19 @@ namespace MazikCare.MobEval
             set;
         }
 
+        public ObservableCollection<string> SystemicSymptomList { get; set; }
+        public ObservableCollection<string> EyeSymptomList { get; set; }
+        public ObservableCollection<string> CardiovascularSymptomList { get; set; }
+        public ObservableCollection<string> GastroIntestinalSymptomList { get; set; }      
+        public ObservableCollection<string> PediatricScreeningList { get; set; }
+        public ObservableCollection<string> SkinSymptomList { get; set; }
+        public ObservableCollection<string> PsychologicalSymptomList { get; set; }
         public ObservableCollection<string> GenitourinarySymptomsList { get; set; }
         public ObservableCollection<string> EndocrineSymptomsList { get; set; }
         public ObservableCollection<string> NeurologicalSymptomList { get; set; }
+        public ObservableCollection<string> PastMedicalHistoryList { get; set; }
+        public ObservableCollection<string> SocialHistoryList { get; set; }
+        public ObservableCollection<string> EndocrineDisorderList { get; set; }
 
         public Patient Patient
         {
@@ -228,7 +252,7 @@ namespace MazikCare.MobEval
                             Gender = "Gender : Male",
                         };
                     }
-
+                    
                 }
                 else
                 {

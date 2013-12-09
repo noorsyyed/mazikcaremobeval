@@ -23,9 +23,11 @@ namespace MazikCare.MobEval.Views
     /// </summary>
     public sealed partial class AssesmentDiagnosis : MazikCare.MobEval.Common.LayoutAwarePage
     {
+        App App;
         public AssesmentDiagnosis()
         {
             this.InitializeComponent();
+            App = (App)Application.Current;
         }
 
         /// <summary>
@@ -39,7 +41,7 @@ namespace MazikCare.MobEval.Views
         /// session.  This will be null the first time a page is visited.</param>
         protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
-           
+
         }
 
         /// <summary>
@@ -89,20 +91,76 @@ namespace MazikCare.MobEval.Views
         private void gvNeurologicalSymptom_Tapped(object sender, TappedRoutedEventArgs e)
         {
             var app = (App)Application.Current;
-            if (app.NeurologicalSymptomList == null)
-            {
-                app.NeurologicalSymptomList = new ObservableCollection<string>();
-            }
-            else
-            {
-                app.NeurologicalSymptomList.Clear();
-            }
+            app.NeurologicalSymptomList.Clear();
             foreach (string item in this.gvNeurologicalSymptom.SelectedItems)
             {
                 app.NeurologicalSymptomList.Add(item);
             }
         }
 
-       
+        private void gvGastroIntestinal_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            App.GastroIntestinalSymptomList.Clear();
+            foreach (string item in this.gvGastroIntestinal.SelectedItems)
+            {
+                App.GastroIntestinalSymptomList.Add(item);
+            }
+        }
+
+        private void gvSystemic_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            App.SystemicSymptomList.Clear();
+            foreach (string item in this.gvSystemic.SelectedItems)
+            {
+                App.SystemicSymptomList.Add(item);
+            }
+        }
+
+        private void gvEyeSymp_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            App.EyeSymptomList.Clear();
+            foreach (string item in this.gvEyeSymp.SelectedItems)
+            {
+                App.EyeSymptomList.Add(item);
+            }
+        }
+
+        private void gvCardioVascular_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            App.CardiovascularSymptomList.Clear();
+            foreach (string item in this.gvCardioVascular.SelectedItems)
+            {
+                App.CardiovascularSymptomList.Add(item);
+            }
+        }
+
+        private void PsychoSymp_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            App.PsychologicalSymptomList.Clear();
+            foreach (string item in this.PsychoSymp.SelectedItems)
+            {
+                App.PsychologicalSymptomList.Add(item);
+            }
+        }
+
+        private void SkinSymp_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            App.SkinSymptomList.Clear();
+            foreach (string item in this.SkinSymp.SelectedItems)
+            {
+                App.SkinSymptomList.Add(item);
+            }
+        }
+
+        private void gvPediatric_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            App.PediatricScreeningList.Clear();
+            foreach (string item in this.gvPediatric.SelectedItems)
+            {
+                App.PediatricScreeningList.Add(item);
+            }
+        }
+
+
     }
 }

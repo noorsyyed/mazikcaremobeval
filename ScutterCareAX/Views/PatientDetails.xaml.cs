@@ -91,7 +91,8 @@ namespace MazikCare.MobEval.Views
 
         private void Physical_PointerReleased(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(PhysicalExamReport));
+            //this.Frame.Navigate(typeof(PhysicalExamReport));
+            this.Frame.Navigate(typeof(DrawImageView), "ms-appx:///Assets/physical_report.png");
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -112,10 +113,10 @@ namespace MazikCare.MobEval.Views
 
         private void Cardio_PointerReleased(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(CardioReport));
+            this.Frame.Navigate(typeof(DrawImageView), "ms-appx:///Assets/card_resp_report.png");
         }
 
-        
+
 
         //#region Bing Map Navigation
 

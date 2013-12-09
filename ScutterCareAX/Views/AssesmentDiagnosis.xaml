@@ -88,8 +88,8 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="GastroIntestinal Symptoms" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
-                <GridView ItemsSource="{Binding GastroIntestinalSymptomList}" Grid.Row="1" SelectionMode="Multiple">
+                <TextBlock Text="GastroIntestinal Symptoms" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}" />
+                <GridView ItemsSource="{Binding GastroIntestinalSymptomList}" Grid.Row="1" SelectionMode="Multiple" x:Name="gvGastroIntestinal" Tapped="gvGastroIntestinal_Tapped" >
                     <GridView.ItemTemplate>
                         <DataTemplate>
                             <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">
@@ -106,7 +106,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Systemic Symptoms" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
-                <GridView ItemsSource="{Binding SystemicSymptomList}" Grid.Row="1" SelectionMode="Multiple">
+                <GridView ItemsSource="{Binding SystemicSymptomList}" Grid.Row="1" SelectionMode="Multiple" x:Name="gvSystemic" Tapped="gvSystemic_Tapped">
                     <GridView.ItemTemplate>
                         <DataTemplate>
                             <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">
@@ -124,7 +124,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Eye Symptoms" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
-                <GridView ItemsSource="{Binding EyeSymptomList}" Grid.Row="1" SelectionMode="Multiple">
+                <GridView ItemsSource="{Binding EyeSymptomList}" Grid.Row="1" SelectionMode="Multiple" x:Name="gvEyeSymp" Tapped="gvEyeSymp_Tapped">
                     <GridView.ItemTemplate>
                         <DataTemplate>
                             <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">
@@ -141,7 +141,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Cardiovascular Symptoms" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
-                <GridView ItemsSource="{Binding CardiovascularSymptomList}" Grid.Row="1" SelectionMode="Multiple">
+                <GridView ItemsSource="{Binding CardiovascularSymptomList}" Grid.Row="1" SelectionMode="Multiple" x:Name="gvCardioVascular" Tapped="gvCardioVascular_Tapped">
                     <GridView.ItemTemplate>
                         <DataTemplate>
                             <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">
@@ -159,7 +159,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Psychological Symptoms" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
-                <GridView ItemsSource="{Binding PsychologicalSymptomList}" Grid.Row="1" SelectionMode="Multiple">
+                <GridView ItemsSource="{Binding PsychologicalSymptomList}" Grid.Row="1" SelectionMode="Multiple" x:Name="PsychoSymp" Tapped="PsychoSymp_Tapped">
                     <GridView.ItemTemplate>
                         <DataTemplate>
                             <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">
@@ -175,8 +175,8 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="Skit Symptoms" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
-                <GridView ItemsSource="{Binding SkinSymptomList}" Grid.Row="1" SelectionMode="Multiple">
+                <TextBlock Text="Skin Symptoms" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
+                <GridView ItemsSource="{Binding SkinSymptomList}" Grid.Row="1" SelectionMode="Multiple" x:Name="SkinSymp" Tapped="SkinSymp_Tapped">
                     <GridView.ItemTemplate>
                         <DataTemplate>
                             <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">
@@ -193,7 +193,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Pediatric Screening" Margin="10 5" Style="{StaticResource PageSubheaderTextStyle}"/>
-                <GridView ItemsSource="{Binding PediatricScreeningList}" Grid.Row="1" SelectionMode="Multiple">
+                <GridView ItemsSource="{Binding PediatricScreeningList}" Grid.Row="1" SelectionMode="Multiple" x:Name="gvPediatric" Tapped="gvPediatric_Tapped">
                     <GridView.ItemTemplate>
                         <DataTemplate>
                             <Grid Background="#30FFFFFF" Height="50" Width="320" VerticalAlignment="Center">

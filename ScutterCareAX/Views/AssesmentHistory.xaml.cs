@@ -53,5 +53,56 @@ namespace MazikCare.MobEval.Views
         {
             this.Frame.Navigate(typeof(WalkStatuses));
         }
+
+        private void DGPastMedHist_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var app = (App)Application.Current;
+            if (app.PastMedicalHistoryList==null)
+            {
+                app.PastMedicalHistoryList = new System.Collections.ObjectModel.ObservableCollection<string>();
+            }
+            else
+            {
+                app.PastMedicalHistoryList.Clear();
+            }
+            foreach (string item in this.DGPastMedHist.SelectedItems)
+            {
+                app.PastMedicalHistoryList.Add(item);
+            }
+        }
+
+        private void DGSocialHist_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var app = (App)Application.Current;
+            if (app.SocialHistoryList==null)
+            {
+                app.SocialHistoryList = new System.Collections.ObjectModel.ObservableCollection<string>();
+            }
+            else
+            {
+                app.SocialHistoryList.Clear();
+            }
+            foreach (string item in DGSocialHist.SelectedItems)
+            {
+                app.SocialHistoryList.Add(item);
+            }
+        }
+
+        private void DGEndocrineDisorder_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var app = (App)Application.Current;
+            if (app.EndocrineDisorderList==null)
+            {
+                app.EndocrineDisorderList = new System.Collections.ObjectModel.ObservableCollection<string>();
+            }
+            else
+            {
+                app.EndocrineDisorderList.Clear();
+            }
+            foreach (string item in DGEndocrineDisorder.SelectedItems)
+            {
+                app.EndocrineDisorderList.Add(item);
+            }
+        }
     }
 }
