@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tempuri.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ax2012-a.contoso.com:85/MicrosoftDynamicsAXAif60/MZKWEB/xppservice.svc?xsd=xsd3" namespace="http://tempuri.org" />
+      <xsd:import schemaLocation="http://ax2012-a.contoso.com:85/MicrosoftDynamicsAXAif60/MZKWEB/xppservice.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" />
+      <xsd:import schemaLocation="http://ax2012-a.contoso.com:85/MicrosoftDynamicsAXAif60/MZKWEB/xppservice.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" />
+      <xsd:import schemaLocation="http://ax2012-a.contoso.com:85/MicrosoftDynamicsAXAif60/MZKWEB/xppservice.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ax2012-a.contoso.com:85/MicrosoftDynamicsAXAif60/MZKWEB/xppservice.svc?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" />
+      <xsd:import schemaLocation="http://ax2012-a.contoso.com:85/MicrosoftDynamicsAXAif60/MZKWEB/xppservice.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" />
+      <xsd:import schemaLocation="http://ax2012-a.contoso.com:85/MicrosoftDynamicsAXAif60/MZKWEB/xppservice.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://ax2012-a.contoso.com:85/MicrosoftDynamicsAXAif60/MZKWEB/xppservice.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MazikCareWebServiceGetSalesOrderNoRequest">
+    <wsdl:part name="parameters" element="tns:MazikCareWebServiceGetSalesOrderNoRequest" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceGetSalesOrderNoRequest_Headers">
+    <wsdl:part xmlns:q1="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q1:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceGetSalesOrderNoResponse">
+    <wsdl:part name="parameters" element="tns:MazikCareWebServiceGetSalesOrderNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebService_getSalesOrderNo_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q2:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServicePostPackingSlipRequest">
+    <wsdl:part name="parameters" element="tns:MazikCareWebServicePostPackingSlipRequest" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServicePostPackingSlipRequest_Headers">
+    <wsdl:part xmlns:q3="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q3:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServicePostPackingSlipResponse">
+    <wsdl:part name="parameters" element="tns:MazikCareWebServicePostPackingSlipResponse" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebService_postPackingSlip_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q4:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceGetSalesLinesRequest">
+    <wsdl:part name="parameters" element="tns:MazikCareWebServiceGetSalesLinesRequest" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceGetSalesLinesRequest_Headers">
+    <wsdl:part xmlns:q5="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q5:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceGetSalesLinesResponse">
+    <wsdl:part name="parameters" element="tns:MazikCareWebServiceGetSalesLinesResponse" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebService_getSalesLines_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q6:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceGetPatientImageRequest">
+    <wsdl:part name="parameters" element="tns:MazikCareWebServiceGetPatientImageRequest" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceGetPatientImageRequest_Headers">
+    <wsdl:part xmlns:q7="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q7:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceGetPatientImageResponse">
+    <wsdl:part name="parameters" element="tns:MazikCareWebServiceGetPatientImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebService_getPatientImage_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q8:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceGetAllPropectsRequest">
+    <wsdl:part name="parameters" element="tns:MazikCareWebServiceGetAllPropectsRequest" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceGetAllPropectsRequest_Headers">
+    <wsdl:part xmlns:q9="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q9:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceGetAllPropectsResponse">
+    <wsdl:part name="parameters" element="tns:MazikCareWebServiceGetAllPropectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebService_getAllPropects_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q10:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceGetAllPatientsRequest">
+    <wsdl:part name="parameters" element="tns:MazikCareWebServiceGetAllPatientsRequest" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceGetAllPatientsRequest_Headers">
+    <wsdl:part xmlns:q11="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q11:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceGetAllPatientsResponse">
+    <wsdl:part name="parameters" element="tns:MazikCareWebServiceGetAllPatientsResponse" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebService_getAllPatients_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q12:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceCreatePrescriptionRequest">
+    <wsdl:part name="parameters" element="tns:MazikCareWebServiceCreatePrescriptionRequest" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceCreatePrescriptionRequest_Headers">
+    <wsdl:part xmlns:q13="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q13:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceCreatePrescriptionResponse">
+    <wsdl:part name="parameters" element="tns:MazikCareWebServiceCreatePrescriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebService_createPrescription_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q14:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceCreateNewPrescriptionRequest">
+    <wsdl:part name="parameters" element="tns:MazikCareWebServiceCreateNewPrescriptionRequest" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceCreateNewPrescriptionRequest_Headers">
+    <wsdl:part xmlns:q15="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q15:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceCreateNewPrescriptionResponse">
+    <wsdl:part name="parameters" element="tns:MazikCareWebServiceCreateNewPrescriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebService_createNewPrescription_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q16:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceConvertProspectToPatientRequest">
+    <wsdl:part name="parameters" element="tns:MazikCareWebServiceConvertProspectToPatientRequest" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceConvertProspectToPatientRequest_Headers">
+    <wsdl:part xmlns:q17="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q17:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceConvertProspectToPatientResponse">
+    <wsdl:part name="parameters" element="tns:MazikCareWebServiceConvertProspectToPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebService_convertProspectToPatient_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q18:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceAddNewSONotesDocumentRequest">
+    <wsdl:part name="parameters" element="tns:MazikCareWebServiceAddNewSONotesDocumentRequest" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceAddNewSONotesDocumentRequest_Headers">
+    <wsdl:part xmlns:q19="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q19:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceAddNewSONotesDocumentResponse">
+    <wsdl:part name="parameters" element="tns:MazikCareWebServiceAddNewSONotesDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebService_addNewSONotesDocument_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q20:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceAddNewDocumentRequest">
+    <wsdl:part name="parameters" element="tns:MazikCareWebServiceAddNewDocumentRequest" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceAddNewDocumentRequest_Headers">
+    <wsdl:part xmlns:q21="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q21:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebServiceAddNewDocumentResponse">
+    <wsdl:part name="parameters" element="tns:MazikCareWebServiceAddNewDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="MazikCareWebService_addNewDocument_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q22:AifFault" />
+  </wsdl:message>
+  <wsdl:portType name="MazikCareWebService">
+    <wsdl:operation name="getSalesOrderNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/MazikCareWebService/getSalesOrderNo" name="MazikCareWebServiceGetSalesOrderNoRequest" message="tns:MazikCareWebServiceGetSalesOrderNoRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MazikCareWebService/getSalesOrderNoResponse" name="MazikCareWebServiceGetSalesOrderNoResponse" message="tns:MazikCareWebServiceGetSalesOrderNoResponse" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/MazikCareWebService/getSalesOrderNoAifFaultFault" name="AifFaultFault" message="tns:MazikCareWebService_getSalesOrderNo_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="postPackingSlip">
+      <wsdl:input wsaw:Action="http://tempuri.org/MazikCareWebService/postPackingSlip" name="MazikCareWebServicePostPackingSlipRequest" message="tns:MazikCareWebServicePostPackingSlipRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MazikCareWebService/postPackingSlipResponse" name="MazikCareWebServicePostPackingSlipResponse" message="tns:MazikCareWebServicePostPackingSlipResponse" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/MazikCareWebService/postPackingSlipAifFaultFault" name="AifFaultFault" message="tns:MazikCareWebService_postPackingSlip_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSalesLines">
+      <wsdl:input wsaw:Action="http://tempuri.org/MazikCareWebService/getSalesLines" name="MazikCareWebServiceGetSalesLinesRequest" message="tns:MazikCareWebServiceGetSalesLinesRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MazikCareWebService/getSalesLinesResponse" name="MazikCareWebServiceGetSalesLinesResponse" message="tns:MazikCareWebServiceGetSalesLinesResponse" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/MazikCareWebService/getSalesLinesAifFaultFault" name="AifFaultFault" message="tns:MazikCareWebService_getSalesLines_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPatientImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/MazikCareWebService/getPatientImage" name="MazikCareWebServiceGetPatientImageRequest" message="tns:MazikCareWebServiceGetPatientImageRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MazikCareWebService/getPatientImageResponse" name="MazikCareWebServiceGetPatientImageResponse" message="tns:MazikCareWebServiceGetPatientImageResponse" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/MazikCareWebService/getPatientImageAifFaultFault" name="AifFaultFault" message="tns:MazikCareWebService_getPatientImage_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllPropects">
+      <wsdl:input wsaw:Action="http://tempuri.org/MazikCareWebService/getAllPropects" name="MazikCareWebServiceGetAllPropectsRequest" message="tns:MazikCareWebServiceGetAllPropectsRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MazikCareWebService/getAllPropectsResponse" name="MazikCareWebServiceGetAllPropectsResponse" message="tns:MazikCareWebServiceGetAllPropectsResponse" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/MazikCareWebService/getAllPropectsAifFaultFault" name="AifFaultFault" message="tns:MazikCareWebService_getAllPropects_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllPatients">
+      <wsdl:input wsaw:Action="http://tempuri.org/MazikCareWebService/getAllPatients" name="MazikCareWebServiceGetAllPatientsRequest" message="tns:MazikCareWebServiceGetAllPatientsRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MazikCareWebService/getAllPatientsResponse" name="MazikCareWebServiceGetAllPatientsResponse" message="tns:MazikCareWebServiceGetAllPatientsResponse" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/MazikCareWebService/getAllPatientsAifFaultFault" name="AifFaultFault" message="tns:MazikCareWebService_getAllPatients_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createPrescription">
+      <wsdl:input wsaw:Action="http://tempuri.org/MazikCareWebService/createPrescription" name="MazikCareWebServiceCreatePrescriptionRequest" message="tns:MazikCareWebServiceCreatePrescriptionRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MazikCareWebService/createPrescriptionResponse" name="MazikCareWebServiceCreatePrescriptionResponse" message="tns:MazikCareWebServiceCreatePrescriptionResponse" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/MazikCareWebService/createPrescriptionAifFaultFault" name="AifFaultFault" message="tns:MazikCareWebService_createPrescription_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createNewPrescription">
+      <wsdl:input wsaw:Action="http://tempuri.org/MazikCareWebService/createNewPrescription" name="MazikCareWebServiceCreateNewPrescriptionRequest" message="tns:MazikCareWebServiceCreateNewPrescriptionRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MazikCareWebService/createNewPrescriptionResponse" name="MazikCareWebServiceCreateNewPrescriptionResponse" message="tns:MazikCareWebServiceCreateNewPrescriptionResponse" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/MazikCareWebService/createNewPrescriptionAifFaultFault" name="AifFaultFault" message="tns:MazikCareWebService_createNewPrescription_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="convertProspectToPatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/MazikCareWebService/convertProspectToPatient" name="MazikCareWebServiceConvertProspectToPatientRequest" message="tns:MazikCareWebServiceConvertProspectToPatientRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MazikCareWebService/convertProspectToPatientResponse" name="MazikCareWebServiceConvertProspectToPatientResponse" message="tns:MazikCareWebServiceConvertProspectToPatientResponse" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/MazikCareWebService/convertProspectToPatientAifFaultFault" name="AifFaultFault" message="tns:MazikCareWebService_convertProspectToPatient_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addNewSONotesDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/MazikCareWebService/addNewSONotesDocument" name="MazikCareWebServiceAddNewSONotesDocumentRequest" message="tns:MazikCareWebServiceAddNewSONotesDocumentRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MazikCareWebService/addNewSONotesDocumentResponse" name="MazikCareWebServiceAddNewSONotesDocumentResponse" message="tns:MazikCareWebServiceAddNewSONotesDocumentResponse" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/MazikCareWebService/addNewSONotesDocumentAifFaultFault" name="AifFaultFault" message="tns:MazikCareWebService_addNewSONotesDocument_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addNewDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/MazikCareWebService/addNewDocument" name="MazikCareWebServiceAddNewDocumentRequest" message="tns:MazikCareWebServiceAddNewDocumentRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MazikCareWebService/addNewDocumentResponse" name="MazikCareWebServiceAddNewDocumentResponse" message="tns:MazikCareWebServiceAddNewDocumentResponse" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/MazikCareWebService/addNewDocumentAifFaultFault" name="AifFaultFault" message="tns:MazikCareWebService_addNewDocument_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
