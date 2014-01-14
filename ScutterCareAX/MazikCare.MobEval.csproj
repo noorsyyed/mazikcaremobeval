@@ -20,7 +20,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
-    <PackageCertificateThumbprint>F16525CB4E31AF7BBCB4870762D8692838D8A131</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>F8491F6D2FE906D392BC9B5593879609FC11FD23</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -112,7 +112,7 @@
     <SDKReference Include="Microsoft.VCLibs, Version=11.0">
       <Name>Microsoft Visual C++ Runtime Package</Name>
     </SDKReference>
-    <SDKReference Include="SQLite.WinRT, Version=3.8.1">
+    <SDKReference Include="SQLite.WinRT, Version=3.8.2">
       <Name>SQLite for Windows Runtime</Name>
     </SDKReference>
   </ItemGroup>

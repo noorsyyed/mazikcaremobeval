@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="1BBF29A1-0867-4C57-BE78-EA34EA4A2F95" Publisher="CN=MazikGlobal" Version="1.0.0.2" />
+  <Identity Name="1BBF29A1-0867-4C57-BE78-EA34EA4A2F95" Publisher="CN=syed.noor" Version="1.0.0.2" />
   <Properties>
     <DisplayName>MazikCare MobEval Insulet</DisplayName>
     <PublisherDisplayName>admin</PublisherDisplayName>
