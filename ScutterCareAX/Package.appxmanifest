@@ -1,24 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="MazikCareMobEval" Publisher="CN=MazikGlobal" Version="1.0.0.21" />
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
+  <Identity Name="MazikCareMobEval" Publisher="CN=Syed.Noor" Version="1.1.0.25" />
   <Properties>
     <DisplayName>MazikCare MobEval</DisplayName>
     <PublisherDisplayName>admin</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Prerequisites>
-    <OSMinVersion>6.2.1</OSMinVersion>
-    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+    <OSMinVersion>6.3.0</OSMinVersion>
+    <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
   </Prerequisites>
   <Resources>
     <Resource Language="x-generate" />
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="MazikCare.MobEval.App">
-      <VisualElements DisplayName="MazikCare MobEval" Logo="Assets\mazikcare_150-150.png" SmallLogo="Assets\logo-small.png" Description="MazikCare MobEval" ForegroundText="light" BackgroundColor="#1f497d">
-        <DefaultTile WideLogo="Assets\mazikcare_310-150.png" ShowName="noLogos" />
-        <SplashScreen Image="Assets\mazikcare_620-300.png" BackgroundColor="#1f497d" />
-      </VisualElements>
       <Extensions>
         <Extension Category="windows.fileTypeAssociation">
           <FileTypeAssociation Name="xml">
@@ -28,6 +24,11 @@
           </FileTypeAssociation>
         </Extension>
       </Extensions>
+      <m2:VisualElements DisplayName="MazikCare MobEval" Description="MazikCare MobEval" BackgroundColor="#1f497d" ForegroundText="light" Square150x150Logo="Assets\mazikcare_150-150.png" Square30x30Logo="Assets\logo-small.png">
+        <m2:DefaultTile Wide310x150Logo="Assets\mazikcare_310-150.png">
+        </m2:DefaultTile>
+        <m2:SplashScreen BackgroundColor="#1f497d" Image="Assets\mazikcare_620-300.png" />
+      </m2:VisualElements>
     </Application>
   </Applications>
   <Capabilities>

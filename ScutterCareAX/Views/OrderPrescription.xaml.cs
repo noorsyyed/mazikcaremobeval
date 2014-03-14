@@ -668,7 +668,7 @@ namespace MazikCare.MobEval.Views
                         page.Graphics.DrawImage(image, 1, 1, image.Width, image.Height);
 
                         //signature                     
-                        if (signStream != Stream.Null)
+                        if (signStream != Stream.Null && signStream.Length>0)
                         {
                             var signImage = new Siberix.Sparkle.Graphics.Image(signStream);
                             page.Graphics.DrawImage(signImage, 370, 925, signImage.Width * 0.27F, signImage.Height * 0.27F);

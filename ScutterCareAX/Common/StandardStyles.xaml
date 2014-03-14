@@ -1980,7 +1980,7 @@
         <!--<Setter Property="Background" Value="{StaticResource ApplicationPageBackgroundThemeBrush}"/>-->
         <Setter Property="Background">
             <Setter.Value>
-                <ImageBrush ImageSource="Assets/bg_theme_dark.png" AlignmentX="Center" AlignmentY="Center" />
+                <ImageBrush ImageSource="ms-appx:///Assets/bg_theme_dark.png" AlignmentX="Center" AlignmentY="Center" />
             </Setter.Value>
         </Setter>
         <Setter Property="ChildrenTransitions">
