@@ -32,7 +32,7 @@ namespace MazikCare.MobEval
             PastMedicalHistoryList = new ObservableCollection<string>();
             SocialHistoryList = new ObservableCollection<string>();
             EndocrineDisorderList = new ObservableCollection<string>();
-
+            
             SystemicSymptomList =new ObservableCollection<string>();
             EyeSymptomList = new ObservableCollection<string>();
             CardiovascularSymptomList =new ObservableCollection<string>();
@@ -68,6 +68,14 @@ namespace MazikCare.MobEval
             };
         }
 
+        protected override void OnActivated(IActivatedEventArgs args)
+        {
+            if (args.Kind == ActivationKind.Protocol)
+            {
+                StartupAsync(args); 
+            }
+        }
+
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
         /// will be used when the application is launched to open a specific file, to display
@@ -75,6 +83,11 @@ namespace MazikCare.MobEval
         /// </summary>
         /// <param name="args">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs args)
+        {
+            StartupAsync(args);
+        }
+
+        private static void StartupAsync(IActivatedEventArgs args)
         {
             Frame rootFrame = Window.Current.Content as Frame;
 
@@ -99,7 +112,7 @@ namespace MazikCare.MobEval
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                if (!rootFrame.Navigate(typeof(MainPage), args.Arguments))
+                if (!rootFrame.Navigate(typeof(MainPage)))
                 {
                     throw new Exception("Failed to create initial page");
                 }

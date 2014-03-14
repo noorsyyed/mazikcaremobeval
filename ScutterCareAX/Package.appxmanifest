@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="MazikCareMobEval" Publisher="CN=Syed.Noor" Version="1.1.0.25" />
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="MazikCareMobEval" Publisher="CN=MazikGlobal" Version="1.0.0.21" />
   <Properties>
-    <DisplayName>MazikCare MobEval</DisplayName>
+    <DisplayName>MazikCare MobEval Insulet</DisplayName>
     <PublisherDisplayName>admin</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -22,6 +22,9 @@
               <FileType>.xml</FileType>
             </SupportedFileTypes>
           </FileTypeAssociation>
+        </Extension>
+        <Extension Category="windows.protocol">
+          <Protocol Name="mazikcare" />
         </Extension>
       </Extensions>
       <m2:VisualElements DisplayName="MazikCare MobEval" Description="MazikCare MobEval" BackgroundColor="#1f497d" ForegroundText="light" Square150x150Logo="Assets\mazikcare_150-150.png" Square30x30Logo="Assets\logo-small.png">
